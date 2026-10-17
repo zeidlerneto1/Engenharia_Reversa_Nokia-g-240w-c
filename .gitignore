@@ -1,0 +1,19 @@
+# Artefatos de tooling/ambiente — não devem ir para o repo
+rev-env/
+peter-ghidra/
+ghidra_proj_*/
+ghidra_scripts/
+__pycache__/
+*.pyc
+
+# Binários extraídos / kernel / ferramentas
+vmlinux*.bin
+vmlinux.lz
+openwrt-malta-vmlinux
+rizin-static.tar.xz
+jython/
+uclibcroot/
+
+# Logs e arquivos temporários
+*.log
+*.tmp

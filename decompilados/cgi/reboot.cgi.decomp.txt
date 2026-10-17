@@ -1,0 +1,662 @@
+===== _init @ 00400918 size=108 =====
+
+int _init(EVP_PKEY_CTX *ctx)
+
+{
+  int iVar1;
+  
+  FUN_00400aac();
+  iVar1 = FUN_00401030();
+  return iVar1;
+}
+
+
+===== entry @ 00400990 size=88 =====
+
+void processEntry entry(undefined4 param_1,undefined4 param_2)
+
+{
+  undefined1 auStack_20 [16];
+  undefined *local_10;
+  undefined4 local_c;
+  undefined1 *local_8;
+  
+  local_8 = auStack_20;
+  local_10 = PTR__fini_0041153c;
+  local_c = param_1;
+  (*(code *)PTR___uClibc_main_00411588)
+            (PTR_main_00411550,param_2,&stack0x00000004,PTR__init_00411538);
+  do {
+                    /* WARNING: Do nothing block with infinite loop */
+  } while( true );
+}
+
+
+===== FUN_004009f0 @ 004009f0 size=188 =====
+
+/* WARNING: Removing unreachable block (ram,0x00400a44) */
+
+void FUN_004009f0(void)
+
+{
+  if (_fbss == '\0') {
+    if (PTR___deregister_frame_info_004115a8 != (undefined *)0x0) {
+      (*(code *)PTR___deregister_frame_info_004115a8)(&DWORD_004014f0);
+    }
+    _fbss = '\x01';
+  }
+  return;
+}
+
+
+===== FUN_00400aac @ 00400aac size=104 =====
+
+void FUN_00400aac(void)
+
+{
+  if (PTR___register_frame_info_00411590 != (undefined *)0x0) {
+    (*(code *)PTR___register_frame_info_00411590)(&DWORD_004014f0,&DAT_004115b8);
+  }
+  if ((DAT_00411504 != 0) && (PTR__Jv_RegisterClasses_00411598 != (undefined *)0x0)) {
+    (*(code *)PTR__Jv_RegisterClasses_00411598)(&DAT_00411504);
+    return;
+  }
+  return;
+}
+
+
+===== CGIMain @ 00400b20 size=1296 =====
+
+undefined4 CGIMain(int param_1,int param_2)
+
+{
+  undefined4 uVar1;
+  int iVar2;
+  undefined1 auStack_88 [128];
+  
+  (*(code *)PTR_memset_0041156c)(auStack_88,0,0x80);
+  uVar1 = (*(code *)PTR_getenv_004115a4)("REQUEST_METHOD");
+  iVar2 = (*(code *)PTR_strcmp_0041155c)(uVar1,&DAT_00401220);
+  if (iVar2 == 0) {
+    if (*(int *)PTR_g_is_timeout_0041158c != 0) {
+      (*(code *)PTR_CGIWriteHead_00411578)("relogin:1");
+      (*(code *)PTR_CGIWritePage_0041154c)("<script>top.location.href=\'/\'</script>");
+      (*(code *)PTR_CGIFlush_0041159c)();
+    }
+    (*(code *)PTR_scfg_get_00411564)("OperatorID",auStack_88,0x80);
+    iVar2 = (*(code *)PTR_strcmp_0041155c)(auStack_88,&DAT_00401264);
+    if ((iVar2 != 0) &&
+       (iVar2 = (*(code *)PTR_strcmp_0041155c)(auStack_88,&DAT_0040126c), iVar2 != 0)) {
+      (*(code *)PTR_tl_apply_00411574)(0,"html_glb/management/reboot.html");
+      return 0;
+    }
+    (*(code *)PTR_VFSP_TmplApply_00411568)(0,"web_vfsp/modules/statussupport/restart.html");
+  }
+  else {
+    uVar1 = (*(code *)PTR_getenv_004115a4)("REQUEST_METHOD");
+    iVar2 = (*(code *)PTR_strcmp_0041155c)(uVar1,&DAT_004012c0);
+    if (((iVar2 == 0) && (param_1 == 2)) &&
+       (iVar2 = (*(code *)PTR_strcmp_0041155c)(*(undefined4 *)(param_2 + 4),"reboot"), iVar2 == 0))
+    {
+      iVar2 = (*(code *)PTR_access_00411580)("/tmp/qtnupgrading",0);
+      if ((iVar2 == 0) && (iVar2 = (*(code *)PTR_access_00411580)(&DAT_004012e4,0), iVar2 == 0)) {
+        (*(code *)PTR_puts_00411554)
+                  (
+                  "Content-type:text/html;charset=UTF-8\r\nCache-Control:private,max-age=0;\r\nX-Frame-Options:SAMEORIGIN\r\nX-Content-Type-Options:nosniff\r\nX-XSS-Protection:1; mode=block\r\nContent-Security-Policy:default-src \'self\' \'unsafe-inline\' \'unsafe-eval\'\r\nStrict-Transport-Security:max-age=2592000; includeSubdomains\r"
+                  );
+        (*(code *)PTR_puts_00411554)(&DAT_00401418);
+        (*(code *)PTR_printf_00411558)("{ \"msg\":\"%s\" }","qtnupgrading");
+        (*(code *)PTR_fflush_00411570)(0);
+        (*(code *)PTR_close_0041157c)(1);
+        (*(code *)PTR_close_0041157c)(2);
+        uVar1 = (*(code *)PTR_exit_00411560)(0);
+        return uVar1;
+      }
+      if (*(int *)PTR_g_is_timeout_0041158c != 0) {
+        (*(code *)PTR_CGIWriteHead_00411578)("relogin:1");
+        (*(code *)PTR_CGIWritePage_0041154c)("<script>top.location.href=\'/\'</script>");
+        (*(code *)PTR_CGIFlush_0041159c)();
+      }
+      (*(code *)PTR_puts_00411554)
+                (
+                "Content-type:text/html;charset=UTF-8\r\nCache-Control:private,max-age=0;\r\nX-Frame-Options:SAMEORIGIN\r\nX-Content-Type-Options:nosniff\r\nX-XSS-Protection:1; mode=block\r\nContent-Security-Policy:default-src \'self\' \'unsafe-inline\' \'unsafe-eval\'\r\nStrict-Transport-Security:max-age=2592000; includeSubdomains\r"
+                );
+      (*(code *)PTR_puts_00411554)(&DAT_00401418);
+      (*(code *)PTR_customer_log_log_00411584)(1,"reboot by Web.\n");
+      (*(code *)PTR_sleep_00411594)(1);
+      (*(code *)PTR_printf_00411558)("{ \"ret\": 0, \"msg\":\"%s\" }","done reboot");
+      (*(code *)PTR_fflush_00411570)(0);
+      (*(code *)PTR_close_0041157c)(1);
+      (*(code *)PTR_close_0041157c)(2);
+      (*(code *)PTR_system_004115a0)
+                (
+                "/usr/sbin/cs_sudo \"echo 1 3,`date \'+%Y-%m-%d,%H:%M:%S\'` > /configs/last_reboot_info\""
+                );
+      (*(code *)PTR_system_004115a0)("(sleep 1;/sbin/reboot)&");
+      (*(code *)PTR_sleep_00411594)(1);
+      uVar1 = (*(code *)PTR_exit_00411560)(0);
+      return uVar1;
+    }
+  }
+  return 0;
+}
+
+
+===== FUN_00401030 @ 00401030 size=68 =====
+
+void FUN_00401030(void)
+
+{
+  undefined4 *puVar1;
+  
+  for (puVar1 = &DAT_004114f4; (code *)*puVar1 != (code *)0xffffffff; puVar1 = puVar1 + -1) {
+    (*(code *)*puVar1)();
+  }
+  return;
+}
+
+
+===== getenv @ 00401080 size=16 =====
+
+/* WARNING: Unknown calling convention -- yet parameter storage is locked */
+
+char * getenv(char *__name)
+
+{
+  char *pcVar1;
+  
+  (*(code *)_GLOBAL_OFFSET_TABLE_)();
+  (*(code *)_GLOBAL_OFFSET_TABLE_)();
+  (*(code *)_GLOBAL_OFFSET_TABLE_)();
+  (*(code *)_GLOBAL_OFFSET_TABLE_)();
+  (*(code *)_GLOBAL_OFFSET_TABLE_)();
+  (*(code *)_GLOBAL_OFFSET_TABLE_)();
+  (*(code *)_GLOBAL_OFFSET_TABLE_)();
+  (*(code *)_GLOBAL_OFFSET_TABLE_)();
+  (*(code *)_GLOBAL_OFFSET_TABLE_)();
+  (*(code *)_GLOBAL_OFFSET_TABLE_)();
+  (*(code *)_GLOBAL_OFFSET_TABLE_)();
+  (*(code *)_GLOBAL_OFFSET_TABLE_)();
+  (*(code *)_GLOBAL_OFFSET_TABLE_)();
+  (*(code *)_GLOBAL_OFFSET_TABLE_)();
+  (*(code *)_GLOBAL_OFFSET_TABLE_)();
+  (*(code *)_GLOBAL_OFFSET_TABLE_)();
+  (*(code *)_GLOBAL_OFFSET_TABLE_)();
+  (*(code *)_GLOBAL_OFFSET_TABLE_)();
+  (*(code *)_GLOBAL_OFFSET_TABLE_)();
+  pcVar1 = (char *)FUN_004009f0();
+  return pcVar1;
+}
+
+
+===== system @ 00401090 size=16 =====
+
+/* WARNING: Unknown calling convention -- yet parameter storage is locked */
+
+int system(char *__command)
+
+{
+  int iVar1;
+  
+  (*(code *)_GLOBAL_OFFSET_TABLE_)();
+  (*(code *)_GLOBAL_OFFSET_TABLE_)();
+  (*(code *)_GLOBAL_OFFSET_TABLE_)();
+  (*(code *)_GLOBAL_OFFSET_TABLE_)();
+  (*(code *)_GLOBAL_OFFSET_TABLE_)();
+  (*(code *)_GLOBAL_OFFSET_TABLE_)();
+  (*(code *)_GLOBAL_OFFSET_TABLE_)();
+  (*(code *)_GLOBAL_OFFSET_TABLE_)();
+  (*(code *)_GLOBAL_OFFSET_TABLE_)();
+  (*(code *)_GLOBAL_OFFSET_TABLE_)();
+  (*(code *)_GLOBAL_OFFSET_TABLE_)();
+  (*(code *)_GLOBAL_OFFSET_TABLE_)();
+  (*(code *)_GLOBAL_OFFSET_TABLE_)();
+  (*(code *)_GLOBAL_OFFSET_TABLE_)();
+  (*(code *)_GLOBAL_OFFSET_TABLE_)();
+  (*(code *)_GLOBAL_OFFSET_TABLE_)();
+  (*(code *)_GLOBAL_OFFSET_TABLE_)();
+  (*(code *)_GLOBAL_OFFSET_TABLE_)();
+  iVar1 = FUN_004009f0();
+  return iVar1;
+}
+
+
+===== CGIFlush @ 004010a0 size=16 =====
+
+void CGIFlush(void)
+
+{
+  int unaff_gp;
+  
+  (**(code **)(unaff_gp + -0x7ff0))();
+  (**(code **)(unaff_gp + -0x7ff0))();
+  (**(code **)(unaff_gp + -0x7ff0))();
+  (**(code **)(unaff_gp + -0x7ff0))();
+  (**(code **)(unaff_gp + -0x7ff0))();
+  (**(code **)(unaff_gp + -0x7ff0))();
+  (**(code **)(unaff_gp + -0x7ff0))();
+  (**(code **)(unaff_gp + -0x7ff0))();
+  (**(code **)(unaff_gp + -0x7ff0))();
+  (**(code **)(unaff_gp + -0x7ff0))();
+  (**(code **)(unaff_gp + -0x7ff0))();
+  (**(code **)(unaff_gp + -0x7ff0))();
+  (**(code **)(unaff_gp + -0x7ff0))();
+  (**(code **)(unaff_gp + -0x7ff0))();
+  (**(code **)(unaff_gp + -0x7ff0))();
+  (**(code **)(unaff_gp + -0x7ff0))();
+  (**(code **)(unaff_gp + -0x7ff0))();
+  FUN_004009f0();
+  return;
+}
+
+
+===== sleep @ 004010b0 size=16 =====
+
+/* WARNING: Unknown calling convention -- yet parameter storage is locked */
+
+uint sleep(uint __seconds)
+
+{
+  uint uVar1;
+  int unaff_gp;
+  
+  (**(code **)(unaff_gp + -0x7ff0))();
+  (**(code **)(unaff_gp + -0x7ff0))();
+  (**(code **)(unaff_gp + -0x7ff0))();
+  (**(code **)(unaff_gp + -0x7ff0))();
+  (**(code **)(unaff_gp + -0x7ff0))();
+  (**(code **)(unaff_gp + -0x7ff0))();
+  (**(code **)(unaff_gp + -0x7ff0))();
+  (**(code **)(unaff_gp + -0x7ff0))();
+  (**(code **)(unaff_gp + -0x7ff0))();
+  (**(code **)(unaff_gp + -0x7ff0))();
+  (**(code **)(unaff_gp + -0x7ff0))();
+  (**(code **)(unaff_gp + -0x7ff0))();
+  (**(code **)(unaff_gp + -0x7ff0))();
+  (**(code **)(unaff_gp + -0x7ff0))();
+  (**(code **)(unaff_gp + -0x7ff0))();
+  (**(code **)(unaff_gp + -0x7ff0))();
+  uVar1 = FUN_004009f0();
+  return uVar1;
+}
+
+
+===== __uClibc_main @ 004010c0 size=16 =====
+
+void __uClibc_main(void)
+
+{
+  int unaff_gp;
+  
+  (**(code **)(unaff_gp + -0x7ff0))();
+  (**(code **)(unaff_gp + -0x7ff0))();
+  (**(code **)(unaff_gp + -0x7ff0))();
+  (**(code **)(unaff_gp + -0x7ff0))();
+  (**(code **)(unaff_gp + -0x7ff0))();
+  (**(code **)(unaff_gp + -0x7ff0))();
+  (**(code **)(unaff_gp + -0x7ff0))();
+  (**(code **)(unaff_gp + -0x7ff0))();
+  (**(code **)(unaff_gp + -0x7ff0))();
+  (**(code **)(unaff_gp + -0x7ff0))();
+  (**(code **)(unaff_gp + -0x7ff0))();
+  (**(code **)(unaff_gp + -0x7ff0))();
+  (**(code **)(unaff_gp + -0x7ff0))();
+  (**(code **)(unaff_gp + -0x7ff0))();
+  (**(code **)(unaff_gp + -0x7ff0))();
+  FUN_004009f0();
+  return;
+}
+
+
+===== customer_log_log @ 004010d0 size=16 =====
+
+void customer_log_log(void)
+
+{
+  (*(code *)_GLOBAL_OFFSET_TABLE_)();
+  (*(code *)_GLOBAL_OFFSET_TABLE_)();
+  (*(code *)_GLOBAL_OFFSET_TABLE_)();
+  (*(code *)_GLOBAL_OFFSET_TABLE_)();
+  (*(code *)_GLOBAL_OFFSET_TABLE_)();
+  (*(code *)_GLOBAL_OFFSET_TABLE_)();
+  (*(code *)_GLOBAL_OFFSET_TABLE_)();
+  (*(code *)_GLOBAL_OFFSET_TABLE_)();
+  (*(code *)_GLOBAL_OFFSET_TABLE_)();
+  (*(code *)_GLOBAL_OFFSET_TABLE_)();
+  (*(code *)_GLOBAL_OFFSET_TABLE_)();
+  (*(code *)_GLOBAL_OFFSET_TABLE_)();
+  (*(code *)_GLOBAL_OFFSET_TABLE_)();
+  (*(code *)_GLOBAL_OFFSET_TABLE_)();
+  FUN_004009f0();
+  return;
+}
+
+
+===== access @ 004010e0 size=16 =====
+
+/* WARNING: Unknown calling convention -- yet parameter storage is locked */
+
+int access(char *__name,int __type)
+
+{
+  int iVar1;
+  int unaff_gp;
+  
+  (**(code **)(unaff_gp + -0x7ff0))();
+  (**(code **)(unaff_gp + -0x7ff0))();
+  (**(code **)(unaff_gp + -0x7ff0))();
+  (**(code **)(unaff_gp + -0x7ff0))();
+  (**(code **)(unaff_gp + -0x7ff0))();
+  (**(code **)(unaff_gp + -0x7ff0))();
+  (**(code **)(unaff_gp + -0x7ff0))();
+  (**(code **)(unaff_gp + -0x7ff0))();
+  (**(code **)(unaff_gp + -0x7ff0))();
+  (**(code **)(unaff_gp + -0x7ff0))();
+  (**(code **)(unaff_gp + -0x7ff0))();
+  (**(code **)(unaff_gp + -0x7ff0))();
+  (**(code **)(unaff_gp + -0x7ff0))();
+  iVar1 = FUN_004009f0();
+  return iVar1;
+}
+
+
+===== close @ 004010f0 size=16 =====
+
+/* WARNING: Unknown calling convention -- yet parameter storage is locked */
+
+int close(int __fd)
+
+{
+  int iVar1;
+  int unaff_gp;
+  
+  (**(code **)(unaff_gp + -0x7ff0))();
+  (**(code **)(unaff_gp + -0x7ff0))();
+  (**(code **)(unaff_gp + -0x7ff0))();
+  (**(code **)(unaff_gp + -0x7ff0))();
+  (**(code **)(unaff_gp + -0x7ff0))();
+  (**(code **)(unaff_gp + -0x7ff0))();
+  (**(code **)(unaff_gp + -0x7ff0))();
+  (**(code **)(unaff_gp + -0x7ff0))();
+  (**(code **)(unaff_gp + -0x7ff0))();
+  (**(code **)(unaff_gp + -0x7ff0))();
+  (**(code **)(unaff_gp + -0x7ff0))();
+  (**(code **)(unaff_gp + -0x7ff0))();
+  iVar1 = FUN_004009f0();
+  return iVar1;
+}
+
+
+===== CGIWriteHead @ 00401100 size=16 =====
+
+void CGIWriteHead(void)
+
+{
+  int unaff_gp;
+  
+  (**(code **)(unaff_gp + -0x7ff0))();
+  (**(code **)(unaff_gp + -0x7ff0))();
+  (**(code **)(unaff_gp + -0x7ff0))();
+  (**(code **)(unaff_gp + -0x7ff0))();
+  (**(code **)(unaff_gp + -0x7ff0))();
+  (**(code **)(unaff_gp + -0x7ff0))();
+  (**(code **)(unaff_gp + -0x7ff0))();
+  (**(code **)(unaff_gp + -0x7ff0))();
+  (**(code **)(unaff_gp + -0x7ff0))();
+  (**(code **)(unaff_gp + -0x7ff0))();
+  (**(code **)(unaff_gp + -0x7ff0))();
+  FUN_004009f0();
+  return;
+}
+
+
+===== tl_apply @ 00401110 size=16 =====
+
+void tl_apply(void)
+
+{
+  int unaff_gp;
+  
+  (**(code **)(unaff_gp + -0x7ff0))();
+  (**(code **)(unaff_gp + -0x7ff0))();
+  (**(code **)(unaff_gp + -0x7ff0))();
+  (**(code **)(unaff_gp + -0x7ff0))();
+  (**(code **)(unaff_gp + -0x7ff0))();
+  (**(code **)(unaff_gp + -0x7ff0))();
+  (**(code **)(unaff_gp + -0x7ff0))();
+  (**(code **)(unaff_gp + -0x7ff0))();
+  (**(code **)(unaff_gp + -0x7ff0))();
+  (**(code **)(unaff_gp + -0x7ff0))();
+  FUN_004009f0();
+  return;
+}
+
+
+===== fflush @ 00401120 size=16 =====
+
+/* WARNING: Unknown calling convention -- yet parameter storage is locked */
+
+int fflush(FILE *__stream)
+
+{
+  int iVar1;
+  int unaff_gp;
+  
+  (**(code **)(unaff_gp + -0x7ff0))();
+  (**(code **)(unaff_gp + -0x7ff0))();
+  (**(code **)(unaff_gp + -0x7ff0))();
+  (**(code **)(unaff_gp + -0x7ff0))();
+  (**(code **)(unaff_gp + -0x7ff0))();
+  (**(code **)(unaff_gp + -0x7ff0))();
+  (**(code **)(unaff_gp + -0x7ff0))();
+  (**(code **)(unaff_gp + -0x7ff0))();
+  (**(code **)(unaff_gp + -0x7ff0))();
+  iVar1 = FUN_004009f0();
+  return iVar1;
+}
+
+
+===== memset @ 00401130 size=16 =====
+
+/* WARNING: Unknown calling convention -- yet parameter storage is locked */
+
+void * memset(void *__s,int __c,size_t __n)
+
+{
+  void *pvVar1;
+  int unaff_gp;
+  
+  (**(code **)(unaff_gp + -0x7ff0))();
+  (**(code **)(unaff_gp + -0x7ff0))();
+  (**(code **)(unaff_gp + -0x7ff0))();
+  (**(code **)(unaff_gp + -0x7ff0))();
+  (**(code **)(unaff_gp + -0x7ff0))();
+  (**(code **)(unaff_gp + -0x7ff0))();
+  (**(code **)(unaff_gp + -0x7ff0))();
+  (**(code **)(unaff_gp + -0x7ff0))();
+  pvVar1 = (void *)FUN_004009f0();
+  return pvVar1;
+}
+
+
+===== VFSP_TmplApply @ 00401140 size=16 =====
+
+void VFSP_TmplApply(void)
+
+{
+  int unaff_gp;
+  
+  (**(code **)(unaff_gp + -0x7ff0))();
+  (**(code **)(unaff_gp + -0x7ff0))();
+  (**(code **)(unaff_gp + -0x7ff0))();
+  (**(code **)(unaff_gp + -0x7ff0))();
+  (**(code **)(unaff_gp + -0x7ff0))();
+  (**(code **)(unaff_gp + -0x7ff0))();
+  (**(code **)(unaff_gp + -0x7ff0))();
+  FUN_004009f0();
+  return;
+}
+
+
+===== scfg_get @ 00401150 size=16 =====
+
+void scfg_get(void)
+
+{
+  int unaff_gp;
+  
+  (**(code **)(unaff_gp + -0x7ff0))();
+  (**(code **)(unaff_gp + -0x7ff0))();
+  (**(code **)(unaff_gp + -0x7ff0))();
+  (**(code **)(unaff_gp + -0x7ff0))();
+  (**(code **)(unaff_gp + -0x7ff0))();
+  (**(code **)(unaff_gp + -0x7ff0))();
+  FUN_004009f0();
+  return;
+}
+
+
+===== exit @ 00401160 size=16 =====
+
+/* WARNING: Unknown calling convention -- yet parameter storage is locked */
+
+void exit(int __status)
+
+{
+  int unaff_gp;
+  
+  (**(code **)(unaff_gp + -0x7ff0))();
+  (**(code **)(unaff_gp + -0x7ff0))();
+  (**(code **)(unaff_gp + -0x7ff0))();
+  (**(code **)(unaff_gp + -0x7ff0))();
+  (**(code **)(unaff_gp + -0x7ff0))();
+  FUN_004009f0();
+  return;
+}
+
+
+===== strcmp @ 00401170 size=16 =====
+
+/* WARNING: Unknown calling convention -- yet parameter storage is locked */
+
+int strcmp(char *__s1,char *__s2)
+
+{
+  int iVar1;
+  int unaff_gp;
+  
+  (**(code **)(unaff_gp + -0x7ff0))();
+  (**(code **)(unaff_gp + -0x7ff0))();
+  (**(code **)(unaff_gp + -0x7ff0))();
+  (**(code **)(unaff_gp + -0x7ff0))();
+  iVar1 = FUN_004009f0();
+  return iVar1;
+}
+
+
+===== printf @ 00401180 size=16 =====
+
+/* WARNING: Unknown calling convention -- yet parameter storage is locked */
+
+int printf(char *__format,...)
+
+{
+  int iVar1;
+  int unaff_gp;
+  
+  (**(code **)(unaff_gp + -0x7ff0))();
+  (**(code **)(unaff_gp + -0x7ff0))();
+  (**(code **)(unaff_gp + -0x7ff0))();
+  iVar1 = FUN_004009f0();
+  return iVar1;
+}
+
+
+===== puts @ 00401190 size=16 =====
+
+/* WARNING: Unknown calling convention -- yet parameter storage is locked */
+
+int puts(char *__s)
+
+{
+  int iVar1;
+  int unaff_gp;
+  
+  (**(code **)(unaff_gp + -0x7ff0))();
+  (**(code **)(unaff_gp + -0x7ff0))();
+  iVar1 = FUN_004009f0();
+  return iVar1;
+}
+
+
+===== CGIWritePage @ 004011a0 size=32 =====
+
+void CGIWritePage(void)
+
+{
+  int unaff_gp;
+  
+  (**(code **)(unaff_gp + -0x7ff0))();
+  FUN_004009f0();
+  return;
+}
+
+
+===== _fini @ 004011c0 size=76 =====
+
+void _fini(void)
+
+{
+  FUN_004009f0();
+  return;
+}
+
+
+===== main @ 00412000 size=1 =====
+
+/* WARNING: Control flow encountered bad instruction data */
+
+void main(void)
+
+{
+                    /* WARNING: Bad instruction - Truncating control flow here */
+  halt_baddata();
+}
+
+
+===== __register_frame_info @ 00412008 size=1 =====
+
+/* WARNING: Control flow encountered bad instruction data */
+
+void __register_frame_info(void)
+
+{
+                    /* WARNING: Bad instruction - Truncating control flow here */
+  halt_baddata();
+}
+
+
+===== _Jv_RegisterClasses @ 0041200c size=1 =====
+
+/* WARNING: Control flow encountered bad instruction data */
+
+void _Jv_RegisterClasses(void)
+
+{
+                    /* WARNING: Bad instruction - Truncating control flow here */
+  halt_baddata();
+}
+
+
+===== __deregister_frame_info @ 00412010 size=1 =====
+
+/* WARNING: Control flow encountered bad instruction data */
+
+void __deregister_frame_info(void)
+
+{
+                    /* WARNING: Bad instruction - Truncating control flow here */
+  halt_baddata();
+}
+
+

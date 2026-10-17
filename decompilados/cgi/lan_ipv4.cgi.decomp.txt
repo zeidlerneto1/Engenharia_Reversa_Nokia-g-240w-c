@@ -1,0 +1,2969 @@
+===== _init @ 00400bc8 size=108 =====
+
+int _init(EVP_PKEY_CTX *ctx)
+
+{
+  int iVar1;
+  
+  FUN_00400d5c();
+  iVar1 = FUN_00406ee0();
+  return iVar1;
+}
+
+
+===== entry @ 00400c40 size=88 =====
+
+void processEntry entry(undefined4 param_1,undefined4 param_2)
+
+{
+  undefined1 auStack_20 [16];
+  undefined *local_10;
+  undefined4 local_c;
+  undefined1 *local_8;
+  
+  local_8 = auStack_20;
+  local_10 = PTR__fini_00417c9c;
+  local_c = param_1;
+  (*(code *)PTR___uClibc_main_00417d28)
+            (PTR_main_00417cb4,param_2,&stack0x00000004,PTR__init_00417c98);
+  do {
+                    /* WARNING: Do nothing block with infinite loop */
+  } while( true );
+}
+
+
+===== FUN_00400ca0 @ 00400ca0 size=188 =====
+
+/* WARNING: Removing unreachable block (ram,0x00400cf4) */
+
+void FUN_00400ca0(void)
+
+{
+  if (_fbss == '\0') {
+    if (PTR___deregister_frame_info_00417d4c != (undefined *)0x0) {
+      (*(code *)PTR___deregister_frame_info_00417d4c)(&DWORD_00407c50);
+    }
+    _fbss = '\x01';
+  }
+  return;
+}
+
+
+===== FUN_00400d5c @ 00400d5c size=104 =====
+
+void FUN_00400d5c(void)
+
+{
+  if (PTR___register_frame_info_00417d30 != (undefined *)0x0) {
+    (*(code *)PTR___register_frame_info_00417d30)(&DWORD_00407c50,&DAT_00417d68);
+  }
+  if ((DAT_00417c64 != 0) && (PTR__Jv_RegisterClasses_00417d34 != (undefined *)0x0)) {
+    (*(code *)PTR__Jv_RegisterClasses_00417d34)(&DAT_00417c64);
+    return;
+  }
+  return;
+}
+
+
+===== FUN_00400dd0 @ 00400dd0 size=284 =====
+
+undefined4 * FUN_00400dd0(undefined4 *param_1)
+
+{
+  int iVar1;
+  undefined4 local_50;
+  undefined4 local_40;
+  undefined4 local_3c;
+  undefined4 local_38;
+  undefined4 local_34;
+  undefined4 local_30;
+  undefined4 local_2c;
+  undefined4 local_28;
+  undefined4 local_24;
+  undefined4 local_20;
+  undefined4 local_1c;
+  undefined4 local_18;
+  undefined4 local_14;
+  undefined4 local_10;
+  undefined1 local_c;
+  
+  local_50 = 0;
+  local_3c = 0;
+  local_38 = 0;
+  local_34 = 0;
+  local_30 = 0;
+  local_2c = 0;
+  local_28 = 0;
+  local_24 = 0;
+  local_20 = 0;
+  local_1c = 0;
+  local_18 = 0;
+  local_14 = 0;
+  local_10 = 0;
+  local_c = 0;
+  local_40 = 0x48;
+  iVar1 = (*(code *)PTR_cfg_getObj_00417cb0)(&local_40,0x35,4);
+  if ((iVar1 == 0) && (iVar1 = (*(code *)PTR_strcmp_00417ccc)(&local_1c,"PPTP_one"), iVar1 == 0)) {
+    local_50 = 1;
+  }
+  *param_1 = local_50;
+  param_1[1] = 0;
+  param_1[2] = 0;
+  param_1[3] = 0;
+  return param_1;
+}
+
+
+===== FUN_00400eec @ 00400eec size=440 =====
+
+undefined4 * FUN_00400eec(undefined4 *param_1)
+
+{
+  int iVar1;
+  int local_1eb8;
+  undefined4 local_1ea0 [8];
+  int local_1e80;
+  undefined1 auStack_100c [4100];
+  
+  local_1eb8 = 0;
+  (*(code *)PTR_memset_00417ce4)(local_1ea0,0,0xe91);
+  local_1ea0[0] = 0xd5;
+  while (iVar1 = (*(code *)PTR_cfg_getNextObj_00417cb8)(local_1ea0,0xe91,0x1004), iVar1 == 0) {
+    if (local_1e80 == 1) {
+      local_1eb8 = local_1eb8 + 1;
+    }
+  }
+  (*(code *)PTR_CGIWritePage_00417cac)(&DAT_004071fc);
+  (*(code *)PTR_memset_00417ce4)(auStack_100c,0,0x1001);
+  (*(code *)PTR_snprintf_00417d20)(auStack_100c,0x1000,"domainCount:%d\n",local_1eb8);
+  (*(code *)PTR_CGIWritePage_00417cac)(auStack_100c);
+  (*(code *)PTR_CGIWritePage_00417cac)(&DAT_00407210);
+  *param_1 = 0;
+  param_1[1] = 0;
+  param_1[2] = 0;
+  param_1[3] = 0;
+  return param_1;
+}
+
+
+===== FUN_004010a4 @ 004010a4 size=172 =====
+
+uint * FUN_004010a4(uint *param_1)
+
+{
+  int iVar1;
+  uint local_18;
+  
+  iVar1 = (*(code *)PTR_is_operatorId_00417d14)(&DAT_00407214);
+  local_18 = (uint)(iVar1 != 0);
+  *param_1 = local_18;
+  param_1[1] = 0;
+  param_1[2] = 0;
+  param_1[3] = 0;
+  return param_1;
+}
+
+
+===== FUN_00401150 @ 00401150 size=472 =====
+
+undefined4 * FUN_00401150(undefined4 *param_1)
+
+{
+  int iVar1;
+  undefined4 local_1ab8;
+  undefined1 local_1ab4;
+  undefined4 local_1ab0;
+  int local_1a77;
+  undefined1 auStack_1010 [4104];
+  
+  (*(code *)PTR_memset_00417ce4)(&local_1ab8,0,0xaa6);
+  local_1ab8 = 0xcf;
+  local_1ab4 = 1;
+  local_1ab0 = 1;
+  iVar1 = (*(code *)PTR_cfg_getObj_00417cb0)(&local_1ab8,0xaa6,4);
+  if (iVar1 == 0) {
+    if (local_1a77 == 0) {
+      (*(code *)PTR_memset_00417ce4)(auStack_1010,0,0x1001);
+      (*(code *)PTR_snprintf_00417d20)(auStack_1010,0x1000,"display:none;");
+      (*(code *)PTR_CGIWritePage_00417cac)(auStack_1010);
+    }
+    else {
+      (*(code *)PTR_memset_00417ce4)(auStack_1010,0,0x1001);
+      (*(code *)PTR_snprintf_00417d20)(auStack_1010,0x1000,"display:inline;");
+      (*(code *)PTR_CGIWritePage_00417cac)(auStack_1010);
+    }
+  }
+  *param_1 = 0;
+  param_1[1] = 0;
+  param_1[2] = 0;
+  param_1[3] = 0;
+  return param_1;
+}
+
+
+===== FUN_00401328 @ 00401328 size=5132 =====
+
+undefined4 * FUN_00401328(undefined4 *param_1)
+
+{
+  int iVar1;
+  undefined4 uVar2;
+  undefined4 local_1ac0;
+  undefined1 local_1abc;
+  undefined4 local_1ab8;
+  undefined4 local_1a7f;
+  undefined4 local_1a7b;
+  undefined4 local_1a77;
+  undefined1 auStack_1a67 [33];
+  undefined1 auStack_1a46 [33];
+  undefined1 auStack_1a25 [33];
+  undefined1 auStack_1a04 [257];
+  undefined1 auStack_1903 [33];
+  undefined1 auStack_18e2 [65];
+  undefined1 auStack_18a1 [65];
+  undefined1 auStack_1860 [65];
+  undefined4 local_181f;
+  undefined1 auStack_181b [33];
+  undefined1 auStack_17fa [257];
+  undefined4 local_16f9;
+  undefined1 auStack_16f5 [50];
+  undefined1 auStack_16c3 [1025];
+  undefined4 local_12c2;
+  undefined4 local_12b2;
+  undefined1 auStack_12ae [33];
+  undefined1 auStack_128d [33];
+  undefined4 local_126c;
+  undefined1 auStack_1268 [33];
+  undefined1 auStack_1247 [33];
+  undefined4 local_1226;
+  undefined1 auStack_1222 [33];
+  undefined1 auStack_1201 [33];
+  undefined4 local_11e0;
+  undefined1 auStack_11dc [33];
+  undefined1 auStack_11bb [33];
+  undefined1 auStack_119a [33];
+  undefined1 auStack_1179 [33];
+  undefined1 auStack_1158 [33];
+  undefined4 local_1137;
+  undefined1 auStack_1018 [4108];
+  
+  (*(code *)PTR_memset_00417ce4)(&local_1ac0,0,0xaa6);
+  local_1ac0 = 0xcf;
+  local_1abc = 1;
+  local_1ab8 = 1;
+  iVar1 = (*(code *)PTR_cfg_getObj_00417cb0)(&local_1ac0,0xaa6,4);
+  if (iVar1 == 0) {
+    (*(code *)PTR_memset_00417ce4)(auStack_1018,0,0x1001);
+    (*(code *)PTR_snprintf_00417d20)(auStack_1018,0x1000,"DHCPServerConfigurable:%d,\n",local_1a7f);
+    (*(code *)PTR_CGIWritePage_00417cac)(auStack_1018);
+    (*(code *)PTR_memset_00417ce4)(auStack_1018,0,0x1001);
+    (*(code *)PTR_snprintf_00417d20)(auStack_1018,0x1000,"DHCPServerEnable:%d,\n",local_1a7b);
+    (*(code *)PTR_CGIWritePage_00417cac)(auStack_1018);
+    (*(code *)PTR_memset_00417ce4)(auStack_1018,0,0x1001);
+    (*(code *)PTR_snprintf_00417d20)(auStack_1018,0x1000,"DHCPRelay:%d,\n",local_1a77);
+    (*(code *)PTR_CGIWritePage_00417cac)(auStack_1018);
+    (*(code *)PTR_memset_00417ce4)(auStack_1018,0,0x1001);
+    uVar2 = (*(code *)PTR_get_prop_str_00417d40)("X_ASB_COM_DhcpRelayServer",auStack_1a67);
+    (*(code *)PTR_snprintf_00417d20)(auStack_1018,0x1000,&DAT_00407280,uVar2);
+    (*(code *)PTR_CGIWritePage_00417cac)(auStack_1018);
+    (*(code *)PTR_memset_00417ce4)(auStack_1018,0,0x1001);
+    uVar2 = (*(code *)PTR_get_prop_str_00417d40)("MinAddress",auStack_1a46);
+    (*(code *)PTR_snprintf_00417d20)(auStack_1018,0x1000,&DAT_00407280,uVar2);
+    (*(code *)PTR_CGIWritePage_00417cac)(auStack_1018);
+    (*(code *)PTR_memset_00417ce4)(auStack_1018,0,0x1001);
+    uVar2 = (*(code *)PTR_get_prop_str_00417d40)("MaxAddress",auStack_1a25);
+    (*(code *)PTR_snprintf_00417d20)(auStack_1018,0x1000,&DAT_00407280,uVar2);
+    (*(code *)PTR_CGIWritePage_00417cac)(auStack_1018);
+    (*(code *)PTR_memset_00417ce4)(auStack_1018,0,0x1001);
+    uVar2 = (*(code *)PTR_get_prop_str_00417d40)("ReservedAddresses",auStack_1a04);
+    (*(code *)PTR_snprintf_00417d20)(auStack_1018,0x1000,&DAT_00407280,uVar2);
+    (*(code *)PTR_CGIWritePage_00417cac)(auStack_1018);
+    (*(code *)PTR_memset_00417ce4)(auStack_1018,0,0x1001);
+    uVar2 = (*(code *)PTR_get_prop_str_00417d40)("SubnetMask",auStack_1903);
+    (*(code *)PTR_snprintf_00417d20)(auStack_1018,0x1000,&DAT_00407280,uVar2);
+    (*(code *)PTR_CGIWritePage_00417cac)(auStack_1018);
+    (*(code *)PTR_memset_00417ce4)(auStack_1018,0,0x1001);
+    uVar2 = (*(code *)PTR_get_prop_str_00417d40)("DNSServers",auStack_18e2);
+    (*(code *)PTR_snprintf_00417d20)(auStack_1018,0x1000,&DAT_00407280,uVar2);
+    (*(code *)PTR_CGIWritePage_00417cac)(auStack_1018);
+    (*(code *)PTR_memset_00417ce4)(auStack_1018,0,0x1001);
+    uVar2 = (*(code *)PTR_get_prop_str_00417d40)("DomainName",auStack_18a1);
+    (*(code *)PTR_snprintf_00417d20)(auStack_1018,0x1000,&DAT_00407280,uVar2);
+    (*(code *)PTR_CGIWritePage_00417cac)(auStack_1018);
+    (*(code *)PTR_memset_00417ce4)(auStack_1018,0,0x1001);
+    uVar2 = (*(code *)PTR_get_prop_str_00417d40)("IPRouters",auStack_1860);
+    (*(code *)PTR_snprintf_00417d20)(auStack_1018,0x1000,&DAT_00407280,uVar2);
+    (*(code *)PTR_CGIWritePage_00417cac)(auStack_1018);
+    (*(code *)PTR_memset_00417ce4)(auStack_1018,0,0x1001);
+    (*(code *)PTR_snprintf_00417d20)(auStack_1018,0x1000,"DHCPLeaseTime:%d,\n",local_181f);
+    (*(code *)PTR_CGIWritePage_00417cac)(auStack_1018);
+    (*(code *)PTR_memset_00417ce4)(auStack_1018,0,0x1001);
+    uVar2 = (*(code *)PTR_get_prop_str_00417d40)("UseAllocatedWAN",auStack_181b);
+    (*(code *)PTR_snprintf_00417d20)(auStack_1018,0x1000,&DAT_00407280,uVar2);
+    (*(code *)PTR_CGIWritePage_00417cac)(auStack_1018);
+    (*(code *)PTR_memset_00417ce4)(auStack_1018,0,0x1001);
+    uVar2 = (*(code *)PTR_get_prop_str_00417d40)("AssociatedConnection",auStack_17fa);
+    (*(code *)PTR_snprintf_00417d20)(auStack_1018,0x1000,&DAT_00407280,uVar2);
+    (*(code *)PTR_CGIWritePage_00417cac)(auStack_1018);
+    (*(code *)PTR_memset_00417ce4)(auStack_1018,0,0x1001);
+    (*(code *)PTR_snprintf_00417d20)(auStack_1018,0x1000,"PassthroughLease:%d,\n",local_16f9);
+    (*(code *)PTR_CGIWritePage_00417cac)(auStack_1018);
+    (*(code *)PTR_memset_00417ce4)(auStack_1018,0,0x1001);
+    uVar2 = (*(code *)PTR_get_prop_str_00417d40)("PassthroughMACAddress",auStack_16f5);
+    (*(code *)PTR_snprintf_00417d20)(auStack_1018,0x1000,&DAT_00407280,uVar2);
+    (*(code *)PTR_CGIWritePage_00417cac)(auStack_1018);
+    (*(code *)PTR_memset_00417ce4)(auStack_1018,0,0x1001);
+    uVar2 = (*(code *)PTR_get_prop_str_00417d40)("AllowedMACAddresses",auStack_16c3);
+    (*(code *)PTR_snprintf_00417d20)(auStack_1018,0x1000,&DAT_00407280,uVar2);
+    (*(code *)PTR_CGIWritePage_00417cac)(auStack_1018);
+    (*(code *)PTR_memset_00417ce4)(auStack_1018,0,0x1001);
+    (*(code *)PTR_snprintf_00417d20)
+              (auStack_1018,0x1000,"IPInterfaceNumberOfEntries:%d,\n",local_12c2);
+    (*(code *)PTR_CGIWritePage_00417cac)(auStack_1018);
+    (*(code *)PTR_memset_00417ce4)(auStack_1018,0,0x1001);
+    (*(code *)PTR_snprintf_00417d20)
+              (auStack_1018,0x1000,"X_CT_COM_STB_DHCPServerEnable:%d,\n",local_12b2);
+    (*(code *)PTR_CGIWritePage_00417cac)(auStack_1018);
+    (*(code *)PTR_memset_00417ce4)(auStack_1018,0,0x1001);
+    uVar2 = (*(code *)PTR_get_prop_str_00417d40)("X_CT_COM_STB_MinAddress",auStack_12ae);
+    (*(code *)PTR_snprintf_00417d20)(auStack_1018,0x1000,&DAT_00407280,uVar2);
+    (*(code *)PTR_CGIWritePage_00417cac)(auStack_1018);
+    (*(code *)PTR_memset_00417ce4)(auStack_1018,0,0x1001);
+    uVar2 = (*(code *)PTR_get_prop_str_00417d40)("X_CT_COM_STB_MaxAddress",auStack_128d);
+    (*(code *)PTR_snprintf_00417d20)(auStack_1018,0x1000,&DAT_00407280,uVar2);
+    (*(code *)PTR_CGIWritePage_00417cac)(auStack_1018);
+    (*(code *)PTR_memset_00417ce4)(auStack_1018,0,0x1001);
+    (*(code *)PTR_snprintf_00417d20)
+              (auStack_1018,0x1000,"X_CT_COM_Phone_DHCPServerEnable:%d,\n",local_126c);
+    (*(code *)PTR_CGIWritePage_00417cac)(auStack_1018);
+    (*(code *)PTR_memset_00417ce4)(auStack_1018,0,0x1001);
+    uVar2 = (*(code *)PTR_get_prop_str_00417d40)("X_CT_COM_Phone_MinAddress",auStack_1268);
+    (*(code *)PTR_snprintf_00417d20)(auStack_1018,0x1000,&DAT_00407280,uVar2);
+    (*(code *)PTR_CGIWritePage_00417cac)(auStack_1018);
+    (*(code *)PTR_memset_00417ce4)(auStack_1018,0,0x1001);
+    uVar2 = (*(code *)PTR_get_prop_str_00417d40)("X_CT_COM_Phone_MaxAddress",auStack_1247);
+    (*(code *)PTR_snprintf_00417d20)(auStack_1018,0x1000,&DAT_00407280,uVar2);
+    (*(code *)PTR_CGIWritePage_00417cac)(auStack_1018);
+    (*(code *)PTR_memset_00417ce4)(auStack_1018,0,0x1001);
+    (*(code *)PTR_snprintf_00417d20)
+              (auStack_1018,0x1000,"X_CT_COM_Camera_DHCPServerEnable:%d,\n",local_1226);
+    (*(code *)PTR_CGIWritePage_00417cac)(auStack_1018);
+    (*(code *)PTR_memset_00417ce4)(auStack_1018,0,0x1001);
+    uVar2 = (*(code *)PTR_get_prop_str_00417d40)("X_CT_COM_Camera_MinAddress",auStack_1222);
+    (*(code *)PTR_snprintf_00417d20)(auStack_1018,0x1000,&DAT_00407280,uVar2);
+    (*(code *)PTR_CGIWritePage_00417cac)(auStack_1018);
+    (*(code *)PTR_memset_00417ce4)(auStack_1018,0,0x1001);
+    uVar2 = (*(code *)PTR_get_prop_str_00417d40)("X_CT_COM_Camera_MaxAddress",auStack_1201);
+    (*(code *)PTR_snprintf_00417d20)(auStack_1018,0x1000,&DAT_00407280,uVar2);
+    (*(code *)PTR_CGIWritePage_00417cac)(auStack_1018);
+    (*(code *)PTR_memset_00417ce4)(auStack_1018,0,0x1001);
+    (*(code *)PTR_snprintf_00417d20)
+              (auStack_1018,0x1000,"X_CT_COM_Computer_ServerEnable:%d,\n",local_11e0);
+    (*(code *)PTR_CGIWritePage_00417cac)(auStack_1018);
+    (*(code *)PTR_memset_00417ce4)(auStack_1018,0,0x1001);
+    uVar2 = (*(code *)PTR_get_prop_str_00417d40)("X_CT_COM_Computer_MinAddress",auStack_11dc);
+    (*(code *)PTR_snprintf_00417d20)(auStack_1018,0x1000,&DAT_00407280,uVar2);
+    (*(code *)PTR_CGIWritePage_00417cac)(auStack_1018);
+    (*(code *)PTR_memset_00417ce4)(auStack_1018,0,0x1001);
+    uVar2 = (*(code *)PTR_get_prop_str_00417d40)("X_CT_COM_Computer_MaxAddress",auStack_11bb);
+    (*(code *)PTR_snprintf_00417d20)(auStack_1018,0x1000,&DAT_00407280,uVar2);
+    (*(code *)PTR_CGIWritePage_00417cac)(auStack_1018);
+    (*(code *)PTR_memset_00417ce4)(auStack_1018,0,0x1001);
+    uVar2 = (*(code *)PTR_get_prop_str_00417d40)("X_ASB_COM_CT_STB",auStack_119a);
+    (*(code *)PTR_snprintf_00417d20)(auStack_1018,0x1000,&DAT_00407280,uVar2);
+    (*(code *)PTR_CGIWritePage_00417cac)(auStack_1018);
+    (*(code *)PTR_memset_00417ce4)(auStack_1018,0,0x1001);
+    uVar2 = (*(code *)PTR_get_prop_str_00417d40)("X_ASB_COM_CT_Phone",auStack_1179);
+    (*(code *)PTR_snprintf_00417d20)(auStack_1018,0x1000,&DAT_00407280,uVar2);
+    (*(code *)PTR_CGIWritePage_00417cac)(auStack_1018);
+    (*(code *)PTR_memset_00417ce4)(auStack_1018,0,0x1001);
+    (*(code *)PTR_snprintf_00417d20)(auStack_1018,0x1000,"X_ALU_EnableDHCPdOpt125:%d,\n",local_1137)
+    ;
+    (*(code *)PTR_CGIWritePage_00417cac)(auStack_1018);
+    (*(code *)PTR_memset_00417ce4)(auStack_1018,0,0x1001);
+    uVar2 = (*(code *)PTR_get_prop_str_00417d40)("X_ASB_COM_CT_Camera",auStack_1158);
+    (*(code *)PTR_snprintf_00417d20)(auStack_1018,0x1000,&DAT_00407560,uVar2);
+    (*(code *)PTR_CGIWritePage_00417cac)(auStack_1018);
+  }
+  *param_1 = 0;
+  param_1[1] = 0;
+  param_1[2] = 0;
+  param_1[3] = 0;
+  return param_1;
+}
+
+
+===== FUN_00402734 @ 00402734 size=552 =====
+
+undefined4 * FUN_00402734(undefined4 *param_1)
+
+{
+  int iVar1;
+  undefined4 uVar2;
+  undefined4 local_11f0;
+  undefined1 local_11ec;
+  undefined4 local_11e8;
+  undefined4 local_11e4;
+  undefined1 auStack_118b [33];
+  undefined1 auStack_116a [338];
+  undefined1 auStack_1018 [4108];
+  
+  (*(code *)PTR_memset_00417ce4)(&local_11f0,0,0x1d7);
+  local_11f0 = 0xd0;
+  local_11ec = 2;
+  local_11e8 = 1;
+  local_11e4 = 1;
+  iVar1 = (*(code *)PTR_cfg_getObj_00417cb0)(&local_11f0,0x1d7,4);
+  if (iVar1 == 0) {
+    (*(code *)PTR_memset_00417ce4)(auStack_1018,0,0x1001);
+    uVar2 = (*(code *)PTR_get_prop_str_00417d40)("IPInterfaceIPAddress",auStack_118b);
+    (*(code *)PTR_snprintf_00417d20)(auStack_1018,0x1000,&DAT_00407280,uVar2);
+    (*(code *)PTR_CGIWritePage_00417cac)(auStack_1018);
+    (*(code *)PTR_memset_00417ce4)(auStack_1018,0,0x1001);
+    uVar2 = (*(code *)PTR_get_prop_str_00417d40)("IPInterfaceSubnetMask",auStack_116a);
+    (*(code *)PTR_snprintf_00417d20)(auStack_1018,0x1000,&DAT_00407560,uVar2);
+    (*(code *)PTR_CGIWritePage_00417cac)(auStack_1018);
+  }
+  *param_1 = 0;
+  param_1[1] = 0;
+  param_1[2] = 0;
+  param_1[3] = 0;
+  return param_1;
+}
+
+
+===== FUN_0040295c @ 0040295c size=772 =====
+
+undefined4 * FUN_0040295c(undefined4 *param_1)
+
+{
+  int iVar1;
+  undefined1 *puVar2;
+  int iVar3;
+  int local_1050;
+  undefined4 local_1038;
+  uint local_1034;
+  undefined4 local_1030 [8];
+  undefined1 auStack_1010 [4104];
+  
+  iVar1 = (*(code *)PTR_get_lan_eth_num_00417d58)();
+  local_1034 = 0;
+  local_1030[0] = 0;
+  local_1030[1] = 0;
+  local_1030[2] = 0;
+  local_1030[3] = 0;
+  local_1030[4] = 0;
+  local_1030[5] = 0;
+  local_1030[6] = 0;
+  local_1030[7] = 0;
+  local_1038 = 0x1d8;
+  for (local_1050 = 0;
+      (iVar3 = (*(code *)PTR_cfg_getNextObj_00417cb8)(&local_1038,0x28,6), iVar3 == 0 &&
+      (local_1050 < iVar1)); local_1050 = local_1050 + 1) {
+    if (local_1050 == 0) {
+      puVar2 = &DAT_004075ac;
+    }
+    else {
+      puVar2 = &DAT_004075a8;
+    }
+    (*(code *)PTR_CGIWritePage_00417cac)(puVar2);
+    (*(code *)PTR_CGIWritePage_00417cac)(&DAT_004075b0);
+    (*(code *)PTR_memset_00417ce4)(auStack_1010,0,0x1001);
+    (*(code *)PTR_snprintf_00417d20)
+              (auStack_1010,0x1000,"_oid:%d\n,",local_1030[(local_1034 >> 0x18) - 1]);
+    (*(code *)PTR_CGIWritePage_00417cac)(auStack_1010);
+    (*(code *)PTR_memset_00417ce4)(auStack_1010,0,0x1001);
+    (*(code *)PTR_snprintf_00417d20)(auStack_1010,0x1000,"X_ASB_COM_PhyType:%d,\n",local_1030[7]);
+    (*(code *)PTR_CGIWritePage_00417cac)(auStack_1010);
+    (*(code *)PTR_memset_00417ce4)(auStack_1010,0,0x1001);
+    (*(code *)PTR_snprintf_00417d20)(auStack_1010,0x1000,"isTr069Domain:%d\n",local_1030[6]);
+    (*(code *)PTR_CGIWritePage_00417cac)(auStack_1010);
+    (*(code *)PTR_CGIWritePage_00417cac)(&DAT_00407210);
+  }
+  *param_1 = 0;
+  param_1[1] = 0;
+  param_1[2] = 0;
+  param_1[3] = 0;
+  return param_1;
+}
+
+
+===== FUN_00402c60 @ 00402c60 size=160 =====
+
+uint * FUN_00402c60(uint *param_1)
+
+{
+  int iVar1;
+  uint local_18;
+  
+  iVar1 = (*(code *)PTR_is_operatorId_00417d14)(&DAT_004075ec);
+  local_18 = (uint)(iVar1 != 0);
+  *param_1 = local_18;
+  param_1[1] = 0;
+  param_1[2] = 0;
+  param_1[3] = 0;
+  return param_1;
+}
+
+
+===== FUN_00402d00 @ 00402d00 size=804 =====
+
+undefined4 * FUN_00402d00(undefined4 *param_1)
+
+{
+  undefined1 *puVar1;
+  undefined4 uVar2;
+  int iVar3;
+  int local_10b8;
+  undefined4 local_10a4;
+  byte local_10a0;
+  undefined4 auStack_109c [23];
+  undefined1 auStack_103f [19];
+  undefined1 auStack_102c [24];
+  undefined1 auStack_1014 [4104];
+  
+  (*(code *)PTR_memset_00417ce4)(&local_10a4,0,0x8d);
+  local_10a4 = 0xd4;
+  local_10b8 = 0;
+  while( true ) {
+    iVar3 = (*(code *)PTR_cfg_getNextObj_00417cb8)(&local_10a4,0x8d,6);
+    if (iVar3 != 0) break;
+    if (local_10b8 == 0) {
+      puVar1 = &DAT_004075ac;
+    }
+    else {
+      puVar1 = &DAT_004075a8;
+    }
+    (*(code *)PTR_CGIWritePage_00417cac)(puVar1);
+    (*(code *)PTR_CGIWritePage_00417cac)(&DAT_004075b0);
+    (*(code *)PTR_memset_00417ce4)(auStack_1014,0,0x1001);
+    (*(code *)PTR_snprintf_00417d20)(auStack_1014,0x1000,"_oid:%d\n,",auStack_109c[local_10a0 - 1]);
+    (*(code *)PTR_CGIWritePage_00417cac)(auStack_1014);
+    (*(code *)PTR_memset_00417ce4)(auStack_1014,0,0x1001);
+    uVar2 = (*(code *)PTR_get_prop_str_00417d40)("Chaddr",auStack_103f);
+    (*(code *)PTR_snprintf_00417d20)(auStack_1014,0x1000,&DAT_00407280,uVar2);
+    (*(code *)PTR_CGIWritePage_00417cac)(auStack_1014);
+    (*(code *)PTR_memset_00417ce4)(auStack_1014,0,0x1001);
+    uVar2 = (*(code *)PTR_get_prop_str_00417d40)("Yiaddr",auStack_102c);
+    (*(code *)PTR_snprintf_00417d20)(auStack_1014,0x1000,&DAT_00407560,uVar2);
+    (*(code *)PTR_CGIWritePage_00417cac)(auStack_1014);
+    (*(code *)PTR_CGIWritePage_00417cac)(&DAT_00407210);
+    local_10b8 = local_10b8 + 1;
+  }
+  *param_1 = 0;
+  param_1[1] = 0;
+  param_1[2] = 0;
+  param_1[3] = 0;
+  return param_1;
+}
+
+
+===== FUN_00403024 @ 00403024 size=1916 =====
+
+undefined4 * FUN_00403024(undefined4 *param_1)
+
+{
+  undefined1 *puVar1;
+  undefined4 uVar2;
+  int iVar3;
+  int local_2030;
+  int local_202c;
+  undefined4 local_2018;
+  byte local_2014;
+  undefined4 auStack_2010 [6];
+  undefined4 local_1ff8;
+  undefined1 auStack_1eae [2140];
+  undefined1 auStack_1652 [33];
+  undefined1 auStack_1631 [811];
+  undefined1 auStack_1306 [386];
+  undefined4 local_1184;
+  byte local_1180 [4];
+  undefined4 auStack_117c [23];
+  undefined4 local_111f;
+  undefined1 auStack_111b [263];
+  undefined1 auStack_1014 [4104];
+  
+  (*(code *)PTR_memset_00417ce4)(&local_2018,0,0xe91);
+  local_2018 = 0xd5;
+  local_2030 = 0;
+  while( true ) {
+    iVar3 = (*(code *)PTR_cfg_getNextObj_00417cb8)(&local_2018,0xe91,0);
+    if (iVar3 != 0) break;
+    if (local_2030 == 0) {
+      puVar1 = &DAT_004075ac;
+    }
+    else {
+      puVar1 = &DAT_004075a8;
+    }
+    (*(code *)PTR_CGIWritePage_00417cac)(puVar1);
+    (*(code *)PTR_CGIWritePage_00417cac)(&DAT_004075b0);
+    (*(code *)PTR_memset_00417ce4)(auStack_1014,0,0x1001);
+    (*(code *)PTR_snprintf_00417d20)(auStack_1014,0x1000,"_oid:%d,\n",auStack_2010[local_2014 - 1]);
+    (*(code *)PTR_CGIWritePage_00417cac)(auStack_1014);
+    (*(code *)PTR_memset_00417ce4)(auStack_1014,0,0x1001);
+    (*(code *)PTR_snprintf_00417d20)(auStack_1014,0x1000,"Enable:%d,\n",local_1ff8);
+    (*(code *)PTR_CGIWritePage_00417cac)(auStack_1014);
+    (*(code *)PTR_memset_00417ce4)(auStack_1014,0,0x1001);
+    uVar2 = (*(code *)PTR_get_prop_str_00417d40)("VendorClassID",auStack_1eae);
+    (*(code *)PTR_snprintf_00417d20)(auStack_1014,0x1000,&DAT_00407280,uVar2);
+    (*(code *)PTR_CGIWritePage_00417cac)(auStack_1014);
+    (*(code *)PTR_memset_00417ce4)(auStack_1014,0,0x1001);
+    uVar2 = (*(code *)PTR_get_prop_str_00417d40)("MinAddress",auStack_1652);
+    (*(code *)PTR_snprintf_00417d20)(auStack_1014,0x1000,&DAT_00407280,uVar2);
+    (*(code *)PTR_CGIWritePage_00417cac)(auStack_1014);
+    (*(code *)PTR_memset_00417ce4)(auStack_1014,0,0x1001);
+    uVar2 = (*(code *)PTR_get_prop_str_00417d40)("MaxAddress",auStack_1631);
+    (*(code *)PTR_snprintf_00417d20)(auStack_1014,0x1000,&DAT_00407280,uVar2);
+    (*(code *)PTR_CGIWritePage_00417cac)(auStack_1014);
+    (*(code *)PTR_memset_00417ce4)(auStack_1014,0,0x1001);
+    uVar2 = (*(code *)PTR_get_prop_str_00417d40)("AssociatedConnection",auStack_1306);
+    (*(code *)PTR_snprintf_00417d20)(auStack_1014,0x1000,&DAT_00407280,uVar2);
+    (*(code *)PTR_CGIWritePage_00417cac)(auStack_1014);
+    (*(code *)PTR_CGIWritePage_00417cac)("dhcpoption:[{");
+    (*(code *)PTR_memset_00417ce4)(&local_1184,0,0x16e);
+    local_1184 = 0xd7;
+    local_202c = 0;
+    while( true ) {
+      iVar3 = (*(code *)PTR_cfg_getNextObjInSubTree_00417d04)(&local_1184,local_1180,0x16e,0);
+      if (iVar3 != 0) break;
+      if (local_202c == 0) {
+        puVar1 = &DAT_004075ac;
+      }
+      else {
+        puVar1 = &DAT_004075a8;
+      }
+      (*(code *)PTR_CGIWritePage_00417cac)(puVar1);
+      (*(code *)PTR_memset_00417ce4)(auStack_1014,0,0x1001);
+      (*(code *)PTR_snprintf_00417d20)
+                (auStack_1014,0x1000,"_oid:%d,\n",auStack_117c[local_1180[0] - 1]);
+      (*(code *)PTR_CGIWritePage_00417cac)(auStack_1014);
+      (*(code *)PTR_memset_00417ce4)(auStack_1014,0,0x1001);
+      (*(code *)PTR_snprintf_00417d20)(auStack_1014,0x1000,"Tag:%u,\n",local_111f);
+      (*(code *)PTR_CGIWritePage_00417cac)(auStack_1014);
+      (*(code *)PTR_memset_00417ce4)(auStack_1014,0,0x1001);
+      uVar2 = (*(code *)PTR_get_prop_str_00417d40)("Value",auStack_111b);
+      (*(code *)PTR_snprintf_00417d20)(auStack_1014,0x1000,&DAT_00407560,uVar2);
+      (*(code *)PTR_CGIWritePage_00417cac)(auStack_1014);
+      local_202c = local_202c + 1;
+    }
+    (*(code *)PTR_CGIWritePage_00417cac)(&DAT_00407210);
+    (*(code *)PTR_CGIWritePage_00417cac)(&DAT_00407650);
+    (*(code *)PTR_CGIWritePage_00417cac)(&DAT_00407210);
+    local_2030 = local_2030 + 1;
+  }
+  *param_1 = 0;
+  param_1[1] = 0;
+  param_1[2] = 0;
+  param_1[3] = 0;
+  return param_1;
+}
+
+
+===== FUN_004037a0 @ 004037a0 size=2220 =====
+
+undefined4 * FUN_004037a0(undefined4 *param_1)
+
+{
+  int iVar1;
+  undefined4 uVar2;
+  int local_20f0;
+  undefined4 local_20e8;
+  undefined4 local_20e4;
+  undefined4 local_20e0;
+  undefined4 local_20dc;
+  undefined4 local_20d8;
+  undefined4 local_20c4;
+  undefined4 local_20c0;
+  undefined4 local_20bc;
+  undefined4 local_20b8;
+  undefined4 local_20b4;
+  undefined4 local_20b0;
+  undefined4 local_20ac;
+  undefined4 local_20a8 [33];
+  undefined1 auStack_2022 [274];
+  undefined1 auStack_1f10 [20];
+  undefined1 auStack_1efc [20];
+  undefined1 auStack_1ee8 [20];
+  undefined1 auStack_1ed4 [20];
+  undefined1 auStack_1ec0 [20];
+  undefined4 local_1eac [26];
+  undefined1 auStack_1e43 [3627];
+  undefined1 auStack_1018 [4104];
+  
+  local_20bc = 0;
+  local_20b8 = 0;
+  local_20b4 = 0;
+  local_20b0 = 0;
+  local_20ac = 0;
+  local_20c4 = 0x1000000;
+  local_20c0 = 1;
+  (*(code *)PTR_memset_00417ce4)(local_20a8,0,0x196);
+  local_20a8[0] = 0xe7;
+  (*(code *)PTR_memset_00417ce4)(auStack_1f10,0,100);
+  local_20f0 = 0;
+  while (iVar1 = (*(code *)PTR_cfg_getNextObjInSubTree_00417d04)(local_20a8,&local_20c4,0x196,4),
+        iVar1 == 0) {
+    uVar2 = (*(code *)PTR_strlen_00417d24)(auStack_2022);
+    (*(code *)PTR_strncpy_00417cf4)(auStack_1f10 + local_20f0 * 0x14,auStack_2022,uVar2);
+    local_20f0 = local_20f0 + 1;
+  }
+  (*(code *)PTR_memset_00417ce4)(local_1eac,0,0xe91);
+  local_1eac[0] = 0xd5;
+  local_20e8 = 0;
+  local_20e4 = 0;
+  local_20e0 = 0;
+  local_20dc = 0;
+  local_20d8 = 0;
+  while (iVar1 = (*(code *)PTR_cfg_getNextObj_00417cb8)(local_1eac,0xe91,0), iVar1 == 0) {
+    (*(code *)PTR_memset_00417ce4)(auStack_1018,0,0x1001);
+    uVar2 = (*(code *)PTR_get_prop_str_00417d40)("SourceInterface",auStack_1e43);
+    (*(code *)PTR_snprintf_00417d20)(auStack_1018,0x1000,&DAT_00407280,uVar2);
+    (*(code *)PTR_CGIWritePage_00417cac)(auStack_1018);
+    iVar1 = (*(code *)PTR_strstr_00417cd0)(auStack_1e43,auStack_1f10);
+    if (iVar1 == 0) {
+      (*(code *)PTR_memset_00417ce4)(auStack_1018,0,0x1001);
+      (*(code *)PTR_snprintf_00417d20)(auStack_1018,0x1000,"\"Lan1\":%d,\n",local_20e8);
+      (*(code *)PTR_CGIWritePage_00417cac)(auStack_1018);
+    }
+    else {
+      local_20e8 = 1;
+      (*(code *)PTR_memset_00417ce4)(auStack_1018,0,0x1001);
+      (*(code *)PTR_snprintf_00417d20)(auStack_1018,0x1000,"\"Lan1\":%d,\n",1);
+      (*(code *)PTR_CGIWritePage_00417cac)(auStack_1018);
+    }
+    iVar1 = (*(code *)PTR_strstr_00417cd0)(auStack_1e43,auStack_1efc);
+    if (iVar1 == 0) {
+      (*(code *)PTR_memset_00417ce4)(auStack_1018,0,0x1001);
+      (*(code *)PTR_snprintf_00417d20)(auStack_1018,0x1000,"\"Lan2\":%d,\n",local_20e4);
+      (*(code *)PTR_CGIWritePage_00417cac)(auStack_1018);
+    }
+    else {
+      local_20e4 = 1;
+      (*(code *)PTR_memset_00417ce4)(auStack_1018,0,0x1001);
+      (*(code *)PTR_snprintf_00417d20)(auStack_1018,0x1000,"\"Lan2\":%d,\n",1);
+      (*(code *)PTR_CGIWritePage_00417cac)(auStack_1018);
+    }
+    iVar1 = (*(code *)PTR_strstr_00417cd0)(auStack_1e43,auStack_1ee8);
+    if (iVar1 == 0) {
+      (*(code *)PTR_memset_00417ce4)(auStack_1018,0,0x1001);
+      (*(code *)PTR_snprintf_00417d20)(auStack_1018,0x1000,"\"Lan3\":%d,\n",local_20e0);
+      (*(code *)PTR_CGIWritePage_00417cac)(auStack_1018);
+    }
+    else {
+      local_20e0 = 1;
+      (*(code *)PTR_memset_00417ce4)(auStack_1018,0,0x1001);
+      (*(code *)PTR_snprintf_00417d20)(auStack_1018,0x1000,"\"Lan3\":%d,\n",1);
+      (*(code *)PTR_CGIWritePage_00417cac)(auStack_1018);
+    }
+    iVar1 = (*(code *)PTR_strstr_00417cd0)(auStack_1e43,auStack_1ed4);
+    if (iVar1 == 0) {
+      (*(code *)PTR_memset_00417ce4)(auStack_1018,0,0x1001);
+      (*(code *)PTR_snprintf_00417d20)(auStack_1018,0x1000,"\"Lan4\":%d,\n",local_20dc);
+      (*(code *)PTR_CGIWritePage_00417cac)(auStack_1018);
+    }
+    else {
+      local_20dc = 1;
+      (*(code *)PTR_memset_00417ce4)(auStack_1018,0,0x1001);
+      (*(code *)PTR_snprintf_00417d20)(auStack_1018,0x1000,"\"Lan4\":%d,\n",1);
+      (*(code *)PTR_CGIWritePage_00417cac)(auStack_1018);
+    }
+    iVar1 = (*(code *)PTR_strstr_00417cd0)(auStack_1e43,auStack_1ec0);
+    if (iVar1 == 0) {
+      (*(code *)PTR_memset_00417ce4)(auStack_1018,0,0x1001);
+      (*(code *)PTR_snprintf_00417d20)(auStack_1018,0x1000,"\"Lan5\":%d,\n",local_20d8);
+      (*(code *)PTR_CGIWritePage_00417cac)(auStack_1018);
+    }
+    else {
+      local_20d8 = 1;
+      (*(code *)PTR_memset_00417ce4)(auStack_1018,0,0x1001);
+      (*(code *)PTR_snprintf_00417d20)(auStack_1018,0x1000,"\"Lan5\":%d,\n",1);
+      (*(code *)PTR_CGIWritePage_00417cac)(auStack_1018);
+    }
+  }
+  *param_1 = 0;
+  param_1[1] = 0;
+  param_1[2] = 0;
+  param_1[3] = 0;
+  return param_1;
+}
+
+
+===== FUN_0040404c @ 0040404c size=368 =====
+
+undefined4 FUN_0040404c(void)
+
+{
+  int iVar1;
+  undefined4 local_1338;
+  undefined4 local_1334;
+  undefined4 local_1330;
+  undefined4 local_132c;
+  undefined4 local_1328;
+  undefined4 local_1324;
+  undefined4 local_1320;
+  undefined4 local_131c;
+  undefined4 local_1318;
+  undefined4 local_1314;
+  undefined4 local_1310;
+  undefined4 local_130c;
+  undefined4 local_1308 [26];
+  undefined1 auStack_129e [4758];
+  
+  local_1334 = 0;
+  local_1330 = 0;
+  local_132c = 0;
+  local_1328 = 0;
+  local_1324 = 0;
+  local_1320 = 0;
+  local_131c = 0;
+  local_1318 = 0;
+  local_1314 = 0;
+  local_1310 = 0;
+  local_130c = 0;
+  local_1338 = 0x119;
+  do {
+    iVar1 = (*(code *)PTR_cfg_getNextObj_00417cb8)(&local_1338,0x30,0);
+    if (iVar1 != 0) {
+      return 0;
+    }
+    (*(code *)PTR_memset_00417ce4)(local_1308,0,0x12fa);
+    local_1308[0] = 0x140;
+    while (iVar1 = (*(code *)PTR_cfg_getNextObjInSubTree_00417d04)(local_1308,&local_1334,0x12fa,0),
+          iVar1 == 0) {
+      iVar1 = (*(code *)PTR_strcmp_00417ccc)(auStack_129e,"PPPoE_Bridged");
+      if (iVar1 == 0) {
+        return 1;
+      }
+    }
+  } while( true );
+}
+
+
+===== FUN_004041bc @ 004041bc size=824 =====
+
+undefined4 * FUN_004041bc(undefined4 *param_1)
+
+{
+  undefined1 *puVar1;
+  undefined4 uVar2;
+  int iVar3;
+  int local_11e0;
+  undefined4 local_11cc;
+  undefined4 local_11c8;
+  undefined4 local_11c4;
+  undefined4 local_11c0;
+  undefined4 local_11bc;
+  undefined4 local_11b8;
+  undefined4 local_11b4;
+  undefined4 local_11b0 [8];
+  undefined4 local_1190;
+  undefined1 auStack_118c [372];
+  undefined1 auStack_1018 [4108];
+  
+  local_11c4 = 0;
+  local_11c0 = 0;
+  local_11bc = 0;
+  local_11b8 = 0;
+  local_11b4 = 0;
+  local_11cc = 0x1000000;
+  local_11c8 = 1;
+  (*(code *)PTR_memset_00417ce4)(local_11b0,0,0x196);
+  local_11b0[0] = 0xe7;
+  (*(code *)PTR_CGIWritePage_00417cac)(&DAT_004076b0);
+  local_11e0 = 0;
+  while( true ) {
+    iVar3 = (*(code *)PTR_cfg_getNextObjInSubTree_00417d04)(local_11b0,&local_11cc,0x196,4);
+    if (iVar3 != 0) break;
+    if (local_11e0 == 0) {
+      puVar1 = &DAT_004075ac;
+    }
+    else {
+      puVar1 = &DAT_004075a8;
+    }
+    (*(code *)PTR_CGIWritePage_00417cac)(puVar1);
+    (*(code *)PTR_memset_00417ce4)(auStack_1018,0,0x1001);
+    (*(code *)PTR_snprintf_00417d20)(auStack_1018,0x1000,&DAT_004071fc);
+    (*(code *)PTR_CGIWritePage_00417cac)(auStack_1018);
+    (*(code *)PTR_memset_00417ce4)(auStack_1018,0,0x1001);
+    (*(code *)PTR_snprintf_00417d20)(auStack_1018,0x1000,"Enable:%d,\n",local_1190);
+    (*(code *)PTR_CGIWritePage_00417cac)(auStack_1018);
+    (*(code *)PTR_memset_00417ce4)(auStack_1018,0,0x1001);
+    uVar2 = (*(code *)PTR_get_prop_str_00417d40)("Status",auStack_118c);
+    (*(code *)PTR_snprintf_00417d20)(auStack_1018,0x1000,&DAT_00407280,uVar2);
+    (*(code *)PTR_CGIWritePage_00417cac)(auStack_1018);
+    (*(code *)PTR_CGIWritePage_00417cac)(&DAT_004076bc);
+    local_11e0 = local_11e0 + 1;
+  }
+  (*(code *)PTR_CGIWritePage_00417cac)(&DAT_004076c0);
+  *param_1 = 0;
+  param_1[1] = 0;
+  param_1[2] = 0;
+  param_1[3] = 0;
+  return param_1;
+}
+
+
+===== FUN_004044f4 @ 004044f4 size=964 =====
+
+undefined4 * FUN_004044f4(undefined4 *param_1)
+
+{
+  undefined1 *puVar1;
+  undefined4 uVar2;
+  int iVar3;
+  int local_15c0;
+  undefined4 local_15ac;
+  byte local_15a8;
+  undefined4 auStack_15a4 [6];
+  undefined1 auStack_158c [70];
+  undefined1 auStack_1546 [547];
+  undefined1 auStack_1323 [783];
+  undefined1 auStack_1014 [4104];
+  
+  (*(code *)PTR_memset_00417ce4)(&local_15ac,0,0x598);
+  local_15ac = 0xf8;
+  local_15c0 = 0;
+  while( true ) {
+    iVar3 = (*(code *)PTR_cfg_getNextObj_00417cb8)(&local_15ac,0x598,0);
+    if (iVar3 != 0) break;
+    if (local_15c0 == 0) {
+      puVar1 = &DAT_004075ac;
+    }
+    else {
+      puVar1 = &DAT_004075a8;
+    }
+    (*(code *)PTR_CGIWritePage_00417cac)(puVar1);
+    (*(code *)PTR_CGIWritePage_00417cac)(&DAT_004075b0);
+    (*(code *)PTR_memset_00417ce4)(auStack_1014,0,0x1001);
+    (*(code *)PTR_snprintf_00417d20)(auStack_1014,0x1000,"_oid:%d,",auStack_15a4[local_15a8 - 1]);
+    (*(code *)PTR_CGIWritePage_00417cac)(auStack_1014);
+    (*(code *)PTR_memset_00417ce4)(auStack_1014,0,0x1001);
+    uVar2 = (*(code *)PTR_get_json_prop_str_00417cbc)("HostName",auStack_1323);
+    (*(code *)PTR_snprintf_00417d20)(auStack_1014,0x1000,&DAT_00407280,uVar2);
+    (*(code *)PTR_CGIWritePage_00417cac)(auStack_1014);
+    (*(code *)PTR_memset_00417ce4)(auStack_1014,0,0x1001);
+    uVar2 = (*(code *)PTR_get_prop_str_00417d40)("IPAddress",auStack_158c);
+    (*(code *)PTR_snprintf_00417d20)(auStack_1014,0x1000,&DAT_00407280,uVar2);
+    (*(code *)PTR_CGIWritePage_00417cac)(auStack_1014);
+    (*(code *)PTR_memset_00417ce4)(auStack_1014,0,0x1001);
+    uVar2 = (*(code *)PTR_get_prop_str_00417d40)("MACAddress",auStack_1546);
+    (*(code *)PTR_snprintf_00417d20)(auStack_1014,0x1000,&DAT_00407280,uVar2);
+    (*(code *)PTR_CGIWritePage_00417cac)(auStack_1014);
+    (*(code *)PTR_CGIWritePage_00417cac)(&DAT_00407210);
+    local_15c0 = local_15c0 + 1;
+  }
+  *param_1 = 0;
+  param_1[1] = 0;
+  param_1[2] = 0;
+  param_1[3] = 0;
+  return param_1;
+}
+
+
+===== CGIMain @ 004048b8 size=9764 =====
+
+undefined4 CGIMain(int param_1,int param_2)
+
+{
+  bool bVar1;
+  int iVar2;
+  undefined4 uVar3;
+  int iVar4;
+  int iVar5;
+  char *pcVar6;
+  char *pcVar7;
+  int iVar8;
+  int iVar9;
+  undefined4 uVar10;
+  undefined4 uVar11;
+  char *pcVar12;
+  char *pcVar13;
+  char *pcVar14;
+  int iVar15;
+  int iVar16;
+  int local_2f40;
+  char *local_2f3c;
+  undefined1 auStack_2eac [128];
+  undefined2 local_2e2c [2];
+  undefined4 local_2e28;
+  undefined4 local_2e24;
+  undefined4 local_2e20;
+  undefined4 local_2e1c;
+  undefined4 local_2e18;
+  undefined4 local_2e14;
+  undefined4 local_2e10;
+  undefined4 local_2e0c;
+  undefined4 local_2e08;
+  undefined4 local_2e04;
+  undefined4 local_2e00;
+  undefined4 local_2dfc;
+  undefined4 local_2df8;
+  undefined4 local_2df4;
+  undefined4 local_2df0;
+  undefined4 local_2dec;
+  char *local_2de8;
+  code *local_2de4;
+  undefined4 local_2ddc;
+  char *local_2dd4;
+  code *local_2dd0;
+  undefined4 local_2dc8;
+  char *local_2dc0;
+  code *local_2dbc;
+  undefined4 local_2db4;
+  char *local_2dac;
+  code *local_2da8;
+  undefined4 local_2da0;
+  char *local_2d98;
+  code *local_2d94;
+  undefined4 local_2d8c;
+  char *local_2d84;
+  undefined4 local_2d80;
+  char *local_2d70;
+  code *local_2d6c;
+  undefined4 local_2d64;
+  char *local_2d5c;
+  code *local_2d58;
+  undefined4 local_2d50;
+  char *local_2d48;
+  undefined *local_2d44;
+  undefined4 local_2d3c;
+  char *local_2d34;
+  code *local_2d30;
+  undefined4 local_2d28;
+  char *local_2d20;
+  code *local_2d1c;
+  undefined4 local_2d14;
+  char *local_2d0c;
+  code *local_2d08;
+  undefined4 local_2d00;
+  char *local_2cf8;
+  undefined4 local_2cf4;
+  char *local_2ce4;
+  code *local_2ce0;
+  undefined4 local_2cd8;
+  char *local_2cd0;
+  code *local_2ccc;
+  undefined4 local_2cc4;
+  char *local_2cbc;
+  code *local_2cb8;
+  undefined4 local_2cb0;
+  undefined4 local_2c94;
+  undefined4 local_2c90;
+  undefined4 local_2c8c;
+  undefined4 local_2c88;
+  undefined4 local_2c84;
+  undefined4 local_2c80;
+  undefined4 local_2c7c;
+  undefined4 local_2c78;
+  uint local_2c74;
+  int local_2c70 [16];
+  uint local_2c30;
+  int local_2c2c;
+  undefined4 local_2c28;
+  undefined4 local_2c24;
+  undefined4 local_2c20;
+  undefined4 local_2c1c;
+  undefined4 local_2c18;
+  undefined4 local_2c14;
+  undefined4 local_2c10;
+  undefined1 auStack_2bcf [4];
+  undefined1 auStack_2bcb [15];
+  undefined1 auStack_2bbc [248];
+  int local_2ac4;
+  int local_2ac0;
+  int local_2abc;
+  int local_2ab8;
+  int local_2ab4;
+  int local_2ab0;
+  uint local_2a7f;
+  undefined1 auStack_2a4a [33];
+  undefined1 auStack_2a29 [323];
+  undefined4 uStack_28e6;
+  undefined4 auStack_28e2 [47];
+  int local_2823;
+  uint local_213b;
+  undefined4 local_201c;
+  undefined1 local_2018;
+  undefined4 local_2014;
+  int local_2010;
+  uint local_1ffc;
+  undefined1 auStack_1fb7 [33];
+  undefined1 auStack_1f96 [2368];
+  undefined1 auStack_1656 [33];
+  undefined1 auStack_1635 [1565];
+  undefined1 auStack_1018 [4108];
+  
+  if (*(int *)PTR_g_is_timeout_00417d2c != 0) {
+    (*(code *)PTR_CGIWriteHead_00417cec)("relogin:1");
+    (*(code *)PTR_CGIWritePage_00417cac)("<script>top.location.href=\'/\'</script>");
+    (*(code *)PTR_CGIFlush_00417d38)();
+  }
+  iVar2 = (*(code *)PTR_get_siminfo_00417d18)();
+  if (iVar2 == 0) {
+    (*(code *)PTR_CGIWriteHead_00417cec)("relogin:1");
+    (*(code *)PTR_tl_apply_00417ce8)(0,"html/notonline.html");
+    (*(code *)PTR_CGIFlush_00417d38)();
+  }
+  (*(code *)PTR_memset_00417ce4)(auStack_2eac,0,0x80);
+  uVar3 = FUN_0040404c();
+  local_2e2c[0] = DAT_00407c40;
+  local_2e28 = 0;
+  local_2e24 = 0;
+  local_2e20 = 0;
+  local_2e1c = 0;
+  local_2e18 = 0;
+  local_2e14 = 0;
+  local_2e10 = 0;
+  local_2e0c = 0;
+  local_2e08 = 0;
+  local_2e04 = 0;
+  local_2e00 = 0;
+  local_2dfc = 0;
+  local_2df8 = 0;
+  local_2df4 = 0;
+  local_2df0 = 0;
+  local_2dec = 0;
+  (*(code *)PTR_memset_00417ce4)(&local_2de8,0,0x154);
+  local_2de8 = "ipv4_config";
+  local_2de4 = FUN_00401328;
+  local_2ddc = 1;
+  local_2dd4 = "ipv4_intf";
+  local_2dd0 = FUN_00402734;
+  local_2dc8 = 1;
+  local_2dc0 = "ipv4_route";
+  local_2dbc = FUN_0040295c;
+  local_2db4 = 1;
+  local_2dac = "bind_mac";
+  local_2da8 = FUN_00402d00;
+  local_2da0 = 1;
+  local_2d98 = "is_Bridge_mode";
+  local_2d94 = FUN_004037a0;
+  local_2d8c = 1;
+  local_2d84 = "is_cpe";
+  local_2d80 = 0;
+  local_2d70 = "DHCPConditionalServingPool";
+  local_2d6c = FUN_00403024;
+  local_2d64 = 1;
+  local_2d5c = "support_third_dns";
+  local_2d58 = FUN_00402c60;
+  local_2d50 = 1;
+  local_2d48 = "lan_port_num";
+  local_2d44 = PTR_lan_port_num_00417cc8;
+  local_2d3c = 1;
+  local_2d34 = "is_DHCPServerConfigurable_enable";
+  local_2d30 = FUN_00401150;
+  local_2d28 = 1;
+  local_2d20 = "lanPortEnable_support";
+  local_2d1c = FUN_004010a4;
+  local_2d14 = 1;
+  local_2d0c = "lan_ether";
+  local_2d08 = FUN_004041bc;
+  local_2d00 = 1;
+  local_2cf8 = "has_bridge_wan";
+  local_2ce4 = "Is_VEIP_AS_UNI";
+  local_2ce0 = FUN_00400dd0;
+  local_2cd8 = 1;
+  local_2cd0 = "device_cfg";
+  local_2ccc = FUN_004044f4;
+  local_2cc4 = 1;
+  local_2cbc = "isDomainPresent";
+  local_2cb8 = FUN_00400eec;
+  local_2cb0 = 1;
+  local_2cf4 = uVar3;
+  (*(code *)PTR_scfg_get_00417cdc)("OperatorID",auStack_2eac,0x80);
+  iVar2 = (*(code *)PTR_strcmp_00417ccc)(auStack_2eac,&DAT_00407854);
+  iVar4 = (*(code *)PTR_strcmp_00417ccc)(auStack_2eac,&DAT_0040785c);
+  bVar1 = iVar4 == 0;
+  iVar4 = (*(code *)PTR_CGIGetQuery_00417d50)(&DAT_00407864);
+  if ((iVar4 != 0) && (iVar5 = (*(code *)PTR_strcmp_00417ccc)(iVar4,&DAT_00407868), iVar5 == 0)) {
+    iVar5 = (*(code *)PTR_CGIIsPostMethod_00417d54)();
+    if (iVar5 == 0) {
+      if (iVar4 != 0) {
+        (*(code *)PTR_free_00417cc4)(iVar4);
+      }
+      goto LAB_00406e98;
+    }
+    pcVar6 = (char *)(*(code *)PTR_CGIGetQuery_00417d50)(&DAT_0040786c);
+    if ((pcVar6 != (char *)0x0) && (*pcVar6 != '\0')) {
+      local_2c8c = 0;
+      local_2c88 = 0;
+      local_2c84 = 0;
+      local_2c80 = 0;
+      local_2c7c = 0;
+      local_2c94 = 0x2000000;
+      local_2c90 = 1;
+      local_2c8c = (*(code *)PTR_atoi_00417cc0)(pcVar6);
+      iVar5 = (*(code *)PTR_cfg_delObj_00417d00)(0xd4,&local_2c94,4);
+      if (iVar5 != 0) {
+        (*(code *)PTR_memset_00417ce4)(auStack_1018,0,0x1001);
+        uVar3 = (*(code *)PTR_atoi_00417cc0)(pcVar6);
+        (*(code *)PTR_snprintf_00417d20)
+                  (auStack_1018,0x1000,"error delete  OID_DHCPSTATICADDRESS #%d",uVar3);
+        (*(code *)PTR_CGIWritePage_00417cac)(auStack_1018);
+        (*(code *)PTR_CGIFlush_00417d38)();
+      }
+      uVar3 = (*(code *)PTR_getenv_00417d44)("SCRIPT_NAME");
+      (*(code *)PTR_CGIRedirect_00417d1c)(uVar3);
+    }
+    if (pcVar6 != (char *)0x0) {
+      (*(code *)PTR_free_00417cc4)(pcVar6);
+    }
+  }
+  if (iVar4 != 0) {
+    (*(code *)PTR_free_00417cc4)(iVar4);
+  }
+  if (param_1 == 2) {
+    iVar4 = (*(code *)PTR_strcmp_00417ccc)(*(undefined4 *)(param_2 + 4),"config");
+    if (iVar4 == 0) {
+      iVar4 = (*(code *)PTR_CGIIsPostMethod_00417d54)();
+      if (iVar4 != 0) {
+        pcVar6 = (char *)(*(code *)PTR_CGIGetPost_00417cd4)("ethIpAddress");
+        pcVar7 = (char *)(*(code *)PTR_CGIGetPost_00417cd4)("ethSubnetMask");
+        if ((((pcVar6 != (char *)0x0) && (*pcVar6 != '\0')) && (pcVar7 != (char *)0x0)) &&
+           (*pcVar7 != '\0')) {
+          (*(code *)PTR_memset_00417ce4)(&local_201c,0,0x1d7);
+          local_201c = 0xd0;
+          local_2018 = 2;
+          local_2014 = 1;
+          local_2010 = 1;
+          iVar4 = (*(code *)PTR_cfg_getObj_00417cb0)(&local_201c,0x1d7,4);
+          if (iVar4 != 0) {
+            (*(code *)PTR_CGIWritePage_00417cac)("error get LanIpIntfObject");
+            (*(code *)PTR_CGIFlush_00417d38)();
+          }
+          (*(code *)PTR_strncpy_00417cf4)(auStack_1fb7,pcVar6,0x20);
+          (*(code *)PTR_strncpy_00417cf4)(auStack_1f96,pcVar7,0x20);
+          iVar4 = (*(code *)PTR_cfg_setObj_00417cf0)(&local_201c,0x1d7,4);
+          if (iVar4 != 0) {
+            (*(code *)PTR_CGIWritePage_00417cac)("error set LanIpIntfObject");
+            (*(code *)PTR_CGIFlush_00417d38)();
+          }
+        }
+        iVar4 = (*(code *)PTR_CGIGetPost_00417cd4)("dhcpEnable");
+        (*(code *)PTR_memset_00417ce4)(&local_2ac4,0,0xaa6);
+        local_2ac4 = 0xcf;
+        local_2ac0 = CONCAT13(1,local_2ac0._1_3_);
+        local_2abc = 1;
+        iVar5 = (*(code *)PTR_cfg_getObj_00417cb0)(&local_2ac4,0xaa6,4);
+        if (iVar5 != 0) {
+          (*(code *)PTR_memset_00417ce4)(auStack_1018,0,0x1001);
+          (*(code *)PTR_snprintf_00417d20)(auStack_1018,0x1000,"error read LanHostCfgObject");
+          (*(code *)PTR_CGIWritePage_00417cac)(auStack_1018);
+          (*(code *)PTR_CGIFlush_00417d38)();
+        }
+        iVar5 = (*(code *)PTR_CGIGetPost_00417cd4)("dhcpEthStart");
+        iVar8 = (*(code *)PTR_CGIGetPost_00417cd4)("dhcpEthEnd");
+        iVar9 = (*(code *)PTR_CGIGetPost_00417cd4)("dhcpLeasedTime");
+        if ((iVar5 != 0) && (iVar8 != 0)) {
+          (*(code *)PTR_strncpy_00417cf4)(auStack_2a4a,iVar5,0x20);
+          (*(code *)PTR_strncpy_00417cf4)(auStack_2a29,iVar8,0x20);
+        }
+        if (iVar9 != 0) {
+          local_2823 = (*(code *)PTR_atoi_00417cc0)(iVar9);
+          local_2823 = local_2823 * 0x3c;
+        }
+        if (bVar1) {
+          uVar3 = (*(code *)PTR_strtok_00417cfc)(iVar5,local_2e2c);
+          uVar10 = (*(code *)PTR_strtok_00417cfc)(0,local_2e2c);
+          uVar11 = (*(code *)PTR_strtok_00417cfc)(0,local_2e2c);
+          (*(code *)PTR_sprintf_00417ce0)(&local_2e28,"%s.%s.%s.251",uVar3,uVar10,uVar11);
+          (*(code *)PTR_sprintf_00417ce0)(&local_2e08,"%s.%s.%s.253",uVar3,uVar10,uVar11);
+        }
+        pcVar12 = (char *)(*(code *)PTR_CGIGetPost_00417cd4)("firstDns");
+        pcVar13 = (char *)(*(code *)PTR_CGIGetPost_00417cd4)("secondDns");
+        pcVar14 = (char *)(*(code *)PTR_CGIGetPost_00417cd4)("thirdDns");
+        if ((pcVar12 == (char *)0x0) || (*pcVar12 == '\0')) {
+          (*(code *)PTR_strncpy_00417cf4)(&uStack_28e6,&DAT_0040799c,0x40);
+        }
+        else {
+          (*(code *)PTR_strncpy_00417cf4)(&uStack_28e6,pcVar12,0x40);
+        }
+        if ((pcVar13 == (char *)0x0) || (*pcVar13 == '\0')) {
+          iVar15 = (*(code *)PTR_strlen_00417d24)(&uStack_28e6);
+          *(undefined1 *)((int)&uStack_28e6 + iVar15) = DAT_004075a8;
+          *(undefined1 *)((int)&uStack_28e6 + iVar15 + 1) = DAT_004075a9;
+          iVar15 = (*(code *)PTR_strlen_00417d24)(&uStack_28e6);
+          *(undefined4 *)((int)&uStack_28e6 + iVar15) = DAT_0040799c;
+          *(undefined4 *)((int)auStack_28e2 + iVar15) = DAT_004079a0;
+        }
+        else {
+          iVar15 = (*(code *)PTR_strlen_00417d24)(&uStack_28e6);
+          *(undefined1 *)((int)&uStack_28e6 + iVar15) = DAT_004075a8;
+          *(undefined1 *)((int)&uStack_28e6 + iVar15 + 1) = DAT_004075a9;
+          (*(code *)PTR_strncat_00417d08)(&uStack_28e6,pcVar13,0x20);
+        }
+        if ((pcVar14 == (char *)0x0) || (*pcVar14 == '\0')) {
+          iVar15 = (*(code *)PTR_strlen_00417d24)(&uStack_28e6);
+          *(undefined1 *)((int)&uStack_28e6 + iVar15) = DAT_004075a8;
+          *(undefined1 *)((int)&uStack_28e6 + iVar15 + 1) = DAT_004075a9;
+          iVar15 = (*(code *)PTR_strlen_00417d24)(&uStack_28e6);
+          *(undefined4 *)((int)&uStack_28e6 + iVar15) = DAT_0040799c;
+          *(undefined4 *)((int)auStack_28e2 + iVar15) = DAT_004079a0;
+        }
+        else {
+          iVar15 = (*(code *)PTR_strlen_00417d24)(&uStack_28e6);
+          *(undefined1 *)((int)&uStack_28e6 + iVar15) = DAT_004075a8;
+          *(undefined1 *)((int)&uStack_28e6 + iVar15 + 1) = DAT_004075a9;
+          (*(code *)PTR_strncat_00417d08)(&uStack_28e6,pcVar14,0x20);
+        }
+        local_2a7f = (uint)(iVar4 != 0);
+        if (iVar2 == 0) {
+          iVar2 = (*(code *)PTR_CGIGetPost_00417cd4)("enable3");
+          local_213b = (uint)(iVar2 != 0);
+          if (iVar2 != 0) {
+            (*(code *)PTR_free_00417cc4)(iVar2);
+          }
+        }
+        if (bVar1) {
+          (*(code *)PTR_memset_00417ce4)(local_2c70 + 0xf,0,0x16e);
+          local_2c70[0xf] = 0xd7;
+          local_2c30 = CONCAT13(3,local_2c30._1_3_);
+          local_2c2c = 1;
+          local_2c28 = 1;
+          local_2c24 = 1;
+          iVar2 = (*(code *)PTR_cfg_getObj_00417cb0)(local_2c70 + 0xf,0x16e,4);
+          if (iVar2 != 0) {
+            (*(code *)PTR_memset_00417ce4)(auStack_1018,0,0x1001);
+            (*(code *)PTR_snprintf_00417d20)(auStack_1018,0x1000,"error read dhcpOptObj");
+            (*(code *)PTR_CGIWritePage_00417cac)(auStack_1018);
+            (*(code *)PTR_CGIFlush_00417d38)();
+          }
+          iVar2 = (*(code *)PTR_CGIGetPost_00417cd4)("stbDhcpHostName");
+          if (iVar2 != 0) {
+            (*(code *)PTR_strncpy_00417cf4)(auStack_2bcb,iVar2,0x100);
+          }
+          iVar15 = (*(code *)PTR_cfg_setObj_00417cf0)(local_2c70 + 0xf,0x16e,4);
+          if (iVar15 != 0) {
+            (*(code *)PTR_memset_00417ce4)(auStack_1018,0,0x1001);
+            (*(code *)PTR_snprintf_00417d20)(auStack_1018,0x1000,"error set dhcpOptObj ");
+            (*(code *)PTR_CGIWritePage_00417cac)(auStack_1018);
+            (*(code *)PTR_CGIFlush_00417d38)();
+          }
+          if (iVar2 != 0) {
+            (*(code *)PTR_free_00417cc4)(iVar2);
+          }
+        }
+        iVar2 = (*(code *)PTR_cfg_setObj_00417cf0)(&local_2ac4,0xaa6,4);
+        if (iVar2 != 0) {
+          if (iVar2 == 0x26ac) {
+            (*(code *)PTR_memset_00417ce4)(auStack_1018,0,0x1001);
+            uVar3 = (*(code *)PTR_libintl_gettext_00417d48)
+                              ("Domain grouping is enabled. Cannot change IP Range");
+            (*(code *)PTR_snprintf_00417d20)
+                      (auStack_1018,0x1000,"<script>alert(\"%s\");</script>",uVar3);
+            (*(code *)PTR_CGIWritePage_00417cac)(auStack_1018);
+            (*(code *)PTR_CGIFlush_00417d38)();
+          }
+          else {
+            (*(code *)PTR_memset_00417ce4)(auStack_1018,0,0x1001);
+            (*(code *)PTR_snprintf_00417d20)(auStack_1018,0x1000,"error set LanHostCfgObject ");
+            (*(code *)PTR_CGIWritePage_00417cac)(auStack_1018);
+            (*(code *)PTR_CGIFlush_00417d38)();
+          }
+        }
+        if (bVar1) {
+          (*(code *)PTR_memset_00417ce4)(&local_201c,0,0xe91);
+          local_201c = 0xd5;
+          local_2018 = 2;
+          local_2014 = 1;
+          local_2010 = 1;
+          iVar2 = (*(code *)PTR_cfg_getObj_00417cb0)(&local_201c,0xe91,4);
+          if (iVar2 != 0) {
+            (*(code *)PTR_memset_00417ce4)(auStack_1018,0,0x1001);
+            (*(code *)PTR_snprintf_00417d20)(auStack_1018,0x1000,"error read dhcppoolObj");
+            (*(code *)PTR_CGIWritePage_00417cac)(auStack_1018);
+            (*(code *)PTR_CGIFlush_00417d38)();
+          }
+          iVar2 = (*(code *)PTR_CGIGetPost_00417cd4)("stbDhcpEnable");
+          local_1ffc = (uint)(iVar2 != 0);
+          if ((local_2e28._0_1_ != '\0') && (local_2e08._0_1_ != '\0')) {
+            (*(code *)PTR_strncpy_00417cf4)(auStack_1656,&local_2e28,0x20);
+            (*(code *)PTR_strncpy_00417cf4)(auStack_1635,&local_2e08,0x20);
+          }
+          iVar15 = (*(code *)PTR_cfg_setObj_00417cf0)(&local_201c,0xe91,4);
+          if (iVar15 != 0) {
+            (*(code *)PTR_memset_00417ce4)(auStack_1018,0,0x1001);
+            (*(code *)PTR_snprintf_00417d20)(auStack_1018,0x1000,"error set dhcpOptObj ");
+            (*(code *)PTR_CGIWritePage_00417cac)(auStack_1018);
+            (*(code *)PTR_CGIFlush_00417d38)();
+          }
+          if (iVar2 != 0) {
+            (*(code *)PTR_free_00417cc4)(iVar2);
+          }
+        }
+        iVar2 = (*(code *)PTR_CGIGetPost_00417cd4)("isReboot_1");
+        iVar15 = (*(code *)PTR_atoi_00417cc0)(iVar2);
+        if (iVar15 == 1) {
+          (*(code *)PTR_cfg_saveToFlash_00417d0c)(0);
+          (*(code *)PTR_system_00417d3c)
+                    (
+                    "/usr/sbin/cs_sudo \"echo 1 3,`date \'+%Y-%m-%d,%H:%M:%S\'` > /configs/last_reboot_info\""
+                    );
+          (*(code *)PTR_system_00417d3c)("(sleep 1;/sbin/reboot)&");
+          uVar3 = (*(code *)PTR_exit_00417cd8)(0);
+          return uVar3;
+        }
+        uVar3 = (*(code *)PTR_getenv_00417d44)("SCRIPT_NAME");
+        (*(code *)PTR_CGIRedirect_00417d1c)(uVar3);
+        if (pcVar6 != (char *)0x0) {
+          (*(code *)PTR_free_00417cc4)(pcVar6);
+        }
+        if (pcVar7 != (char *)0x0) {
+          (*(code *)PTR_free_00417cc4)(pcVar7);
+        }
+        if (iVar4 != 0) {
+          (*(code *)PTR_free_00417cc4)(iVar4);
+        }
+        if (iVar5 != 0) {
+          (*(code *)PTR_free_00417cc4)(iVar5);
+        }
+        if (iVar8 != 0) {
+          (*(code *)PTR_free_00417cc4)(iVar8);
+        }
+        if (iVar9 != 0) {
+          (*(code *)PTR_free_00417cc4)(iVar9);
+        }
+        if (pcVar12 != (char *)0x0) {
+          (*(code *)PTR_free_00417cc4)(pcVar12);
+        }
+        if (pcVar13 != (char *)0x0) {
+          (*(code *)PTR_free_00417cc4)(pcVar13);
+        }
+        if (pcVar14 != (char *)0x0) {
+          (*(code *)PTR_free_00417cc4)(pcVar14);
+        }
+        if (iVar2 != 0) {
+          (*(code *)PTR_free_00417cc4)(iVar2);
+        }
+      }
+    }
+    else {
+      iVar2 = (*(code *)PTR_strcmp_00417ccc)(*(undefined4 *)(param_2 + 4),"allbridge");
+      if (iVar2 == 0) {
+        iVar2 = (*(code *)PTR_CGIIsPostMethod_00417d54)();
+        if (iVar2 != 0) {
+          local_2c70[7] = 0;
+          local_2c70[8] = 0;
+          local_2c70[9] = 0;
+          local_2c70[10] = 0;
+          local_2c70[0xb] = 0;
+          local_2c70[0xc] = 0;
+          local_2c70[0xd] = 0;
+          local_2c70[0xe] = 0;
+          local_2c70[6] = 0x1d7;
+          iVar2 = (*(code *)PTR_cfg_getObj_00417cb0)(local_2c70 + 6,0x24,4);
+          if (iVar2 != 0) {
+            (*(code *)PTR_memset_00417ce4)(auStack_1018,0,0x1001);
+            (*(code *)PTR_snprintf_00417d20)(auStack_1018,0x1000,"error read EthPortObject #");
+            (*(code *)PTR_CGIWritePage_00417cac)(auStack_1018);
+            (*(code *)PTR_CGIFlush_00417d38)();
+          }
+          pcVar6 = (char *)(*(code *)PTR_CGIGetPost_00417cd4)("allstr");
+          local_2f3c = (char *)0x0;
+          local_2c78 = 0;
+          local_2c30 = 0;
+          local_2c2c = 0;
+          local_2c28 = 0;
+          local_2c24 = 0;
+          local_2c20 = 0;
+          local_2c1c = 0;
+          local_2c18 = 0;
+          local_2c14 = 0;
+          local_2c10 = 0;
+          local_2c70[0xf] = 0x1d8;
+          iVar2 = (*(code *)PTR_get_lan_eth_num_00417d58)();
+          for (local_2f40 = 1; local_2f40 < iVar2 + 1; local_2f40 = local_2f40 + 1) {
+            if ((pcVar6 == (char *)0x0) || (local_2f3c = pcVar6, *pcVar6 == '\0')) {
+              (*(code *)PTR_asprintf_00417cf8)(&local_2c78,"unimode%d",local_2f40);
+              local_2f3c = (char *)(*(code *)PTR_CGIGetPost_00417cd4)(local_2c78);
+            }
+            if ((local_2f3c != (char *)0x0) && (*local_2f3c != '\0')) {
+              local_2c2c = local_2f40;
+              local_2c14 = (*(code *)PTR_atoi_00417cc0)(local_2f3c);
+              iVar4 = (*(code *)PTR_cfg_setObj_00417cf0)(local_2c70 + 0xf,0x28,4);
+              if (iVar4 != 0) {
+                (*(code *)PTR_memset_00417ce4)(auStack_1018,0,0x1001);
+                (*(code *)PTR_snprintf_00417d20)
+                          (auStack_1018,0x1000,"error set portEnObj:%d",local_2f40);
+                (*(code *)PTR_CGIWritePage_00417cac)(auStack_1018);
+                (*(code *)PTR_CGIFlush_00417d38)();
+              }
+            }
+            if ((local_2f3c != pcVar6) && (local_2f3c != (char *)0x0)) {
+              (*(code *)PTR_free_00417cc4)(local_2f3c);
+              local_2f3c = (char *)0x0;
+            }
+          }
+          iVar4 = (*(code *)PTR_is_operatorId_00417d14)(&DAT_00407214);
+          if (iVar4 != 0) {
+            iVar4 = (*(code *)PTR_CGIGetPost_00417cd4)("ifEnable1");
+            iVar5 = (*(code *)PTR_CGIGetPost_00417cd4)("ifEnable2");
+            iVar8 = (*(code *)PTR_CGIGetPost_00417cd4)("ifEnable3");
+            iVar9 = (*(code *)PTR_CGIGetPost_00417cd4)("ifEnable4");
+            iVar15 = (*(code *)PTR_CGIGetPost_00417cd4)("ifEnable5");
+            local_2ac0 = iVar4;
+            local_2abc = iVar5;
+            local_2ab8 = iVar8;
+            local_2ab4 = iVar9;
+            local_2ab0 = iVar15;
+            for (local_2f40 = 1; local_2f40 < iVar2 + 1; local_2f40 = local_2f40 + 1) {
+              (*(code *)PTR_memset_00417ce4)(&local_201c,0,0x196);
+              local_201c = 0xe7;
+              local_2018 = 2;
+              local_2014 = 1;
+              local_2010 = local_2f40;
+              iVar16 = (*(code *)PTR_cfg_getObj_00417cb0)(&local_201c,0x196,4);
+              if (iVar16 == 0) {
+                if (((&local_2ac4)[local_2f40] == 0) || (*(char *)(&local_2ac4)[local_2f40] == '\0')
+                   ) {
+                  local_1ffc = 0;
+                }
+                else {
+                  local_1ffc = 1;
+                }
+                iVar16 = (*(code *)PTR_cfg_setObj_00417cf0)(&local_201c,0x196,4);
+                if (iVar16 != 0) {
+                  (*(code *)PTR_memset_00417ce4)(auStack_1018,0,0x1001);
+                  (*(code *)PTR_snprintf_00417d20)(auStack_1018,0x1000,"error set lanEthIfObj");
+                  (*(code *)PTR_CGIWritePage_00417cac)(auStack_1018);
+                  (*(code *)PTR_CGIFlush_00417d38)();
+                }
+              }
+            }
+            if (iVar4 != 0) {
+              (*(code *)PTR_free_00417cc4)(iVar4);
+            }
+            if (iVar5 != 0) {
+              (*(code *)PTR_free_00417cc4)(iVar5);
+            }
+            if (iVar8 != 0) {
+              (*(code *)PTR_free_00417cc4)(iVar8);
+            }
+            if (iVar9 != 0) {
+              (*(code *)PTR_free_00417cc4)(iVar9);
+            }
+            if (iVar15 != 0) {
+              (*(code *)PTR_free_00417cc4)(iVar15);
+            }
+          }
+          iVar2 = (*(code *)PTR_CGIGetPost_00417cd4)("isReboot");
+          iVar4 = (*(code *)PTR_atoi_00417cc0)(iVar2);
+          if (iVar4 == 1) {
+            (*(code *)PTR_cfg_saveToFlash_00417d0c)(0);
+            (*(code *)PTR_system_00417d3c)
+                      (
+                      "/usr/sbin/cs_sudo \"echo 1 3,`date \'+%Y-%m-%d,%H:%M:%S\'` > /configs/last_reboot_info\""
+                      );
+            (*(code *)PTR_system_00417d3c)("(sleep 1;/sbin/reboot)&");
+            uVar3 = (*(code *)PTR_exit_00417cd8)(0);
+            return uVar3;
+          }
+          if ((pcVar6 != local_2f3c) && (local_2f3c != (char *)0x0)) {
+            (*(code *)PTR_free_00417cc4)(local_2f3c);
+          }
+          if (pcVar6 != (char *)0x0) {
+            (*(code *)PTR_free_00417cc4)(pcVar6);
+          }
+          if (iVar2 != 0) {
+            (*(code *)PTR_free_00417cc4)(iVar2);
+          }
+          uVar3 = (*(code *)PTR_getenv_00417d44)("SCRIPT_NAME");
+          (*(code *)PTR_CGIRedirect_00417d1c)(uVar3);
+        }
+      }
+      else {
+        iVar2 = (*(code *)PTR_strcmp_00417ccc)(*(undefined4 *)(param_2 + 4),"reboot");
+        if (iVar2 == 0) {
+          (*(code *)PTR_cfg_saveToFlash_00417d0c)(0);
+          (*(code *)PTR_system_00417d3c)
+                    (
+                    "/usr/sbin/cs_sudo \"echo 1 3,`date \'+%Y-%m-%d,%H:%M:%S\'` > /configs/last_reboot_info\""
+                    );
+          (*(code *)PTR_system_00417d3c)("(sleep 1;/sbin/reboot)&");
+          uVar3 = (*(code *)PTR_exit_00417cd8)(0);
+          return uVar3;
+        }
+        iVar2 = (*(code *)PTR_strcmp_00417ccc)(*(undefined4 *)(param_2 + 4),"bindmac");
+        if ((iVar2 == 0) && (iVar2 = (*(code *)PTR_CGIIsPostMethod_00417d54)(), iVar2 != 0)) {
+          pcVar6 = (char *)(*(code *)PTR_CGIGetPost_00417cd4)("bindmac");
+          pcVar7 = (char *)(*(code *)PTR_CGIGetPost_00417cd4)("bindip");
+          if ((pcVar6 != (char *)0x0) &&
+             (((*pcVar6 != '\0' && (pcVar7 != (char *)0x0)) && (*pcVar7 != '\0')))) {
+            local_2c70[1] = 0;
+            local_2c70[2] = 0;
+            local_2c70[3] = 0;
+            local_2c70[4] = 0;
+            local_2c70[5] = 0;
+            local_2c74 = 0x1000000;
+            local_2c70[0] = 1;
+            iVar2 = (*(code *)PTR_cfg_addObj_00417d10)(0xd4,&local_2c74,4);
+            if (iVar2 != 0) {
+              (*(code *)PTR_memset_00417ce4)(&local_201c,0,0x1001);
+              (*(code *)PTR_snprintf_00417d20)(&local_201c,0x1000,"error add OID_DHCPSTATICADDRESS")
+              ;
+              (*(code *)PTR_CGIWritePage_00417cac)(&local_201c);
+              (*(code *)PTR_CGIFlush_00417d38)();
+            }
+            (*(code *)PTR_memset_00417ce4)(local_2c70 + 0xf,0,0x8d);
+            local_2c70[0xf] = 0xd4;
+            local_2c30 = local_2c74;
+            local_2c2c = local_2c70[0];
+            local_2c28 = local_2c70[1];
+            local_2c24 = local_2c70[2];
+            local_2c20 = local_2c70[3];
+            local_2c1c = local_2c70[4];
+            local_2c18 = local_2c70[5];
+            iVar2 = (*(code *)PTR_cfg_getObj_00417cb0)(local_2c70 + 0xf,0x8d,4);
+            if (iVar2 != 0) {
+              (*(code *)PTR_memset_00417ce4)(&local_201c,0,0x1001);
+              (*(code *)PTR_snprintf_00417d20)
+                        (&local_201c,0x1000,"error get dhcpObj #%d",
+                         local_2c70[(local_2c74 >> 0x18) - 1]);
+              (*(code *)PTR_CGIWritePage_00417cac)(&local_201c);
+              (*(code *)PTR_CGIFlush_00417d38)();
+            }
+            (*(code *)PTR_strncpy_00417cf4)(auStack_2bcf,pcVar6,0x12);
+            (*(code *)PTR_strncpy_00417cf4)(auStack_2bbc,pcVar7,0x10);
+            iVar2 = (*(code *)PTR_cfg_setObj_00417cf0)(local_2c70 + 0xf,0x8d,4);
+            if (iVar2 != 0) {
+              (*(code *)PTR_cfg_delObj_00417d00)(0xd4,&local_2c74,4);
+              (*(code *)PTR_memset_00417ce4)(&local_201c,0,0x1001);
+              uVar3 = (*(code *)PTR_libintl_gettext_00417d48)("error set dhcpObj #%d");
+              (*(code *)PTR_snprintf_00417d20)
+                        (&local_201c,0x1000,uVar3,local_2c70[(local_2c74 >> 0x18) - 1]);
+              (*(code *)PTR_CGIWritePage_00417cac)(&local_201c);
+              (*(code *)PTR_CGIFlush_00417d38)();
+            }
+            uVar3 = (*(code *)PTR_getenv_00417d44)("SCRIPT_NAME");
+            (*(code *)PTR_CGIRedirect_00417d1c)(uVar3);
+          }
+          if (pcVar6 != (char *)0x0) {
+            (*(code *)PTR_free_00417cc4)(pcVar6);
+          }
+          if (pcVar7 != (char *)0x0) {
+            (*(code *)PTR_free_00417cc4)(pcVar7);
+          }
+        }
+      }
+    }
+  }
+LAB_00406e98:
+  (*(code *)PTR_tl_apply_00417ce8)(&local_2de8,"html_glb/network/ipv4_config.html");
+  return 0;
+}
+
+
+===== FUN_00406ee0 @ 00406ee0 size=68 =====
+
+void FUN_00406ee0(void)
+
+{
+  undefined4 *puVar1;
+  
+  for (puVar1 = &DAT_00417c54; (code *)*puVar1 != (code *)0xffffffff; puVar1 = puVar1 + -1) {
+    (*(code *)*puVar1)();
+  }
+  return;
+}
+
+
+===== get_lan_eth_num @ 00406f30 size=16 =====
+
+void get_lan_eth_num(void)
+
+{
+  (*(code *)_GLOBAL_OFFSET_TABLE_)();
+  (*(code *)_GLOBAL_OFFSET_TABLE_)();
+  (*(code *)_GLOBAL_OFFSET_TABLE_)();
+  (*(code *)_GLOBAL_OFFSET_TABLE_)();
+  (*(code *)_GLOBAL_OFFSET_TABLE_)();
+  (*(code *)_GLOBAL_OFFSET_TABLE_)();
+  (*(code *)_GLOBAL_OFFSET_TABLE_)();
+  (*(code *)_GLOBAL_OFFSET_TABLE_)();
+  (*(code *)_GLOBAL_OFFSET_TABLE_)();
+  (*(code *)_GLOBAL_OFFSET_TABLE_)();
+  (*(code *)_GLOBAL_OFFSET_TABLE_)();
+  (*(code *)_GLOBAL_OFFSET_TABLE_)();
+  (*(code *)_GLOBAL_OFFSET_TABLE_)();
+  (*(code *)_GLOBAL_OFFSET_TABLE_)();
+  (*(code *)_GLOBAL_OFFSET_TABLE_)();
+  (*(code *)_GLOBAL_OFFSET_TABLE_)();
+  (*(code *)_GLOBAL_OFFSET_TABLE_)();
+  (*(code *)_GLOBAL_OFFSET_TABLE_)();
+  (*(code *)_GLOBAL_OFFSET_TABLE_)();
+  (*(code *)_GLOBAL_OFFSET_TABLE_)();
+  (*(code *)_GLOBAL_OFFSET_TABLE_)();
+  (*(code *)_GLOBAL_OFFSET_TABLE_)();
+  (*(code *)_GLOBAL_OFFSET_TABLE_)();
+  (*(code *)_GLOBAL_OFFSET_TABLE_)();
+  (*(code *)_GLOBAL_OFFSET_TABLE_)();
+  (*(code *)_GLOBAL_OFFSET_TABLE_)();
+  (*(code *)_GLOBAL_OFFSET_TABLE_)();
+  (*(code *)_GLOBAL_OFFSET_TABLE_)();
+  (*(code *)_GLOBAL_OFFSET_TABLE_)();
+  (*(code *)_GLOBAL_OFFSET_TABLE_)();
+  (*(code *)_GLOBAL_OFFSET_TABLE_)();
+  (*(code *)_GLOBAL_OFFSET_TABLE_)();
+  (*(code *)_GLOBAL_OFFSET_TABLE_)();
+  (*(code *)_GLOBAL_OFFSET_TABLE_)();
+  (*(code *)_GLOBAL_OFFSET_TABLE_)();
+  (*(code *)_GLOBAL_OFFSET_TABLE_)();
+  (*(code *)_GLOBAL_OFFSET_TABLE_)();
+  (*(code *)_GLOBAL_OFFSET_TABLE_)();
+  FUN_00400ca0();
+  return;
+}
+
+
+===== CGIIsPostMethod @ 00406f40 size=16 =====
+
+void CGIIsPostMethod(void)
+
+{
+  (*(code *)_GLOBAL_OFFSET_TABLE_)();
+  (*(code *)_GLOBAL_OFFSET_TABLE_)();
+  (*(code *)_GLOBAL_OFFSET_TABLE_)();
+  (*(code *)_GLOBAL_OFFSET_TABLE_)();
+  (*(code *)_GLOBAL_OFFSET_TABLE_)();
+  (*(code *)_GLOBAL_OFFSET_TABLE_)();
+  (*(code *)_GLOBAL_OFFSET_TABLE_)();
+  (*(code *)_GLOBAL_OFFSET_TABLE_)();
+  (*(code *)_GLOBAL_OFFSET_TABLE_)();
+  (*(code *)_GLOBAL_OFFSET_TABLE_)();
+  (*(code *)_GLOBAL_OFFSET_TABLE_)();
+  (*(code *)_GLOBAL_OFFSET_TABLE_)();
+  (*(code *)_GLOBAL_OFFSET_TABLE_)();
+  (*(code *)_GLOBAL_OFFSET_TABLE_)();
+  (*(code *)_GLOBAL_OFFSET_TABLE_)();
+  (*(code *)_GLOBAL_OFFSET_TABLE_)();
+  (*(code *)_GLOBAL_OFFSET_TABLE_)();
+  (*(code *)_GLOBAL_OFFSET_TABLE_)();
+  (*(code *)_GLOBAL_OFFSET_TABLE_)();
+  (*(code *)_GLOBAL_OFFSET_TABLE_)();
+  (*(code *)_GLOBAL_OFFSET_TABLE_)();
+  (*(code *)_GLOBAL_OFFSET_TABLE_)();
+  (*(code *)_GLOBAL_OFFSET_TABLE_)();
+  (*(code *)_GLOBAL_OFFSET_TABLE_)();
+  (*(code *)_GLOBAL_OFFSET_TABLE_)();
+  (*(code *)_GLOBAL_OFFSET_TABLE_)();
+  (*(code *)_GLOBAL_OFFSET_TABLE_)();
+  (*(code *)_GLOBAL_OFFSET_TABLE_)();
+  (*(code *)_GLOBAL_OFFSET_TABLE_)();
+  (*(code *)_GLOBAL_OFFSET_TABLE_)();
+  (*(code *)_GLOBAL_OFFSET_TABLE_)();
+  (*(code *)_GLOBAL_OFFSET_TABLE_)();
+  (*(code *)_GLOBAL_OFFSET_TABLE_)();
+  (*(code *)_GLOBAL_OFFSET_TABLE_)();
+  (*(code *)_GLOBAL_OFFSET_TABLE_)();
+  (*(code *)_GLOBAL_OFFSET_TABLE_)();
+  (*(code *)_GLOBAL_OFFSET_TABLE_)();
+  FUN_00400ca0();
+  return;
+}
+
+
+===== CGIGetQuery @ 00406f50 size=16 =====
+
+void CGIGetQuery(void)
+
+{
+  (*(code *)_GLOBAL_OFFSET_TABLE_)();
+  (*(code *)_GLOBAL_OFFSET_TABLE_)();
+  (*(code *)_GLOBAL_OFFSET_TABLE_)();
+  (*(code *)_GLOBAL_OFFSET_TABLE_)();
+  (*(code *)_GLOBAL_OFFSET_TABLE_)();
+  (*(code *)_GLOBAL_OFFSET_TABLE_)();
+  (*(code *)_GLOBAL_OFFSET_TABLE_)();
+  (*(code *)_GLOBAL_OFFSET_TABLE_)();
+  (*(code *)_GLOBAL_OFFSET_TABLE_)();
+  (*(code *)_GLOBAL_OFFSET_TABLE_)();
+  (*(code *)_GLOBAL_OFFSET_TABLE_)();
+  (*(code *)_GLOBAL_OFFSET_TABLE_)();
+  (*(code *)_GLOBAL_OFFSET_TABLE_)();
+  (*(code *)_GLOBAL_OFFSET_TABLE_)();
+  (*(code *)_GLOBAL_OFFSET_TABLE_)();
+  (*(code *)_GLOBAL_OFFSET_TABLE_)();
+  (*(code *)_GLOBAL_OFFSET_TABLE_)();
+  (*(code *)_GLOBAL_OFFSET_TABLE_)();
+  (*(code *)_GLOBAL_OFFSET_TABLE_)();
+  (*(code *)_GLOBAL_OFFSET_TABLE_)();
+  (*(code *)_GLOBAL_OFFSET_TABLE_)();
+  (*(code *)_GLOBAL_OFFSET_TABLE_)();
+  (*(code *)_GLOBAL_OFFSET_TABLE_)();
+  (*(code *)_GLOBAL_OFFSET_TABLE_)();
+  (*(code *)_GLOBAL_OFFSET_TABLE_)();
+  (*(code *)_GLOBAL_OFFSET_TABLE_)();
+  (*(code *)_GLOBAL_OFFSET_TABLE_)();
+  (*(code *)_GLOBAL_OFFSET_TABLE_)();
+  (*(code *)_GLOBAL_OFFSET_TABLE_)();
+  (*(code *)_GLOBAL_OFFSET_TABLE_)();
+  (*(code *)_GLOBAL_OFFSET_TABLE_)();
+  (*(code *)_GLOBAL_OFFSET_TABLE_)();
+  (*(code *)_GLOBAL_OFFSET_TABLE_)();
+  (*(code *)_GLOBAL_OFFSET_TABLE_)();
+  (*(code *)_GLOBAL_OFFSET_TABLE_)();
+  (*(code *)_GLOBAL_OFFSET_TABLE_)();
+  FUN_00400ca0();
+  return;
+}
+
+
+===== libintl_gettext @ 00406f60 size=16 =====
+
+void libintl_gettext(void)
+
+{
+  int unaff_gp;
+  
+  (**(code **)(unaff_gp + -0x7ff0))();
+  (**(code **)(unaff_gp + -0x7ff0))();
+  (**(code **)(unaff_gp + -0x7ff0))();
+  (**(code **)(unaff_gp + -0x7ff0))();
+  (**(code **)(unaff_gp + -0x7ff0))();
+  (**(code **)(unaff_gp + -0x7ff0))();
+  (**(code **)(unaff_gp + -0x7ff0))();
+  (**(code **)(unaff_gp + -0x7ff0))();
+  (**(code **)(unaff_gp + -0x7ff0))();
+  (**(code **)(unaff_gp + -0x7ff0))();
+  (**(code **)(unaff_gp + -0x7ff0))();
+  (**(code **)(unaff_gp + -0x7ff0))();
+  (**(code **)(unaff_gp + -0x7ff0))();
+  (**(code **)(unaff_gp + -0x7ff0))();
+  (**(code **)(unaff_gp + -0x7ff0))();
+  (**(code **)(unaff_gp + -0x7ff0))();
+  (**(code **)(unaff_gp + -0x7ff0))();
+  (**(code **)(unaff_gp + -0x7ff0))();
+  (**(code **)(unaff_gp + -0x7ff0))();
+  (**(code **)(unaff_gp + -0x7ff0))();
+  (**(code **)(unaff_gp + -0x7ff0))();
+  (**(code **)(unaff_gp + -0x7ff0))();
+  (**(code **)(unaff_gp + -0x7ff0))();
+  (**(code **)(unaff_gp + -0x7ff0))();
+  (**(code **)(unaff_gp + -0x7ff0))();
+  (**(code **)(unaff_gp + -0x7ff0))();
+  (**(code **)(unaff_gp + -0x7ff0))();
+  (**(code **)(unaff_gp + -0x7ff0))();
+  (**(code **)(unaff_gp + -0x7ff0))();
+  (**(code **)(unaff_gp + -0x7ff0))();
+  (**(code **)(unaff_gp + -0x7ff0))();
+  (**(code **)(unaff_gp + -0x7ff0))();
+  (**(code **)(unaff_gp + -0x7ff0))();
+  (**(code **)(unaff_gp + -0x7ff0))();
+  (**(code **)(unaff_gp + -0x7ff0))();
+  FUN_00400ca0();
+  return;
+}
+
+
+===== getenv @ 00406f70 size=16 =====
+
+/* WARNING: Unknown calling convention -- yet parameter storage is locked */
+
+char * getenv(char *__name)
+
+{
+  char *pcVar1;
+  int unaff_gp;
+  
+  (**(code **)(unaff_gp + -0x7ff0))();
+  (**(code **)(unaff_gp + -0x7ff0))();
+  (**(code **)(unaff_gp + -0x7ff0))();
+  (**(code **)(unaff_gp + -0x7ff0))();
+  (**(code **)(unaff_gp + -0x7ff0))();
+  (**(code **)(unaff_gp + -0x7ff0))();
+  (**(code **)(unaff_gp + -0x7ff0))();
+  (**(code **)(unaff_gp + -0x7ff0))();
+  (**(code **)(unaff_gp + -0x7ff0))();
+  (**(code **)(unaff_gp + -0x7ff0))();
+  (**(code **)(unaff_gp + -0x7ff0))();
+  (**(code **)(unaff_gp + -0x7ff0))();
+  (**(code **)(unaff_gp + -0x7ff0))();
+  (**(code **)(unaff_gp + -0x7ff0))();
+  (**(code **)(unaff_gp + -0x7ff0))();
+  (**(code **)(unaff_gp + -0x7ff0))();
+  (**(code **)(unaff_gp + -0x7ff0))();
+  (**(code **)(unaff_gp + -0x7ff0))();
+  (**(code **)(unaff_gp + -0x7ff0))();
+  (**(code **)(unaff_gp + -0x7ff0))();
+  (**(code **)(unaff_gp + -0x7ff0))();
+  (**(code **)(unaff_gp + -0x7ff0))();
+  (**(code **)(unaff_gp + -0x7ff0))();
+  (**(code **)(unaff_gp + -0x7ff0))();
+  (**(code **)(unaff_gp + -0x7ff0))();
+  (**(code **)(unaff_gp + -0x7ff0))();
+  (**(code **)(unaff_gp + -0x7ff0))();
+  (**(code **)(unaff_gp + -0x7ff0))();
+  (**(code **)(unaff_gp + -0x7ff0))();
+  (**(code **)(unaff_gp + -0x7ff0))();
+  (**(code **)(unaff_gp + -0x7ff0))();
+  (**(code **)(unaff_gp + -0x7ff0))();
+  (**(code **)(unaff_gp + -0x7ff0))();
+  (**(code **)(unaff_gp + -0x7ff0))();
+  pcVar1 = (char *)FUN_00400ca0();
+  return pcVar1;
+}
+
+
+===== get_prop_str @ 00406f80 size=16 =====
+
+void get_prop_str(void)
+
+{
+  int unaff_gp;
+  
+  (**(code **)(unaff_gp + -0x7ff0))();
+  (**(code **)(unaff_gp + -0x7ff0))();
+  (**(code **)(unaff_gp + -0x7ff0))();
+  (**(code **)(unaff_gp + -0x7ff0))();
+  (**(code **)(unaff_gp + -0x7ff0))();
+  (**(code **)(unaff_gp + -0x7ff0))();
+  (**(code **)(unaff_gp + -0x7ff0))();
+  (**(code **)(unaff_gp + -0x7ff0))();
+  (**(code **)(unaff_gp + -0x7ff0))();
+  (**(code **)(unaff_gp + -0x7ff0))();
+  (**(code **)(unaff_gp + -0x7ff0))();
+  (**(code **)(unaff_gp + -0x7ff0))();
+  (**(code **)(unaff_gp + -0x7ff0))();
+  (**(code **)(unaff_gp + -0x7ff0))();
+  (**(code **)(unaff_gp + -0x7ff0))();
+  (**(code **)(unaff_gp + -0x7ff0))();
+  (**(code **)(unaff_gp + -0x7ff0))();
+  (**(code **)(unaff_gp + -0x7ff0))();
+  (**(code **)(unaff_gp + -0x7ff0))();
+  (**(code **)(unaff_gp + -0x7ff0))();
+  (**(code **)(unaff_gp + -0x7ff0))();
+  (**(code **)(unaff_gp + -0x7ff0))();
+  (**(code **)(unaff_gp + -0x7ff0))();
+  (**(code **)(unaff_gp + -0x7ff0))();
+  (**(code **)(unaff_gp + -0x7ff0))();
+  (**(code **)(unaff_gp + -0x7ff0))();
+  (**(code **)(unaff_gp + -0x7ff0))();
+  (**(code **)(unaff_gp + -0x7ff0))();
+  (**(code **)(unaff_gp + -0x7ff0))();
+  (**(code **)(unaff_gp + -0x7ff0))();
+  (**(code **)(unaff_gp + -0x7ff0))();
+  (**(code **)(unaff_gp + -0x7ff0))();
+  (**(code **)(unaff_gp + -0x7ff0))();
+  FUN_00400ca0();
+  return;
+}
+
+
+===== system @ 00406f90 size=16 =====
+
+/* WARNING: Unknown calling convention -- yet parameter storage is locked */
+
+int system(char *__command)
+
+{
+  int iVar1;
+  
+  (*(code *)_GLOBAL_OFFSET_TABLE_)();
+  (*(code *)_GLOBAL_OFFSET_TABLE_)();
+  (*(code *)_GLOBAL_OFFSET_TABLE_)();
+  (*(code *)_GLOBAL_OFFSET_TABLE_)();
+  (*(code *)_GLOBAL_OFFSET_TABLE_)();
+  (*(code *)_GLOBAL_OFFSET_TABLE_)();
+  (*(code *)_GLOBAL_OFFSET_TABLE_)();
+  (*(code *)_GLOBAL_OFFSET_TABLE_)();
+  (*(code *)_GLOBAL_OFFSET_TABLE_)();
+  (*(code *)_GLOBAL_OFFSET_TABLE_)();
+  (*(code *)_GLOBAL_OFFSET_TABLE_)();
+  (*(code *)_GLOBAL_OFFSET_TABLE_)();
+  (*(code *)_GLOBAL_OFFSET_TABLE_)();
+  (*(code *)_GLOBAL_OFFSET_TABLE_)();
+  (*(code *)_GLOBAL_OFFSET_TABLE_)();
+  (*(code *)_GLOBAL_OFFSET_TABLE_)();
+  (*(code *)_GLOBAL_OFFSET_TABLE_)();
+  (*(code *)_GLOBAL_OFFSET_TABLE_)();
+  (*(code *)_GLOBAL_OFFSET_TABLE_)();
+  (*(code *)_GLOBAL_OFFSET_TABLE_)();
+  (*(code *)_GLOBAL_OFFSET_TABLE_)();
+  (*(code *)_GLOBAL_OFFSET_TABLE_)();
+  (*(code *)_GLOBAL_OFFSET_TABLE_)();
+  (*(code *)_GLOBAL_OFFSET_TABLE_)();
+  (*(code *)_GLOBAL_OFFSET_TABLE_)();
+  (*(code *)_GLOBAL_OFFSET_TABLE_)();
+  (*(code *)_GLOBAL_OFFSET_TABLE_)();
+  (*(code *)_GLOBAL_OFFSET_TABLE_)();
+  (*(code *)_GLOBAL_OFFSET_TABLE_)();
+  (*(code *)_GLOBAL_OFFSET_TABLE_)();
+  (*(code *)_GLOBAL_OFFSET_TABLE_)();
+  (*(code *)_GLOBAL_OFFSET_TABLE_)();
+  iVar1 = FUN_00400ca0();
+  return iVar1;
+}
+
+
+===== CGIFlush @ 00406fa0 size=16 =====
+
+void CGIFlush(void)
+
+{
+  int unaff_gp;
+  
+  (**(code **)(unaff_gp + -0x7ff0))();
+  (**(code **)(unaff_gp + -0x7ff0))();
+  (**(code **)(unaff_gp + -0x7ff0))();
+  (**(code **)(unaff_gp + -0x7ff0))();
+  (**(code **)(unaff_gp + -0x7ff0))();
+  (**(code **)(unaff_gp + -0x7ff0))();
+  (**(code **)(unaff_gp + -0x7ff0))();
+  (**(code **)(unaff_gp + -0x7ff0))();
+  (**(code **)(unaff_gp + -0x7ff0))();
+  (**(code **)(unaff_gp + -0x7ff0))();
+  (**(code **)(unaff_gp + -0x7ff0))();
+  (**(code **)(unaff_gp + -0x7ff0))();
+  (**(code **)(unaff_gp + -0x7ff0))();
+  (**(code **)(unaff_gp + -0x7ff0))();
+  (**(code **)(unaff_gp + -0x7ff0))();
+  (**(code **)(unaff_gp + -0x7ff0))();
+  (**(code **)(unaff_gp + -0x7ff0))();
+  (**(code **)(unaff_gp + -0x7ff0))();
+  (**(code **)(unaff_gp + -0x7ff0))();
+  (**(code **)(unaff_gp + -0x7ff0))();
+  (**(code **)(unaff_gp + -0x7ff0))();
+  (**(code **)(unaff_gp + -0x7ff0))();
+  (**(code **)(unaff_gp + -0x7ff0))();
+  (**(code **)(unaff_gp + -0x7ff0))();
+  (**(code **)(unaff_gp + -0x7ff0))();
+  (**(code **)(unaff_gp + -0x7ff0))();
+  (**(code **)(unaff_gp + -0x7ff0))();
+  (**(code **)(unaff_gp + -0x7ff0))();
+  (**(code **)(unaff_gp + -0x7ff0))();
+  (**(code **)(unaff_gp + -0x7ff0))();
+  (**(code **)(unaff_gp + -0x7ff0))();
+  FUN_00400ca0();
+  return;
+}
+
+
+===== __uClibc_main @ 00406fb0 size=16 =====
+
+void __uClibc_main(void)
+
+{
+  int unaff_gp;
+  
+  (**(code **)(unaff_gp + -0x7ff0))();
+  (**(code **)(unaff_gp + -0x7ff0))();
+  (**(code **)(unaff_gp + -0x7ff0))();
+  (**(code **)(unaff_gp + -0x7ff0))();
+  (**(code **)(unaff_gp + -0x7ff0))();
+  (**(code **)(unaff_gp + -0x7ff0))();
+  (**(code **)(unaff_gp + -0x7ff0))();
+  (**(code **)(unaff_gp + -0x7ff0))();
+  (**(code **)(unaff_gp + -0x7ff0))();
+  (**(code **)(unaff_gp + -0x7ff0))();
+  (**(code **)(unaff_gp + -0x7ff0))();
+  (**(code **)(unaff_gp + -0x7ff0))();
+  (**(code **)(unaff_gp + -0x7ff0))();
+  (**(code **)(unaff_gp + -0x7ff0))();
+  (**(code **)(unaff_gp + -0x7ff0))();
+  (**(code **)(unaff_gp + -0x7ff0))();
+  (**(code **)(unaff_gp + -0x7ff0))();
+  (**(code **)(unaff_gp + -0x7ff0))();
+  (**(code **)(unaff_gp + -0x7ff0))();
+  (**(code **)(unaff_gp + -0x7ff0))();
+  (**(code **)(unaff_gp + -0x7ff0))();
+  (**(code **)(unaff_gp + -0x7ff0))();
+  (**(code **)(unaff_gp + -0x7ff0))();
+  (**(code **)(unaff_gp + -0x7ff0))();
+  (**(code **)(unaff_gp + -0x7ff0))();
+  (**(code **)(unaff_gp + -0x7ff0))();
+  (**(code **)(unaff_gp + -0x7ff0))();
+  (**(code **)(unaff_gp + -0x7ff0))();
+  (**(code **)(unaff_gp + -0x7ff0))();
+  (**(code **)(unaff_gp + -0x7ff0))();
+  FUN_00400ca0();
+  return;
+}
+
+
+===== strlen @ 00406fc0 size=16 =====
+
+/* WARNING: Unknown calling convention -- yet parameter storage is locked */
+
+size_t strlen(char *__s)
+
+{
+  size_t sVar1;
+  int unaff_gp;
+  
+  (**(code **)(unaff_gp + -0x7ff0))();
+  (**(code **)(unaff_gp + -0x7ff0))();
+  (**(code **)(unaff_gp + -0x7ff0))();
+  (**(code **)(unaff_gp + -0x7ff0))();
+  (**(code **)(unaff_gp + -0x7ff0))();
+  (**(code **)(unaff_gp + -0x7ff0))();
+  (**(code **)(unaff_gp + -0x7ff0))();
+  (**(code **)(unaff_gp + -0x7ff0))();
+  (**(code **)(unaff_gp + -0x7ff0))();
+  (**(code **)(unaff_gp + -0x7ff0))();
+  (**(code **)(unaff_gp + -0x7ff0))();
+  (**(code **)(unaff_gp + -0x7ff0))();
+  (**(code **)(unaff_gp + -0x7ff0))();
+  (**(code **)(unaff_gp + -0x7ff0))();
+  (**(code **)(unaff_gp + -0x7ff0))();
+  (**(code **)(unaff_gp + -0x7ff0))();
+  (**(code **)(unaff_gp + -0x7ff0))();
+  (**(code **)(unaff_gp + -0x7ff0))();
+  (**(code **)(unaff_gp + -0x7ff0))();
+  (**(code **)(unaff_gp + -0x7ff0))();
+  (**(code **)(unaff_gp + -0x7ff0))();
+  (**(code **)(unaff_gp + -0x7ff0))();
+  (**(code **)(unaff_gp + -0x7ff0))();
+  (**(code **)(unaff_gp + -0x7ff0))();
+  (**(code **)(unaff_gp + -0x7ff0))();
+  (**(code **)(unaff_gp + -0x7ff0))();
+  (**(code **)(unaff_gp + -0x7ff0))();
+  (**(code **)(unaff_gp + -0x7ff0))();
+  (**(code **)(unaff_gp + -0x7ff0))();
+  sVar1 = FUN_00400ca0();
+  return sVar1;
+}
+
+
+===== snprintf @ 00406fd0 size=16 =====
+
+/* WARNING: Unknown calling convention -- yet parameter storage is locked */
+
+int snprintf(char *__s,size_t __maxlen,char *__format,...)
+
+{
+  int iVar1;
+  
+  (*(code *)_GLOBAL_OFFSET_TABLE_)();
+  (*(code *)_GLOBAL_OFFSET_TABLE_)();
+  (*(code *)_GLOBAL_OFFSET_TABLE_)();
+  (*(code *)_GLOBAL_OFFSET_TABLE_)();
+  (*(code *)_GLOBAL_OFFSET_TABLE_)();
+  (*(code *)_GLOBAL_OFFSET_TABLE_)();
+  (*(code *)_GLOBAL_OFFSET_TABLE_)();
+  (*(code *)_GLOBAL_OFFSET_TABLE_)();
+  (*(code *)_GLOBAL_OFFSET_TABLE_)();
+  (*(code *)_GLOBAL_OFFSET_TABLE_)();
+  (*(code *)_GLOBAL_OFFSET_TABLE_)();
+  (*(code *)_GLOBAL_OFFSET_TABLE_)();
+  (*(code *)_GLOBAL_OFFSET_TABLE_)();
+  (*(code *)_GLOBAL_OFFSET_TABLE_)();
+  (*(code *)_GLOBAL_OFFSET_TABLE_)();
+  (*(code *)_GLOBAL_OFFSET_TABLE_)();
+  (*(code *)_GLOBAL_OFFSET_TABLE_)();
+  (*(code *)_GLOBAL_OFFSET_TABLE_)();
+  (*(code *)_GLOBAL_OFFSET_TABLE_)();
+  (*(code *)_GLOBAL_OFFSET_TABLE_)();
+  (*(code *)_GLOBAL_OFFSET_TABLE_)();
+  (*(code *)_GLOBAL_OFFSET_TABLE_)();
+  (*(code *)_GLOBAL_OFFSET_TABLE_)();
+  (*(code *)_GLOBAL_OFFSET_TABLE_)();
+  (*(code *)_GLOBAL_OFFSET_TABLE_)();
+  (*(code *)_GLOBAL_OFFSET_TABLE_)();
+  (*(code *)_GLOBAL_OFFSET_TABLE_)();
+  (*(code *)_GLOBAL_OFFSET_TABLE_)();
+  iVar1 = FUN_00400ca0();
+  return iVar1;
+}
+
+
+===== CGIRedirect @ 00406fe0 size=16 =====
+
+void CGIRedirect(void)
+
+{
+  int unaff_gp;
+  
+  (**(code **)(unaff_gp + -0x7ff0))();
+  (**(code **)(unaff_gp + -0x7ff0))();
+  (**(code **)(unaff_gp + -0x7ff0))();
+  (**(code **)(unaff_gp + -0x7ff0))();
+  (**(code **)(unaff_gp + -0x7ff0))();
+  (**(code **)(unaff_gp + -0x7ff0))();
+  (**(code **)(unaff_gp + -0x7ff0))();
+  (**(code **)(unaff_gp + -0x7ff0))();
+  (**(code **)(unaff_gp + -0x7ff0))();
+  (**(code **)(unaff_gp + -0x7ff0))();
+  (**(code **)(unaff_gp + -0x7ff0))();
+  (**(code **)(unaff_gp + -0x7ff0))();
+  (**(code **)(unaff_gp + -0x7ff0))();
+  (**(code **)(unaff_gp + -0x7ff0))();
+  (**(code **)(unaff_gp + -0x7ff0))();
+  (**(code **)(unaff_gp + -0x7ff0))();
+  (**(code **)(unaff_gp + -0x7ff0))();
+  (**(code **)(unaff_gp + -0x7ff0))();
+  (**(code **)(unaff_gp + -0x7ff0))();
+  (**(code **)(unaff_gp + -0x7ff0))();
+  (**(code **)(unaff_gp + -0x7ff0))();
+  (**(code **)(unaff_gp + -0x7ff0))();
+  (**(code **)(unaff_gp + -0x7ff0))();
+  (**(code **)(unaff_gp + -0x7ff0))();
+  (**(code **)(unaff_gp + -0x7ff0))();
+  (**(code **)(unaff_gp + -0x7ff0))();
+  (**(code **)(unaff_gp + -0x7ff0))();
+  FUN_00400ca0();
+  return;
+}
+
+
+===== get_siminfo @ 00406ff0 size=16 =====
+
+void get_siminfo(void)
+
+{
+  int unaff_gp;
+  
+  (**(code **)(unaff_gp + -0x7ff0))();
+  (**(code **)(unaff_gp + -0x7ff0))();
+  (**(code **)(unaff_gp + -0x7ff0))();
+  (**(code **)(unaff_gp + -0x7ff0))();
+  (**(code **)(unaff_gp + -0x7ff0))();
+  (**(code **)(unaff_gp + -0x7ff0))();
+  (**(code **)(unaff_gp + -0x7ff0))();
+  (**(code **)(unaff_gp + -0x7ff0))();
+  (**(code **)(unaff_gp + -0x7ff0))();
+  (**(code **)(unaff_gp + -0x7ff0))();
+  (**(code **)(unaff_gp + -0x7ff0))();
+  (**(code **)(unaff_gp + -0x7ff0))();
+  (**(code **)(unaff_gp + -0x7ff0))();
+  (**(code **)(unaff_gp + -0x7ff0))();
+  (**(code **)(unaff_gp + -0x7ff0))();
+  (**(code **)(unaff_gp + -0x7ff0))();
+  (**(code **)(unaff_gp + -0x7ff0))();
+  (**(code **)(unaff_gp + -0x7ff0))();
+  (**(code **)(unaff_gp + -0x7ff0))();
+  (**(code **)(unaff_gp + -0x7ff0))();
+  (**(code **)(unaff_gp + -0x7ff0))();
+  (**(code **)(unaff_gp + -0x7ff0))();
+  (**(code **)(unaff_gp + -0x7ff0))();
+  (**(code **)(unaff_gp + -0x7ff0))();
+  (**(code **)(unaff_gp + -0x7ff0))();
+  (**(code **)(unaff_gp + -0x7ff0))();
+  FUN_00400ca0();
+  return;
+}
+
+
+===== is_operatorId @ 00407000 size=16 =====
+
+void is_operatorId(void)
+
+{
+  int unaff_gp;
+  
+  (**(code **)(unaff_gp + -0x7ff0))();
+  (**(code **)(unaff_gp + -0x7ff0))();
+  (**(code **)(unaff_gp + -0x7ff0))();
+  (**(code **)(unaff_gp + -0x7ff0))();
+  (**(code **)(unaff_gp + -0x7ff0))();
+  (**(code **)(unaff_gp + -0x7ff0))();
+  (**(code **)(unaff_gp + -0x7ff0))();
+  (**(code **)(unaff_gp + -0x7ff0))();
+  (**(code **)(unaff_gp + -0x7ff0))();
+  (**(code **)(unaff_gp + -0x7ff0))();
+  (**(code **)(unaff_gp + -0x7ff0))();
+  (**(code **)(unaff_gp + -0x7ff0))();
+  (**(code **)(unaff_gp + -0x7ff0))();
+  (**(code **)(unaff_gp + -0x7ff0))();
+  (**(code **)(unaff_gp + -0x7ff0))();
+  (**(code **)(unaff_gp + -0x7ff0))();
+  (**(code **)(unaff_gp + -0x7ff0))();
+  (**(code **)(unaff_gp + -0x7ff0))();
+  (**(code **)(unaff_gp + -0x7ff0))();
+  (**(code **)(unaff_gp + -0x7ff0))();
+  (**(code **)(unaff_gp + -0x7ff0))();
+  (**(code **)(unaff_gp + -0x7ff0))();
+  (**(code **)(unaff_gp + -0x7ff0))();
+  (**(code **)(unaff_gp + -0x7ff0))();
+  (**(code **)(unaff_gp + -0x7ff0))();
+  FUN_00400ca0();
+  return;
+}
+
+
+===== cfg_addObj @ 00407010 size=16 =====
+
+void cfg_addObj(void)
+
+{
+  int unaff_gp;
+  
+  (**(code **)(unaff_gp + -0x7ff0))();
+  (**(code **)(unaff_gp + -0x7ff0))();
+  (**(code **)(unaff_gp + -0x7ff0))();
+  (**(code **)(unaff_gp + -0x7ff0))();
+  (**(code **)(unaff_gp + -0x7ff0))();
+  (**(code **)(unaff_gp + -0x7ff0))();
+  (**(code **)(unaff_gp + -0x7ff0))();
+  (**(code **)(unaff_gp + -0x7ff0))();
+  (**(code **)(unaff_gp + -0x7ff0))();
+  (**(code **)(unaff_gp + -0x7ff0))();
+  (**(code **)(unaff_gp + -0x7ff0))();
+  (**(code **)(unaff_gp + -0x7ff0))();
+  (**(code **)(unaff_gp + -0x7ff0))();
+  (**(code **)(unaff_gp + -0x7ff0))();
+  (**(code **)(unaff_gp + -0x7ff0))();
+  (**(code **)(unaff_gp + -0x7ff0))();
+  (**(code **)(unaff_gp + -0x7ff0))();
+  (**(code **)(unaff_gp + -0x7ff0))();
+  (**(code **)(unaff_gp + -0x7ff0))();
+  (**(code **)(unaff_gp + -0x7ff0))();
+  (**(code **)(unaff_gp + -0x7ff0))();
+  (**(code **)(unaff_gp + -0x7ff0))();
+  (**(code **)(unaff_gp + -0x7ff0))();
+  (**(code **)(unaff_gp + -0x7ff0))();
+  FUN_00400ca0();
+  return;
+}
+
+
+===== cfg_saveToFlash @ 00407020 size=16 =====
+
+void cfg_saveToFlash(void)
+
+{
+  int unaff_gp;
+  
+  (**(code **)(unaff_gp + -0x7ff0))();
+  (**(code **)(unaff_gp + -0x7ff0))();
+  (**(code **)(unaff_gp + -0x7ff0))();
+  (**(code **)(unaff_gp + -0x7ff0))();
+  (**(code **)(unaff_gp + -0x7ff0))();
+  (**(code **)(unaff_gp + -0x7ff0))();
+  (**(code **)(unaff_gp + -0x7ff0))();
+  (**(code **)(unaff_gp + -0x7ff0))();
+  (**(code **)(unaff_gp + -0x7ff0))();
+  (**(code **)(unaff_gp + -0x7ff0))();
+  (**(code **)(unaff_gp + -0x7ff0))();
+  (**(code **)(unaff_gp + -0x7ff0))();
+  (**(code **)(unaff_gp + -0x7ff0))();
+  (**(code **)(unaff_gp + -0x7ff0))();
+  (**(code **)(unaff_gp + -0x7ff0))();
+  (**(code **)(unaff_gp + -0x7ff0))();
+  (**(code **)(unaff_gp + -0x7ff0))();
+  (**(code **)(unaff_gp + -0x7ff0))();
+  (**(code **)(unaff_gp + -0x7ff0))();
+  (**(code **)(unaff_gp + -0x7ff0))();
+  (**(code **)(unaff_gp + -0x7ff0))();
+  (**(code **)(unaff_gp + -0x7ff0))();
+  (**(code **)(unaff_gp + -0x7ff0))();
+  FUN_00400ca0();
+  return;
+}
+
+
+===== strncat @ 00407030 size=16 =====
+
+/* WARNING: Unknown calling convention -- yet parameter storage is locked */
+
+char * strncat(char *__dest,char *__src,size_t __n)
+
+{
+  char *pcVar1;
+  int unaff_gp;
+  
+  (**(code **)(unaff_gp + -0x7ff0))();
+  (**(code **)(unaff_gp + -0x7ff0))();
+  (**(code **)(unaff_gp + -0x7ff0))();
+  (**(code **)(unaff_gp + -0x7ff0))();
+  (**(code **)(unaff_gp + -0x7ff0))();
+  (**(code **)(unaff_gp + -0x7ff0))();
+  (**(code **)(unaff_gp + -0x7ff0))();
+  (**(code **)(unaff_gp + -0x7ff0))();
+  (**(code **)(unaff_gp + -0x7ff0))();
+  (**(code **)(unaff_gp + -0x7ff0))();
+  (**(code **)(unaff_gp + -0x7ff0))();
+  (**(code **)(unaff_gp + -0x7ff0))();
+  (**(code **)(unaff_gp + -0x7ff0))();
+  (**(code **)(unaff_gp + -0x7ff0))();
+  (**(code **)(unaff_gp + -0x7ff0))();
+  (**(code **)(unaff_gp + -0x7ff0))();
+  (**(code **)(unaff_gp + -0x7ff0))();
+  (**(code **)(unaff_gp + -0x7ff0))();
+  (**(code **)(unaff_gp + -0x7ff0))();
+  (**(code **)(unaff_gp + -0x7ff0))();
+  (**(code **)(unaff_gp + -0x7ff0))();
+  (**(code **)(unaff_gp + -0x7ff0))();
+  pcVar1 = (char *)FUN_00400ca0();
+  return pcVar1;
+}
+
+
+===== cfg_getNextObjInSubTree @ 00407040 size=16 =====
+
+void cfg_getNextObjInSubTree(void)
+
+{
+  int unaff_gp;
+  
+  (**(code **)(unaff_gp + -0x7ff0))();
+  (**(code **)(unaff_gp + -0x7ff0))();
+  (**(code **)(unaff_gp + -0x7ff0))();
+  (**(code **)(unaff_gp + -0x7ff0))();
+  (**(code **)(unaff_gp + -0x7ff0))();
+  (**(code **)(unaff_gp + -0x7ff0))();
+  (**(code **)(unaff_gp + -0x7ff0))();
+  (**(code **)(unaff_gp + -0x7ff0))();
+  (**(code **)(unaff_gp + -0x7ff0))();
+  (**(code **)(unaff_gp + -0x7ff0))();
+  (**(code **)(unaff_gp + -0x7ff0))();
+  (**(code **)(unaff_gp + -0x7ff0))();
+  (**(code **)(unaff_gp + -0x7ff0))();
+  (**(code **)(unaff_gp + -0x7ff0))();
+  (**(code **)(unaff_gp + -0x7ff0))();
+  (**(code **)(unaff_gp + -0x7ff0))();
+  (**(code **)(unaff_gp + -0x7ff0))();
+  (**(code **)(unaff_gp + -0x7ff0))();
+  (**(code **)(unaff_gp + -0x7ff0))();
+  (**(code **)(unaff_gp + -0x7ff0))();
+  (**(code **)(unaff_gp + -0x7ff0))();
+  FUN_00400ca0();
+  return;
+}
+
+
+===== cfg_delObj @ 00407050 size=16 =====
+
+void cfg_delObj(void)
+
+{
+  int unaff_gp;
+  
+  (**(code **)(unaff_gp + -0x7ff0))();
+  (**(code **)(unaff_gp + -0x7ff0))();
+  (**(code **)(unaff_gp + -0x7ff0))();
+  (**(code **)(unaff_gp + -0x7ff0))();
+  (**(code **)(unaff_gp + -0x7ff0))();
+  (**(code **)(unaff_gp + -0x7ff0))();
+  (**(code **)(unaff_gp + -0x7ff0))();
+  (**(code **)(unaff_gp + -0x7ff0))();
+  (**(code **)(unaff_gp + -0x7ff0))();
+  (**(code **)(unaff_gp + -0x7ff0))();
+  (**(code **)(unaff_gp + -0x7ff0))();
+  (**(code **)(unaff_gp + -0x7ff0))();
+  (**(code **)(unaff_gp + -0x7ff0))();
+  (**(code **)(unaff_gp + -0x7ff0))();
+  (**(code **)(unaff_gp + -0x7ff0))();
+  (**(code **)(unaff_gp + -0x7ff0))();
+  (**(code **)(unaff_gp + -0x7ff0))();
+  (**(code **)(unaff_gp + -0x7ff0))();
+  (**(code **)(unaff_gp + -0x7ff0))();
+  (**(code **)(unaff_gp + -0x7ff0))();
+  FUN_00400ca0();
+  return;
+}
+
+
+===== strtok @ 00407060 size=16 =====
+
+/* WARNING: Unknown calling convention -- yet parameter storage is locked */
+
+char * strtok(char *__s,char *__delim)
+
+{
+  char *pcVar1;
+  int unaff_gp;
+  
+  (**(code **)(unaff_gp + -0x7ff0))();
+  (**(code **)(unaff_gp + -0x7ff0))();
+  (**(code **)(unaff_gp + -0x7ff0))();
+  (**(code **)(unaff_gp + -0x7ff0))();
+  (**(code **)(unaff_gp + -0x7ff0))();
+  (**(code **)(unaff_gp + -0x7ff0))();
+  (**(code **)(unaff_gp + -0x7ff0))();
+  (**(code **)(unaff_gp + -0x7ff0))();
+  (**(code **)(unaff_gp + -0x7ff0))();
+  (**(code **)(unaff_gp + -0x7ff0))();
+  (**(code **)(unaff_gp + -0x7ff0))();
+  (**(code **)(unaff_gp + -0x7ff0))();
+  (**(code **)(unaff_gp + -0x7ff0))();
+  (**(code **)(unaff_gp + -0x7ff0))();
+  (**(code **)(unaff_gp + -0x7ff0))();
+  (**(code **)(unaff_gp + -0x7ff0))();
+  (**(code **)(unaff_gp + -0x7ff0))();
+  (**(code **)(unaff_gp + -0x7ff0))();
+  (**(code **)(unaff_gp + -0x7ff0))();
+  pcVar1 = (char *)FUN_00400ca0();
+  return pcVar1;
+}
+
+
+===== asprintf @ 00407070 size=16 =====
+
+/* WARNING: Unknown calling convention -- yet parameter storage is locked */
+
+int asprintf(char **__ptr,char *__fmt,...)
+
+{
+  int iVar1;
+  int unaff_gp;
+  
+  (**(code **)(unaff_gp + -0x7ff0))();
+  (**(code **)(unaff_gp + -0x7ff0))();
+  (**(code **)(unaff_gp + -0x7ff0))();
+  (**(code **)(unaff_gp + -0x7ff0))();
+  (**(code **)(unaff_gp + -0x7ff0))();
+  (**(code **)(unaff_gp + -0x7ff0))();
+  (**(code **)(unaff_gp + -0x7ff0))();
+  (**(code **)(unaff_gp + -0x7ff0))();
+  (**(code **)(unaff_gp + -0x7ff0))();
+  (**(code **)(unaff_gp + -0x7ff0))();
+  (**(code **)(unaff_gp + -0x7ff0))();
+  (**(code **)(unaff_gp + -0x7ff0))();
+  (**(code **)(unaff_gp + -0x7ff0))();
+  (**(code **)(unaff_gp + -0x7ff0))();
+  (**(code **)(unaff_gp + -0x7ff0))();
+  (**(code **)(unaff_gp + -0x7ff0))();
+  (**(code **)(unaff_gp + -0x7ff0))();
+  (**(code **)(unaff_gp + -0x7ff0))();
+  iVar1 = FUN_00400ca0();
+  return iVar1;
+}
+
+
+===== strncpy @ 00407080 size=16 =====
+
+/* WARNING: Unknown calling convention -- yet parameter storage is locked */
+
+char * strncpy(char *__dest,char *__src,size_t __n)
+
+{
+  char *pcVar1;
+  int unaff_gp;
+  
+  (**(code **)(unaff_gp + -0x7ff0))();
+  (**(code **)(unaff_gp + -0x7ff0))();
+  (**(code **)(unaff_gp + -0x7ff0))();
+  (**(code **)(unaff_gp + -0x7ff0))();
+  (**(code **)(unaff_gp + -0x7ff0))();
+  (**(code **)(unaff_gp + -0x7ff0))();
+  (**(code **)(unaff_gp + -0x7ff0))();
+  (**(code **)(unaff_gp + -0x7ff0))();
+  (**(code **)(unaff_gp + -0x7ff0))();
+  (**(code **)(unaff_gp + -0x7ff0))();
+  (**(code **)(unaff_gp + -0x7ff0))();
+  (**(code **)(unaff_gp + -0x7ff0))();
+  (**(code **)(unaff_gp + -0x7ff0))();
+  (**(code **)(unaff_gp + -0x7ff0))();
+  (**(code **)(unaff_gp + -0x7ff0))();
+  (**(code **)(unaff_gp + -0x7ff0))();
+  (**(code **)(unaff_gp + -0x7ff0))();
+  pcVar1 = (char *)FUN_00400ca0();
+  return pcVar1;
+}
+
+
+===== cfg_setObj @ 00407090 size=16 =====
+
+void cfg_setObj(void)
+
+{
+  (*(code *)_GLOBAL_OFFSET_TABLE_)();
+  (*(code *)_GLOBAL_OFFSET_TABLE_)();
+  (*(code *)_GLOBAL_OFFSET_TABLE_)();
+  (*(code *)_GLOBAL_OFFSET_TABLE_)();
+  (*(code *)_GLOBAL_OFFSET_TABLE_)();
+  (*(code *)_GLOBAL_OFFSET_TABLE_)();
+  (*(code *)_GLOBAL_OFFSET_TABLE_)();
+  (*(code *)_GLOBAL_OFFSET_TABLE_)();
+  (*(code *)_GLOBAL_OFFSET_TABLE_)();
+  (*(code *)_GLOBAL_OFFSET_TABLE_)();
+  (*(code *)_GLOBAL_OFFSET_TABLE_)();
+  (*(code *)_GLOBAL_OFFSET_TABLE_)();
+  (*(code *)_GLOBAL_OFFSET_TABLE_)();
+  (*(code *)_GLOBAL_OFFSET_TABLE_)();
+  (*(code *)_GLOBAL_OFFSET_TABLE_)();
+  (*(code *)_GLOBAL_OFFSET_TABLE_)();
+  FUN_00400ca0();
+  return;
+}
+
+
+===== CGIWriteHead @ 004070a0 size=16 =====
+
+void CGIWriteHead(void)
+
+{
+  int unaff_gp;
+  
+  (**(code **)(unaff_gp + -0x7ff0))();
+  (**(code **)(unaff_gp + -0x7ff0))();
+  (**(code **)(unaff_gp + -0x7ff0))();
+  (**(code **)(unaff_gp + -0x7ff0))();
+  (**(code **)(unaff_gp + -0x7ff0))();
+  (**(code **)(unaff_gp + -0x7ff0))();
+  (**(code **)(unaff_gp + -0x7ff0))();
+  (**(code **)(unaff_gp + -0x7ff0))();
+  (**(code **)(unaff_gp + -0x7ff0))();
+  (**(code **)(unaff_gp + -0x7ff0))();
+  (**(code **)(unaff_gp + -0x7ff0))();
+  (**(code **)(unaff_gp + -0x7ff0))();
+  (**(code **)(unaff_gp + -0x7ff0))();
+  (**(code **)(unaff_gp + -0x7ff0))();
+  (**(code **)(unaff_gp + -0x7ff0))();
+  FUN_00400ca0();
+  return;
+}
+
+
+===== tl_apply @ 004070b0 size=16 =====
+
+void tl_apply(void)
+
+{
+  int unaff_gp;
+  
+  (**(code **)(unaff_gp + -0x7ff0))();
+  (**(code **)(unaff_gp + -0x7ff0))();
+  (**(code **)(unaff_gp + -0x7ff0))();
+  (**(code **)(unaff_gp + -0x7ff0))();
+  (**(code **)(unaff_gp + -0x7ff0))();
+  (**(code **)(unaff_gp + -0x7ff0))();
+  (**(code **)(unaff_gp + -0x7ff0))();
+  (**(code **)(unaff_gp + -0x7ff0))();
+  (**(code **)(unaff_gp + -0x7ff0))();
+  (**(code **)(unaff_gp + -0x7ff0))();
+  (**(code **)(unaff_gp + -0x7ff0))();
+  (**(code **)(unaff_gp + -0x7ff0))();
+  (**(code **)(unaff_gp + -0x7ff0))();
+  (**(code **)(unaff_gp + -0x7ff0))();
+  FUN_00400ca0();
+  return;
+}
+
+
+===== memset @ 004070c0 size=16 =====
+
+/* WARNING: Unknown calling convention -- yet parameter storage is locked */
+
+void * memset(void *__s,int __c,size_t __n)
+
+{
+  void *pvVar1;
+  int unaff_gp;
+  
+  (**(code **)(unaff_gp + -0x7ff0))();
+  (**(code **)(unaff_gp + -0x7ff0))();
+  (**(code **)(unaff_gp + -0x7ff0))();
+  (**(code **)(unaff_gp + -0x7ff0))();
+  (**(code **)(unaff_gp + -0x7ff0))();
+  (**(code **)(unaff_gp + -0x7ff0))();
+  (**(code **)(unaff_gp + -0x7ff0))();
+  (**(code **)(unaff_gp + -0x7ff0))();
+  (**(code **)(unaff_gp + -0x7ff0))();
+  (**(code **)(unaff_gp + -0x7ff0))();
+  (**(code **)(unaff_gp + -0x7ff0))();
+  (**(code **)(unaff_gp + -0x7ff0))();
+  (**(code **)(unaff_gp + -0x7ff0))();
+  pvVar1 = (void *)FUN_00400ca0();
+  return pvVar1;
+}
+
+
+===== sprintf @ 004070d0 size=16 =====
+
+/* WARNING: Unknown calling convention -- yet parameter storage is locked */
+
+int sprintf(char *__s,char *__format,...)
+
+{
+  int iVar1;
+  int unaff_gp;
+  
+  (**(code **)(unaff_gp + -0x7ff0))();
+  (**(code **)(unaff_gp + -0x7ff0))();
+  (**(code **)(unaff_gp + -0x7ff0))();
+  (**(code **)(unaff_gp + -0x7ff0))();
+  (**(code **)(unaff_gp + -0x7ff0))();
+  (**(code **)(unaff_gp + -0x7ff0))();
+  (**(code **)(unaff_gp + -0x7ff0))();
+  (**(code **)(unaff_gp + -0x7ff0))();
+  (**(code **)(unaff_gp + -0x7ff0))();
+  (**(code **)(unaff_gp + -0x7ff0))();
+  (**(code **)(unaff_gp + -0x7ff0))();
+  (**(code **)(unaff_gp + -0x7ff0))();
+  iVar1 = FUN_00400ca0();
+  return iVar1;
+}
+
+
+===== scfg_get @ 004070e0 size=16 =====
+
+void scfg_get(void)
+
+{
+  int unaff_gp;
+  
+  (**(code **)(unaff_gp + -0x7ff0))();
+  (**(code **)(unaff_gp + -0x7ff0))();
+  (**(code **)(unaff_gp + -0x7ff0))();
+  (**(code **)(unaff_gp + -0x7ff0))();
+  (**(code **)(unaff_gp + -0x7ff0))();
+  (**(code **)(unaff_gp + -0x7ff0))();
+  (**(code **)(unaff_gp + -0x7ff0))();
+  (**(code **)(unaff_gp + -0x7ff0))();
+  (**(code **)(unaff_gp + -0x7ff0))();
+  (**(code **)(unaff_gp + -0x7ff0))();
+  (**(code **)(unaff_gp + -0x7ff0))();
+  FUN_00400ca0();
+  return;
+}
+
+
+===== exit @ 004070f0 size=16 =====
+
+/* WARNING: Unknown calling convention -- yet parameter storage is locked */
+
+void exit(int __status)
+
+{
+  int unaff_gp;
+  
+  (**(code **)(unaff_gp + -0x7ff0))();
+  (**(code **)(unaff_gp + -0x7ff0))();
+  (**(code **)(unaff_gp + -0x7ff0))();
+  (**(code **)(unaff_gp + -0x7ff0))();
+  (**(code **)(unaff_gp + -0x7ff0))();
+  (**(code **)(unaff_gp + -0x7ff0))();
+  (**(code **)(unaff_gp + -0x7ff0))();
+  (**(code **)(unaff_gp + -0x7ff0))();
+  (**(code **)(unaff_gp + -0x7ff0))();
+  (**(code **)(unaff_gp + -0x7ff0))();
+  FUN_00400ca0();
+  return;
+}
+
+
+===== CGIGetPost @ 00407100 size=16 =====
+
+void CGIGetPost(void)
+
+{
+  int unaff_gp;
+  
+  (**(code **)(unaff_gp + -0x7ff0))();
+  (**(code **)(unaff_gp + -0x7ff0))();
+  (**(code **)(unaff_gp + -0x7ff0))();
+  (**(code **)(unaff_gp + -0x7ff0))();
+  (**(code **)(unaff_gp + -0x7ff0))();
+  (**(code **)(unaff_gp + -0x7ff0))();
+  (**(code **)(unaff_gp + -0x7ff0))();
+  (**(code **)(unaff_gp + -0x7ff0))();
+  (**(code **)(unaff_gp + -0x7ff0))();
+  FUN_00400ca0();
+  return;
+}
+
+
+===== strstr @ 00407110 size=16 =====
+
+/* WARNING: Unknown calling convention -- yet parameter storage is locked */
+
+char * strstr(char *__haystack,char *__needle)
+
+{
+  char *pcVar1;
+  int unaff_gp;
+  
+  (**(code **)(unaff_gp + -0x7ff0))();
+  (**(code **)(unaff_gp + -0x7ff0))();
+  (**(code **)(unaff_gp + -0x7ff0))();
+  (**(code **)(unaff_gp + -0x7ff0))();
+  (**(code **)(unaff_gp + -0x7ff0))();
+  (**(code **)(unaff_gp + -0x7ff0))();
+  (**(code **)(unaff_gp + -0x7ff0))();
+  (**(code **)(unaff_gp + -0x7ff0))();
+  pcVar1 = (char *)FUN_00400ca0();
+  return pcVar1;
+}
+
+
+===== strcmp @ 00407120 size=16 =====
+
+/* WARNING: Unknown calling convention -- yet parameter storage is locked */
+
+int strcmp(char *__s1,char *__s2)
+
+{
+  int iVar1;
+  int unaff_gp;
+  
+  (**(code **)(unaff_gp + -0x7ff0))();
+  (**(code **)(unaff_gp + -0x7ff0))();
+  (**(code **)(unaff_gp + -0x7ff0))();
+  (**(code **)(unaff_gp + -0x7ff0))();
+  (**(code **)(unaff_gp + -0x7ff0))();
+  (**(code **)(unaff_gp + -0x7ff0))();
+  (**(code **)(unaff_gp + -0x7ff0))();
+  iVar1 = FUN_00400ca0();
+  return iVar1;
+}
+
+
+===== free @ 00407130 size=16 =====
+
+/* WARNING: Unknown calling convention -- yet parameter storage is locked */
+
+void free(void *__ptr)
+
+{
+  int unaff_gp;
+  
+  (**(code **)(unaff_gp + -0x7ff0))();
+  (**(code **)(unaff_gp + -0x7ff0))();
+  (**(code **)(unaff_gp + -0x7ff0))();
+  (**(code **)(unaff_gp + -0x7ff0))();
+  (**(code **)(unaff_gp + -0x7ff0))();
+  (**(code **)(unaff_gp + -0x7ff0))();
+  FUN_00400ca0();
+  return;
+}
+
+
+===== atoi @ 00407140 size=16 =====
+
+/* WARNING: Unknown calling convention -- yet parameter storage is locked */
+
+int atoi(char *__nptr)
+
+{
+  int iVar1;
+  int unaff_gp;
+  
+  (**(code **)(unaff_gp + -0x7ff0))();
+  (**(code **)(unaff_gp + -0x7ff0))();
+  (**(code **)(unaff_gp + -0x7ff0))();
+  (**(code **)(unaff_gp + -0x7ff0))();
+  (**(code **)(unaff_gp + -0x7ff0))();
+  iVar1 = FUN_00400ca0();
+  return iVar1;
+}
+
+
+===== get_json_prop_str @ 00407150 size=16 =====
+
+void get_json_prop_str(void)
+
+{
+  int unaff_gp;
+  
+  (**(code **)(unaff_gp + -0x7ff0))();
+  (**(code **)(unaff_gp + -0x7ff0))();
+  (**(code **)(unaff_gp + -0x7ff0))();
+  (**(code **)(unaff_gp + -0x7ff0))();
+  FUN_00400ca0();
+  return;
+}
+
+
+===== cfg_getNextObj @ 00407160 size=16 =====
+
+void cfg_getNextObj(void)
+
+{
+  int unaff_gp;
+  
+  (**(code **)(unaff_gp + -0x7ff0))();
+  (**(code **)(unaff_gp + -0x7ff0))();
+  (**(code **)(unaff_gp + -0x7ff0))();
+  FUN_00400ca0();
+  return;
+}
+
+
+===== cfg_getObj @ 00407170 size=16 =====
+
+void cfg_getObj(void)
+
+{
+  int unaff_gp;
+  
+  (**(code **)(unaff_gp + -0x7ff0))();
+  (**(code **)(unaff_gp + -0x7ff0))();
+  FUN_00400ca0();
+  return;
+}
+
+
+===== CGIWritePage @ 00407180 size=32 =====
+
+void CGIWritePage(void)
+
+{
+  int unaff_gp;
+  
+  (**(code **)(unaff_gp + -0x7ff0))();
+  FUN_00400ca0();
+  return;
+}
+
+
+===== _fini @ 004071a0 size=76 =====
+
+void _fini(void)
+
+{
+  FUN_00400ca0();
+  return;
+}
+
+
+===== main @ 00418000 size=1 =====
+
+/* WARNING: Control flow encountered bad instruction data */
+
+void main(void)
+
+{
+                    /* WARNING: Bad instruction - Truncating control flow here */
+  halt_baddata();
+}
+
+
+===== lan_port_num @ 00418004 size=1 =====
+
+/* WARNING: Control flow encountered bad instruction data */
+
+void lan_port_num(void)
+
+{
+                    /* WARNING: Bad instruction - Truncating control flow here */
+  halt_baddata();
+}
+
+
+===== __register_frame_info @ 0041800c size=1 =====
+
+/* WARNING: Control flow encountered bad instruction data */
+
+void __register_frame_info(void)
+
+{
+                    /* WARNING: Bad instruction - Truncating control flow here */
+  halt_baddata();
+}
+
+
+===== _Jv_RegisterClasses @ 00418010 size=1 =====
+
+/* WARNING: Control flow encountered bad instruction data */
+
+void _Jv_RegisterClasses(void)
+
+{
+                    /* WARNING: Bad instruction - Truncating control flow here */
+  halt_baddata();
+}
+
+
+===== __deregister_frame_info @ 00418014 size=1 =====
+
+/* WARNING: Control flow encountered bad instruction data */
+
+void __deregister_frame_info(void)
+
+{
+                    /* WARNING: Bad instruction - Truncating control flow here */
+  halt_baddata();
+}
+
+

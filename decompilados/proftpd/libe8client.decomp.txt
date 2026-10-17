@@ -1,0 +1,4864 @@
+/* ===== _init @ 000108ec ==== */
+
+int _init(EVP_PKEY_CTX *ctx)
+
+{
+  int iVar1;
+  
+  FUN_00010a48();
+  iVar1 = FUN_00015c60();
+  return iVar1;
+}
+
+
+
+/* ===== entry @ 00010970 ==== */
+
+/* WARNING: Removing unreachable block (ram,0x000109e0) */
+
+void processEntry entry(void)
+
+{
+  if (DAT_0002b940 == '\0') {
+    __cxa_finalize(PTR_LOOP_0002b930);
+    __deregister_frame_info(&DWORD_0001b860);
+    DAT_0002b940 = '\x01';
+  }
+  return;
+}
+
+
+
+/* ===== FUN_00010a48 @ 00010a48 ==== */
+
+void FUN_00010a48(void)
+
+{
+  __register_frame_info(&DWORD_0001b860,&DAT_0002b948);
+  if (DAT_0002b874 == 0) {
+    return;
+  }
+  _Jv_RegisterClasses(&DAT_0002b874);
+  return;
+}
+
+
+
+/* ===== FUN_00010ac0 @ 00010ac0 ==== */
+
+undefined4 FUN_00010ac0(void)
+
+{
+  char acStack_208 [516];
+  
+  memset(acStack_208,0,0x200);
+  sprintf(acStack_208,(char *)0x5f10,DAT_0002b964,0x5f20);
+  system(acStack_208);
+  return 0;
+}
+
+
+
+/* ===== FUN_00010b34 @ 00010b34 ==== */
+
+undefined4 FUN_00010b34(char *param_1,char *param_2)
+
+{
+  int iVar1;
+  size_t __n;
+  undefined4 uVar2;
+  char acStack_3f8 [256];
+  undefined1 auStack_2f8 [12];
+  undefined4 local_2ec;
+  undefined1 auStack_2e8 [28];
+  undefined1 auStack_2cc [704];
+  
+  memset(acStack_3f8,0,0x100);
+  if ((param_1 != (char *)0x0) && (*param_1 != '\0')) {
+    iVar1 = cfg_pathToTr069Node(param_1,auStack_2f8);
+    if (iVar1 == 0) {
+      iVar1 = cfg_getParam(local_2ec,auStack_2e8,auStack_2cc,acStack_3f8,2);
+      if (iVar1 == 0) {
+        log_log(7,"getParameterValues",0x84,0x5f60,param_1,acStack_3f8);
+        __n = strlen(acStack_3f8);
+        strncpy(param_2,acStack_3f8,__n);
+        return 0;
+      }
+      uVar2 = 0x80;
+    }
+    else {
+      uVar2 = 0x7a;
+    }
+    log_log(3,"getParameterValues",uVar2,0x5f50,param_1);
+  }
+  return 0xffffffff;
+}
+
+
+
+/* ===== FUN_00010c78 @ 00010c78 ==== */
+
+undefined4 FUN_00010c78(char *param_1)
+
+{
+  char *pcVar1;
+  int iVar2;
+  size_t sVar3;
+  undefined4 uVar4;
+  char *local_530;
+  char acStack_52c [256];
+  char acStack_42c [256];
+  char acStack_32c [256];
+  char acStack_22c [256];
+  undefined1 auStack_12c [280];
+  
+  memset(acStack_22c,0,0x100);
+  memset(acStack_32c,0,0x100);
+  memset(auStack_12c,0,0x110);
+  pcVar1 = strchr(param_1,0x7b);
+  if (pcVar1 == (char *)0x0) {
+    memset(auStack_12c,0,0x110);
+    memset(acStack_22c,0,0x100);
+    iVar2 = FUN_00010b34(param_1,auStack_12c);
+    if (iVar2 == 0) {
+      sprintf(acStack_22c,(char *)0x5f60,param_1,auStack_12c);
+      sVar3 = strlen(acStack_22c);
+      write(DAT_0002b960,acStack_22c,sVar3);
+      log_log(7,"write_to_file",0xb4,0x5fac,acStack_22c);
+      return 0;
+    }
+    uVar4 = 0xac;
+  }
+  else {
+    memset(acStack_22c,0,0x100);
+    memset(acStack_32c,0,0x100);
+    memset(auStack_12c,0,0x100);
+    memset(acStack_42c,0,0x100);
+    memset(acStack_52c,0,0x100);
+    strncpy(acStack_42c,param_1,0x100);
+    local_530 = acStack_42c;
+    do {
+      pcVar1 = strsep(&local_530,(char *)0x5f68);
+      strcat(acStack_52c,pcVar1);
+    } while (local_530 != (char *)0x0);
+    log_log(7,"strip_brace",0x3b,0x5f6c,acStack_52c);
+    memset(acStack_42c,0,0x100);
+    local_530 = acStack_52c;
+    do {
+      pcVar1 = strsep(&local_530,(char *)0x5f78);
+      strcat(acStack_42c,pcVar1);
+    } while (local_530 != (char *)0x0);
+    log_log(7,"strip_brace",0x45,0x5f6c,acStack_42c);
+    strncpy(acStack_22c,acStack_42c,0x100);
+    iVar2 = FUN_00010b34(acStack_22c,auStack_12c);
+    if (iVar2 == 0) {
+      sprintf(acStack_32c,(char *)0x5f60,param_1,auStack_12c);
+      sVar3 = strlen(acStack_32c);
+      write(DAT_0002b960,acStack_32c,sVar3);
+      log_log(7,"write_to_file",0xa2,0x5fac,acStack_32c);
+      return 0;
+    }
+    param_1 = acStack_22c;
+    uVar4 = 0x9a;
+  }
+  log_log(3,"write_to_file",uVar4,0x5f7c,param_1,iVar2);
+  return 0xffffffff;
+}
+
+
+
+/* ===== FUN_00011074 @ 00011074 ==== */
+
+undefined4 FUN_00011074(void)
+
+{
+  undefined1 uVar1;
+  char cVar2;
+  undefined2 uVar3;
+  undefined4 *puVar4;
+  undefined4 *puVar5;
+  int iVar6;
+  int iVar7;
+  int iVar8;
+  undefined4 *puVar9;
+  char *pcVar10;
+  undefined4 *puVar11;
+  undefined4 uVar12;
+  undefined4 uVar13;
+  undefined4 uVar14;
+  undefined4 uVar15;
+  char *pcVar16;
+  int iVar17;
+  int iVar18;
+  int iVar19;
+  int iVar20;
+  undefined4 local_35a0;
+  undefined4 local_359c;
+  undefined4 local_3598;
+  undefined4 local_3594;
+  undefined4 local_3590;
+  undefined4 local_358c;
+  undefined4 local_3588;
+  undefined4 local_3584;
+  undefined4 local_3580;
+  undefined4 local_357c;
+  undefined4 local_3578;
+  undefined4 local_3574;
+  undefined4 local_3570;
+  undefined4 local_356c;
+  undefined4 local_3568;
+  char acStack_3554 [256];
+  char local_3454 [4];
+  undefined4 local_3450 [5];
+  undefined2 local_343c;
+  char local_343a [65];
+  undefined1 auStack_33f9 [165];
+  undefined4 local_3354 [5];
+  undefined1 local_3340 [81];
+  undefined1 auStack_32ef [155];
+  undefined4 local_3254 [26];
+  undefined1 auStack_31ec [152];
+  undefined4 local_3154 [5];
+  undefined2 local_3140 [41];
+  undefined1 auStack_30ee [154];
+  char local_3054 [4];
+  undefined4 local_3050 [5];
+  undefined2 local_303c [33];
+  undefined1 auStack_2ffa [166];
+  undefined4 local_2f54 [25];
+  undefined1 auStack_2ef0 [156];
+  undefined4 local_2e54 [5];
+  undefined2 local_2e40;
+  undefined1 local_2e3e [81];
+  undefined1 auStack_2ded [153];
+  undefined4 local_2d54 [5];
+  undefined1 local_2d40 [81];
+  undefined1 auStack_2cef [155];
+  undefined4 local_2c54 [7];
+  undefined2 local_2c38 [33];
+  undefined1 auStack_2bf6 [162];
+  undefined4 local_2b54 [4];
+  undefined2 local_2b44 [41];
+  undefined1 auStack_2af2 [158];
+  undefined4 local_2a54 [7];
+  undefined2 local_2a38 [33];
+  undefined1 auStack_29f6 [162];
+  undefined4 local_2954 [26];
+  undefined1 auStack_28ec [152];
+  char local_2854 [4860];
+  undefined4 local_1558;
+  undefined4 local_1554;
+  undefined4 local_1550;
+  undefined4 local_154c;
+  undefined4 local_1548;
+  undefined4 local_1544;
+  undefined4 local_1540;
+  undefined4 local_153c;
+  int local_30;
+  
+  memset(local_3054,0,0x800);
+  puVar4 = (undefined4 *)0x65a0;
+  pcVar16 = local_3054;
+  do {
+    pcVar10 = pcVar16;
+    puVar9 = puVar4;
+    uVar14 = puVar9[1];
+    uVar13 = puVar9[2];
+    uVar12 = puVar9[3];
+    *(undefined4 *)pcVar10 = *puVar9;
+    *(undefined4 *)(pcVar10 + 4) = uVar14;
+    *(undefined4 *)(pcVar10 + 8) = uVar13;
+    *(undefined4 *)(pcVar10 + 0xc) = uVar12;
+    puVar4 = puVar9 + 4;
+    pcVar16 = pcVar10 + 0x10;
+  } while (puVar9 + 4 != &uRam000065f0);
+  uVar12 = puVar9[5];
+  uVar3 = *(undefined2 *)(puVar9 + 6);
+  *(undefined4 *)(pcVar10 + 0x10) = uRam000065f0;
+  *(undefined4 *)(pcVar10 + 0x14) = uVar12;
+  *(undefined2 *)(pcVar10 + 0x18) = uVar3;
+  memset(auStack_2ffa,0,0xa6);
+  puVar9 = local_2f54;
+  puVar4 = (undefined4 *)0x66a0;
+  do {
+    uVar15 = *puVar4;
+    uVar14 = puVar4[1];
+    uVar13 = puVar4[2];
+    uVar12 = puVar4[3];
+    puVar4 = puVar4 + 4;
+    *puVar9 = uVar15;
+    puVar9[1] = uVar14;
+    puVar9[2] = uVar13;
+    puVar9[3] = uVar12;
+    puVar9 = puVar9 + 4;
+  } while (puVar4 != &uRam00006700);
+  *puVar9 = uRam00006700;
+  memset(auStack_2ef0,0,0x9c);
+  puVar4 = (undefined4 *)0x67a0;
+  puVar9 = local_2e54;
+  do {
+    puVar11 = puVar9;
+    puVar5 = puVar4;
+    uVar14 = puVar5[1];
+    uVar13 = puVar5[2];
+    uVar12 = puVar5[3];
+    *puVar11 = *puVar5;
+    puVar11[1] = uVar14;
+    puVar11[2] = uVar13;
+    puVar11[3] = uVar12;
+    puVar4 = puVar5 + 4;
+    puVar9 = puVar11 + 4;
+  } while (puVar5 + 4 != &uRam00006800);
+  uVar3 = *(undefined2 *)(puVar5 + 5);
+  uVar1 = *(undefined1 *)((int)puVar5 + 0x16);
+  puVar11[4] = uRam00006800;
+  *(undefined2 *)(puVar11 + 5) = uVar3;
+  *(undefined1 *)((int)puVar11 + 0x16) = uVar1;
+  memset(auStack_2ded,0,0x99);
+  puVar4 = (undefined4 *)0x68a0;
+  puVar9 = local_2d54;
+  do {
+    puVar11 = puVar9;
+    puVar5 = puVar4;
+    uVar14 = puVar5[1];
+    uVar13 = puVar5[2];
+    uVar12 = puVar5[3];
+    *puVar11 = *puVar5;
+    puVar11[1] = uVar14;
+    puVar11[2] = uVar13;
+    puVar11[3] = uVar12;
+    puVar4 = puVar5 + 4;
+    puVar9 = puVar11 + 4;
+  } while (puVar5 + 4 != &uRam00006900);
+  uVar1 = *(undefined1 *)(puVar5 + 5);
+  puVar11[4] = uRam00006900;
+  *(undefined1 *)(puVar11 + 5) = uVar1;
+  memset(auStack_2cef,0,0x9b);
+  puVar4 = (undefined4 *)0x69a0;
+  puVar9 = local_2c54;
+  do {
+    puVar11 = puVar9;
+    puVar5 = puVar4;
+    uVar14 = puVar5[1];
+    uVar13 = puVar5[2];
+    uVar12 = puVar5[3];
+    *puVar11 = *puVar5;
+    puVar11[1] = uVar14;
+    puVar11[2] = uVar13;
+    puVar11[3] = uVar12;
+    puVar4 = puVar5 + 4;
+    puVar9 = puVar11 + 4;
+  } while (puVar5 + 4 != &uRam000069f0);
+  uVar13 = puVar5[5];
+  uVar12 = puVar5[6];
+  uVar3 = *(undefined2 *)(puVar5 + 7);
+  puVar11[4] = uRam000069f0;
+  puVar11[5] = uVar13;
+  puVar11[6] = uVar12;
+  *(undefined2 *)(puVar11 + 7) = uVar3;
+  memset(auStack_2bf6,0,0xa2);
+  puVar9 = local_2b54;
+  puVar4 = (undefined4 *)0x6aa0;
+  do {
+    uVar15 = *puVar4;
+    uVar14 = puVar4[1];
+    uVar13 = puVar4[2];
+    uVar12 = puVar4[3];
+    puVar4 = puVar4 + 4;
+    *puVar9 = uVar15;
+    puVar9[1] = uVar14;
+    puVar9[2] = uVar13;
+    puVar9[3] = uVar12;
+    puVar9 = puVar9 + 4;
+  } while (puVar4 != (undefined4 *)&uRam00006b00);
+  *(undefined2 *)puVar9 = uRam00006b00;
+  memset(auStack_2af2,0,0x9e);
+  puVar4 = (undefined4 *)0x6ba0;
+  puVar9 = local_2a54;
+  do {
+    puVar11 = puVar9;
+    puVar5 = puVar4;
+    uVar14 = puVar5[1];
+    uVar13 = puVar5[2];
+    uVar12 = puVar5[3];
+    *puVar11 = *puVar5;
+    puVar11[1] = uVar14;
+    puVar11[2] = uVar13;
+    puVar11[3] = uVar12;
+    puVar4 = puVar5 + 4;
+    puVar9 = puVar11 + 4;
+  } while (puVar5 + 4 != &uRam00006bf0);
+  uVar13 = puVar5[5];
+  uVar12 = puVar5[6];
+  uVar3 = *(undefined2 *)(puVar5 + 7);
+  puVar11[4] = uRam00006bf0;
+  puVar11[5] = uVar13;
+  puVar11[6] = uVar12;
+  *(undefined2 *)(puVar11 + 7) = uVar3;
+  memset(auStack_29f6,0,0xa2);
+  puVar4 = local_2954;
+  puVar9 = (undefined4 *)0x6ca0;
+  do {
+    puVar11 = puVar9;
+    puVar5 = puVar4;
+    uVar14 = puVar11[1];
+    uVar13 = puVar11[2];
+    uVar12 = puVar11[3];
+    *puVar5 = *puVar11;
+    puVar5[1] = uVar14;
+    puVar5[2] = uVar13;
+    puVar5[3] = uVar12;
+    puVar4 = puVar5 + 4;
+    puVar9 = puVar11 + 4;
+  } while (puVar11 + 4 != &uRam00006d00);
+  puVar5[5] = puVar11[5];
+  puVar5[4] = uRam00006d00;
+  memset(auStack_28ec,0,0x98);
+  memset(local_3454,0,0x400);
+  puVar4 = (undefined4 *)0x6da0;
+  pcVar16 = local_3454;
+  do {
+    pcVar10 = pcVar16;
+    puVar9 = puVar4;
+    uVar14 = puVar9[1];
+    uVar13 = puVar9[2];
+    uVar12 = puVar9[3];
+    *(undefined4 *)pcVar10 = *puVar9;
+    *(undefined4 *)(pcVar10 + 4) = uVar14;
+    *(undefined4 *)(pcVar10 + 8) = uVar13;
+    *(undefined4 *)(pcVar10 + 0xc) = uVar12;
+    puVar4 = puVar9 + 4;
+    pcVar16 = pcVar10 + 0x10;
+  } while (puVar9 + 4 != &uRam00006df0);
+  uVar12 = puVar9[5];
+  uVar3 = *(undefined2 *)(puVar9 + 6);
+  cVar2 = *(char *)((int)puVar9 + 0x1a);
+  *(undefined4 *)(pcVar10 + 0x10) = uRam00006df0;
+  *(undefined4 *)(pcVar10 + 0x14) = uVar12;
+  *(undefined2 *)(pcVar10 + 0x18) = uVar3;
+  pcVar10[0x1a] = cVar2;
+  memset(auStack_33f9,0,0xa5);
+  puVar4 = (undefined4 *)0x6ea0;
+  puVar9 = local_3354;
+  do {
+    puVar11 = puVar9;
+    puVar5 = puVar4;
+    uVar14 = puVar5[1];
+    uVar13 = puVar5[2];
+    uVar12 = puVar5[3];
+    *puVar11 = *puVar5;
+    puVar11[1] = uVar14;
+    puVar11[2] = uVar13;
+    puVar11[3] = uVar12;
+    puVar4 = puVar5 + 4;
+    puVar9 = puVar11 + 4;
+  } while (puVar5 + 4 != &uRam00006f00);
+  uVar1 = *(undefined1 *)(puVar5 + 5);
+  puVar11[4] = uRam00006f00;
+  *(undefined1 *)(puVar11 + 5) = uVar1;
+  memset(auStack_32ef,0,0x9b);
+  puVar4 = (undefined4 *)0x6fa0;
+  puVar9 = local_3254;
+  do {
+    puVar11 = puVar9;
+    puVar5 = puVar4;
+    uVar14 = puVar5[1];
+    uVar13 = puVar5[2];
+    uVar12 = puVar5[3];
+    *puVar11 = *puVar5;
+    puVar11[1] = uVar14;
+    puVar11[2] = uVar13;
+    puVar11[3] = uVar12;
+    puVar4 = puVar5 + 4;
+    puVar9 = puVar11 + 4;
+  } while (puVar5 + 4 != &uRam00007000);
+  uVar12 = puVar5[5];
+  puVar11[4] = uRam00007000;
+  puVar11[5] = uVar12;
+  memset(auStack_31ec,0,0x98);
+  puVar4 = local_3154;
+  puVar9 = (undefined4 *)0x70a0;
+  do {
+    puVar11 = puVar9;
+    puVar5 = puVar4;
+    uVar14 = puVar11[1];
+    uVar13 = puVar11[2];
+    uVar12 = puVar11[3];
+    *puVar5 = *puVar11;
+    puVar5[1] = uVar14;
+    puVar5[2] = uVar13;
+    puVar5[3] = uVar12;
+    puVar4 = puVar5 + 4;
+    puVar9 = puVar11 + 4;
+  } while (puVar11 + 4 != &uRam00007100);
+  uVar3 = *(undefined2 *)(puVar11 + 5);
+  puVar5[4] = uRam00007100;
+  *(undefined2 *)(puVar5 + 5) = uVar3;
+  memset(auStack_30ee,0,0x9a);
+  local_35a0 = 0;
+  local_359c = 0;
+  local_3598 = 0;
+  local_3594 = 0;
+  local_3590 = 0;
+  local_358c = 0;
+  local_3588 = 0;
+  memset(acStack_3554,0,0x100);
+  local_3584 = 0x119;
+  local_3580 = 0;
+  local_357c = 0;
+  local_3578 = 0;
+  local_3574 = 0;
+  local_3570 = 0;
+  local_356c = 0;
+  local_3568 = 0;
+  iVar18 = 0;
+  while (iVar6 = cfg_getNextObjInSubTree(&local_3584,&local_35a0,0x30,0), iVar6 == 0) {
+    iVar18 = iVar18 + 1;
+  }
+  local_1558 = 0x122;
+  local_1554 = 0;
+  local_1550 = 0;
+  local_154c = 0;
+  local_1548 = 0;
+  local_1544 = 0;
+  local_1540 = 0;
+  local_153c = 0;
+  local_35a0 = 0;
+  local_359c = 0;
+  local_3598 = 0;
+  local_3594 = 0;
+  local_3590 = 0;
+  local_358c = 0;
+  local_3588 = 0;
+  iVar6 = 0;
+  while (iVar7 = cfg_getNextObjInSubTree(&local_1558,&local_35a0,0x1522,0), iVar7 == 0) {
+    iVar6 = iVar6 + 1;
+  }
+  local_2854[0] = '\0';
+  local_2854[1] = '\0';
+  local_2854[2] = '\x01';
+  local_2854[3] = '@';
+  local_2854[4] = '\0';
+  local_2854[5] = '\0';
+  local_2854[6] = '\0';
+  local_2854[7] = '\0';
+  local_2854[8] = '\0';
+  local_2854[9] = '\0';
+  local_2854[10] = '\0';
+  local_2854[0xb] = '\0';
+  local_2854[0xc] = '\0';
+  local_2854[0xd] = '\0';
+  local_2854[0xe] = '\0';
+  local_2854[0xf] = '\0';
+  local_2854[0x10] = '\0';
+  local_2854[0x11] = '\0';
+  local_2854[0x12] = '\0';
+  local_2854[0x13] = '\0';
+  local_2854[0x14] = '\0';
+  local_2854[0x15] = '\0';
+  local_2854[0x16] = '\0';
+  local_2854[0x17] = '\0';
+  local_2854[0x18] = '\0';
+  local_2854[0x19] = '\0';
+  local_2854[0x1a] = '\0';
+  local_2854[0x1b] = '\0';
+  local_2854[0x1c] = '\0';
+  local_2854[0x1d] = '\0';
+  local_2854[0x1e] = '\0';
+  local_2854[0x1f] = '\0';
+  local_35a0 = 0;
+  local_359c = 0;
+  local_3598 = 0;
+  local_3594 = 0;
+  local_3590 = 0;
+  local_358c = 0;
+  local_3588 = 0;
+  iVar7 = 0;
+  while (iVar8 = cfg_getNextObjInSubTree(local_2854,&local_35a0,0x12fa,0), iVar8 == 0) {
+    iVar7 = iVar7 + 1;
+  }
+  iVar8 = iVar18;
+  iVar19 = iVar6;
+  iVar20 = iVar7;
+  log_log(7,"status_info_WANConnectionDevice",0x172,0x5fbc,iVar18,iVar6,iVar7);
+  if (iVar18 == 0) {
+    log_log(3,"status_info_WANConnectionDevice",0x176,0x5fe8,iVar8,iVar19,iVar20);
+    uVar12 = 0xffffffff;
+  }
+  else {
+    iVar17 = 1;
+    do {
+      while( true ) {
+        if (iVar6 == 0) {
+          log_log(3,"status_info_WANConnectionDevice",0x17f,0x5fe8,iVar8,iVar19,iVar20);
+        }
+        else {
+          local_30 = 1;
+          pcVar16 = local_3054;
+          do {
+            do {
+              memset(acStack_3554,0,0x100);
+              iVar8 = local_30;
+              sprintf(acStack_3554,pcVar16,1,iVar17);
+              pcVar16 = pcVar16 + 0x100;
+              FUN_00010c78(acStack_3554);
+            } while (local_2854 != pcVar16);
+            local_30 = local_30 + 1;
+            pcVar16 = local_3054;
+          } while (local_30 <= iVar6);
+        }
+        if (iVar7 == 0) break;
+        local_30 = 1;
+        do {
+          pcVar16 = local_3454;
+          do {
+            memset(acStack_3554,0,0x100);
+            iVar8 = local_30;
+            sprintf(acStack_3554,pcVar16,1,iVar17);
+            pcVar16 = pcVar16 + 0x100;
+            FUN_00010c78(acStack_3554);
+          } while (local_3054 != pcVar16);
+          local_30 = local_30 + 1;
+        } while (local_30 <= iVar7);
+        iVar17 = iVar17 + 1;
+        if (iVar18 < iVar17) {
+          return 0;
+        }
+      }
+      iVar17 = iVar17 + 1;
+      log_log(3,"status_info_WANConnectionDevice",0x191,0x5ff8,iVar8,iVar19,iVar20);
+    } while (iVar17 <= iVar18);
+    uVar12 = 0;
+  }
+  return uVar12;
+}
+
+
+
+/* ===== FUN_00011918 @ 00011918 ==== */
+
+undefined4 FUN_00011918(void)
+
+{
+  undefined1 uVar1;
+  char cVar2;
+  undefined2 uVar3;
+  undefined4 *puVar4;
+  undefined4 *puVar5;
+  char *pcVar6;
+  int iVar7;
+  int iVar8;
+  char *pcVar9;
+  undefined4 *puVar10;
+  undefined4 *puVar11;
+  char *pcVar12;
+  char *pcVar13;
+  undefined4 uVar14;
+  undefined4 uVar15;
+  undefined4 uVar16;
+  undefined4 uVar17;
+  int iVar18;
+  int iVar19;
+  int iVar20;
+  int iVar21;
+  undefined4 local_5048;
+  undefined4 local_5044;
+  undefined4 local_5040;
+  undefined4 local_503c;
+  undefined4 local_5038;
+  undefined4 local_5034;
+  undefined4 local_5030;
+  undefined4 local_502c;
+  undefined4 local_5028;
+  undefined4 local_5024;
+  undefined4 local_5020;
+  undefined4 local_501c;
+  undefined4 local_5018;
+  undefined4 local_5014;
+  undefined4 local_5010;
+  char acStack_4f88 [256];
+  char local_4e88 [4];
+  undefined4 local_4e84 [6];
+  undefined2 uStack_4e6c;
+  char acStack_4e6a [49];
+  undefined1 auStack_4e39 [177];
+  undefined4 local_4d88;
+  undefined4 local_4d84;
+  undefined4 local_4d80;
+  undefined4 local_4d7c;
+  undefined4 local_4d78;
+  undefined4 local_4d74;
+  undefined4 local_4d70;
+  undefined4 local_4d6c;
+  char local_4c84 [4];
+  undefined4 local_4c80 [5];
+  undefined2 uStack_4c6c;
+  char acStack_4c6a [65];
+  undefined1 auStack_4c29 [165];
+  char local_4b84 [4];
+  undefined4 local_4b80 [22];
+  undefined1 auStack_4b28 [164];
+  char local_4a84 [4];
+  undefined4 local_4a80 [5];
+  char acStack_4a6c [81];
+  undefined1 auStack_4a1b [151];
+  undefined4 local_4984;
+  undefined4 local_4980;
+  undefined4 local_497c;
+  undefined4 local_4978;
+  undefined4 local_4974;
+  undefined4 local_4970;
+  undefined4 local_496c;
+  undefined4 local_4968;
+  char local_440c [4];
+  undefined4 local_4408 [6];
+  char local_43f0 [81];
+  undefined1 auStack_439f [147];
+  undefined4 local_430c [27];
+  undefined1 auStack_42a0 [148];
+  char local_420c [4];
+  undefined4 local_4208 [4];
+  undefined2 auStack_41f8 [49];
+  undefined1 auStack_4196 [138];
+  char local_410c [4];
+  undefined4 local_4108 [6];
+  char acStack_40f0 [81];
+  undefined1 auStack_409f [147];
+  char local_400c [4];
+  undefined4 local_4008 [6];
+  undefined2 uStack_3ff0;
+  char acStack_3fee [81];
+  undefined1 auStack_3f9d [145];
+  char local_3f0c [4];
+  undefined4 local_3f08 [22];
+  undefined1 auStack_3eb0 [164];
+  char local_3e0c [4];
+  undefined4 local_3e08 [3];
+  char local_3dfc [49];
+  undefined1 auStack_3dcb [191];
+  undefined4 local_3d0c [21];
+  undefined1 auStack_3cb8 [172];
+  undefined4 local_3c0c [6];
+  undefined2 local_3bf4 [25];
+  undefined1 auStack_3bc2 [182];
+  undefined4 local_3b0c [5];
+  undefined2 local_3af8;
+  undefined1 local_3af6 [49];
+  undefined1 auStack_3ac5 [185];
+  undefined4 local_3a0c [7];
+  undefined2 local_39f0;
+  undefined1 local_39ee [49];
+  undefined1 auStack_39bd [177];
+  undefined4 local_390c [21];
+  undefined1 auStack_38b8 [172];
+  undefined4 local_380c [7];
+  undefined2 local_37f0;
+  undefined1 local_37ee [49];
+  undefined1 auStack_37bd [177];
+  undefined4 local_370c [7];
+  undefined2 local_36f0;
+  undefined1 local_36ee [49];
+  undefined1 auStack_36bd [177];
+  undefined4 local_360c [7];
+  undefined1 local_35f0 [49];
+  undefined1 auStack_35bf [179];
+  undefined4 local_350c [4];
+  undefined1 local_34fc [65];
+  undefined1 auStack_34bb [175];
+  undefined4 local_340c [7];
+  undefined2 local_33f0 [25];
+  undefined1 auStack_33be [178];
+  undefined4 local_330c [4];
+  undefined2 local_32fc;
+  undefined1 local_32fa [49];
+  undefined1 auStack_32c9 [189];
+  undefined4 local_320c [4];
+  undefined2 local_31fc;
+  undefined1 local_31fa [49];
+  undefined1 auStack_31c9 [189];
+  undefined4 local_310c;
+  undefined4 local_3108;
+  undefined4 local_3104;
+  undefined4 local_3100;
+  undefined4 local_30fc;
+  undefined4 local_30f8;
+  undefined4 local_30f4;
+  undefined4 local_30f0;
+  int local_30;
+  int local_2c;
+  
+  memset(local_3e0c,0,0xd00);
+  puVar4 = (undefined4 *)0x71a0;
+  pcVar9 = local_3e0c;
+  do {
+    uVar17 = *puVar4;
+    uVar16 = puVar4[1];
+    uVar15 = puVar4[2];
+    uVar14 = puVar4[3];
+    puVar4 = puVar4 + 4;
+    *(undefined4 *)pcVar9 = uVar17;
+    *(undefined4 *)(pcVar9 + 4) = uVar16;
+    *(undefined4 *)(pcVar9 + 8) = uVar15;
+    *(undefined4 *)(pcVar9 + 0xc) = uVar14;
+    pcVar9 = pcVar9 + 0x10;
+  } while (puVar4 != (undefined4 *)&uRam000071e0);
+  *pcVar9 = uRam000071e0;
+  memset(auStack_3dcb,0,0xbf);
+  puVar10 = local_3d0c;
+  puVar4 = (undefined4 *)0x72a0;
+  do {
+    uVar17 = *puVar4;
+    uVar16 = puVar4[1];
+    uVar15 = puVar4[2];
+    uVar14 = puVar4[3];
+    puVar4 = puVar4 + 4;
+    *puVar10 = uVar17;
+    puVar10[1] = uVar16;
+    puVar10[2] = uVar15;
+    puVar10[3] = uVar14;
+    puVar10 = puVar10 + 4;
+  } while (puVar4 != &uRam000072f0);
+  *puVar10 = uRam000072f0;
+  memset(auStack_3cb8,0,0xac);
+  puVar4 = (undefined4 *)0x73a0;
+  puVar10 = local_3c0c;
+  do {
+    puVar11 = puVar10;
+    puVar5 = puVar4;
+    uVar16 = puVar5[1];
+    uVar15 = puVar5[2];
+    uVar14 = puVar5[3];
+    *puVar11 = *puVar5;
+    puVar11[1] = uVar16;
+    puVar11[2] = uVar15;
+    puVar11[3] = uVar14;
+    puVar4 = puVar5 + 4;
+    puVar10 = puVar11 + 4;
+  } while (puVar5 + 4 != &uRam000073e0);
+  uVar14 = puVar5[5];
+  uVar3 = *(undefined2 *)(puVar5 + 6);
+  puVar11[4] = uRam000073e0;
+  puVar11[5] = uVar14;
+  *(undefined2 *)(puVar11 + 6) = uVar3;
+  memset(auStack_3bc2,0,0xb6);
+  puVar4 = (undefined4 *)0x74a0;
+  puVar10 = local_3b0c;
+  do {
+    puVar11 = puVar10;
+    puVar5 = puVar4;
+    uVar16 = puVar5[1];
+    uVar15 = puVar5[2];
+    uVar14 = puVar5[3];
+    *puVar11 = *puVar5;
+    puVar11[1] = uVar16;
+    puVar11[2] = uVar15;
+    puVar11[3] = uVar14;
+    puVar4 = puVar5 + 4;
+    puVar10 = puVar11 + 4;
+  } while (puVar5 + 4 != &uRam000074e0);
+  uVar3 = *(undefined2 *)(puVar5 + 5);
+  uVar1 = *(undefined1 *)((int)puVar5 + 0x16);
+  puVar11[4] = uRam000074e0;
+  *(undefined2 *)(puVar11 + 5) = uVar3;
+  *(undefined1 *)((int)puVar11 + 0x16) = uVar1;
+  memset(auStack_3ac5,0,0xb9);
+  puVar4 = (undefined4 *)0x75a0;
+  puVar10 = local_3a0c;
+  do {
+    puVar11 = puVar10;
+    puVar5 = puVar4;
+    uVar16 = puVar5[1];
+    uVar15 = puVar5[2];
+    uVar14 = puVar5[3];
+    *puVar11 = *puVar5;
+    puVar11[1] = uVar16;
+    puVar11[2] = uVar15;
+    puVar11[3] = uVar14;
+    puVar4 = puVar5 + 4;
+    puVar10 = puVar11 + 4;
+  } while (puVar5 + 4 != &uRam000075e0);
+  uVar14 = puVar5[6];
+  uVar3 = *(undefined2 *)(puVar5 + 7);
+  uVar1 = *(undefined1 *)((int)puVar5 + 0x1e);
+  puVar11[5] = puVar5[5];
+  puVar11[6] = uVar14;
+  *(undefined2 *)(puVar11 + 7) = uVar3;
+  puVar11[4] = uRam000075e0;
+  *(undefined1 *)((int)puVar11 + 0x1e) = uVar1;
+  memset(auStack_39bd,0,0xb1);
+  puVar10 = local_390c;
+  puVar4 = (undefined4 *)0x76a0;
+  do {
+    uVar17 = *puVar4;
+    uVar16 = puVar4[1];
+    uVar15 = puVar4[2];
+    uVar14 = puVar4[3];
+    puVar4 = puVar4 + 4;
+    *puVar10 = uVar17;
+    puVar10[1] = uVar16;
+    puVar10[2] = uVar15;
+    puVar10[3] = uVar14;
+    puVar10 = puVar10 + 4;
+  } while (puVar4 != &uRam000076f0);
+  *puVar10 = uRam000076f0;
+  memset(auStack_38b8,0,0xac);
+  puVar4 = (undefined4 *)0x77a0;
+  puVar10 = local_380c;
+  do {
+    puVar11 = puVar10;
+    puVar5 = puVar4;
+    uVar16 = puVar5[1];
+    uVar15 = puVar5[2];
+    uVar14 = puVar5[3];
+    *puVar11 = *puVar5;
+    puVar11[1] = uVar16;
+    puVar11[2] = uVar15;
+    puVar11[3] = uVar14;
+    puVar4 = puVar5 + 4;
+    puVar10 = puVar11 + 4;
+  } while (puVar5 + 4 != &uRam000077e0);
+  uVar14 = puVar5[6];
+  uVar3 = *(undefined2 *)(puVar5 + 7);
+  uVar1 = *(undefined1 *)((int)puVar5 + 0x1e);
+  puVar11[5] = puVar5[5];
+  puVar11[6] = uVar14;
+  *(undefined2 *)(puVar11 + 7) = uVar3;
+  puVar11[4] = uRam000077e0;
+  *(undefined1 *)((int)puVar11 + 0x1e) = uVar1;
+  memset(auStack_37bd,0,0xb1);
+  puVar4 = (undefined4 *)0x78a0;
+  puVar10 = local_370c;
+  do {
+    puVar11 = puVar10;
+    puVar5 = puVar4;
+    uVar16 = puVar5[1];
+    uVar15 = puVar5[2];
+    uVar14 = puVar5[3];
+    *puVar11 = *puVar5;
+    puVar11[1] = uVar16;
+    puVar11[2] = uVar15;
+    puVar11[3] = uVar14;
+    puVar4 = puVar5 + 4;
+    puVar10 = puVar11 + 4;
+  } while (puVar5 + 4 != &uRam000078e0);
+  uVar14 = puVar5[6];
+  uVar3 = *(undefined2 *)(puVar5 + 7);
+  uVar1 = *(undefined1 *)((int)puVar5 + 0x1e);
+  puVar11[5] = puVar5[5];
+  puVar11[6] = uVar14;
+  *(undefined2 *)(puVar11 + 7) = uVar3;
+  puVar11[4] = uRam000078e0;
+  *(undefined1 *)((int)puVar11 + 0x1e) = uVar1;
+  memset(auStack_36bd,0,0xb1);
+  puVar4 = (undefined4 *)0x79a0;
+  puVar10 = local_360c;
+  do {
+    puVar11 = puVar10;
+    puVar5 = puVar4;
+    uVar16 = puVar5[1];
+    uVar15 = puVar5[2];
+    uVar14 = puVar5[3];
+    *puVar11 = *puVar5;
+    puVar11[1] = uVar16;
+    puVar11[2] = uVar15;
+    puVar11[3] = uVar14;
+    puVar4 = puVar5 + 4;
+    puVar10 = puVar11 + 4;
+  } while (puVar5 + 4 != &uRam000079e0);
+  uVar15 = puVar5[5];
+  uVar14 = puVar5[6];
+  uVar1 = *(undefined1 *)(puVar5 + 7);
+  puVar11[4] = uRam000079e0;
+  puVar11[5] = uVar15;
+  puVar11[6] = uVar14;
+  *(undefined1 *)(puVar11 + 7) = uVar1;
+  memset(auStack_35bf,0,0xb3);
+  puVar10 = local_350c;
+  puVar4 = (undefined4 *)0x7aa0;
+  do {
+    uVar17 = *puVar4;
+    uVar16 = puVar4[1];
+    uVar15 = puVar4[2];
+    uVar14 = puVar4[3];
+    puVar4 = puVar4 + 4;
+    *puVar10 = uVar17;
+    puVar10[1] = uVar16;
+    puVar10[2] = uVar15;
+    puVar10[3] = uVar14;
+    puVar10 = puVar10 + 4;
+  } while (puVar4 != (undefined4 *)&uRam00007af0);
+  *(undefined1 *)puVar10 = uRam00007af0;
+  memset(auStack_34bb,0,0xaf);
+  puVar4 = (undefined4 *)0x7ba0;
+  puVar10 = local_340c;
+  do {
+    puVar11 = puVar10;
+    puVar5 = puVar4;
+    uVar16 = puVar5[1];
+    uVar15 = puVar5[2];
+    uVar14 = puVar5[3];
+    *puVar11 = *puVar5;
+    puVar11[1] = uVar16;
+    puVar11[2] = uVar15;
+    puVar11[3] = uVar14;
+    puVar4 = puVar5 + 4;
+    puVar10 = puVar11 + 4;
+  } while (puVar5 + 4 != &uRam00007be0);
+  uVar15 = puVar5[5];
+  uVar14 = puVar5[6];
+  uVar3 = *(undefined2 *)(puVar5 + 7);
+  puVar11[4] = uRam00007be0;
+  puVar11[5] = uVar15;
+  puVar11[6] = uVar14;
+  *(undefined2 *)(puVar11 + 7) = uVar3;
+  memset(auStack_33be,0,0xb2);
+  puVar4 = (undefined4 *)0x7ca0;
+  puVar10 = local_330c;
+  do {
+    puVar11 = puVar10;
+    puVar5 = puVar4;
+    uVar16 = puVar5[1];
+    uVar15 = puVar5[2];
+    uVar14 = puVar5[3];
+    *puVar11 = *puVar5;
+    puVar11[1] = uVar16;
+    puVar11[2] = uVar15;
+    puVar11[3] = uVar14;
+    puVar4 = puVar5 + 4;
+    puVar10 = puVar11 + 4;
+  } while (puVar5 + 4 != (undefined4 *)&uRam00007ce0);
+  uVar1 = *(undefined1 *)((int)puVar5 + 0x12);
+  *(undefined2 *)(puVar11 + 4) = uRam00007ce0;
+  *(undefined1 *)((int)puVar11 + 0x12) = uVar1;
+  memset(auStack_32c9,0,0xbd);
+  puVar4 = local_320c;
+  puVar10 = (undefined4 *)0x7da0;
+  do {
+    puVar11 = puVar10;
+    puVar5 = puVar4;
+    uVar16 = puVar11[1];
+    uVar15 = puVar11[2];
+    uVar14 = puVar11[3];
+    *puVar5 = *puVar11;
+    puVar5[1] = uVar16;
+    puVar5[2] = uVar15;
+    puVar5[3] = uVar14;
+    puVar4 = puVar5 + 4;
+    puVar10 = puVar11 + 4;
+  } while (puVar11 + 4 != (undefined4 *)&uRam00007de0);
+  *(undefined1 *)((int)puVar5 + 0x12) = *(undefined1 *)((int)puVar11 + 0x12);
+  *(undefined2 *)(puVar5 + 4) = uRam00007de0;
+  memset(auStack_31c9,0,0xbd);
+  memset(local_440c,0,0x600);
+  puVar4 = (undefined4 *)0x7ea0;
+  pcVar9 = local_440c;
+  do {
+    pcVar12 = pcVar9;
+    puVar10 = puVar4;
+    uVar16 = puVar10[1];
+    uVar15 = puVar10[2];
+    uVar14 = puVar10[3];
+    *(undefined4 *)pcVar12 = *puVar10;
+    *(undefined4 *)(pcVar12 + 4) = uVar16;
+    *(undefined4 *)(pcVar12 + 8) = uVar15;
+    *(undefined4 *)(pcVar12 + 0xc) = uVar14;
+    puVar4 = puVar10 + 4;
+    pcVar9 = pcVar12 + 0x10;
+  } while (puVar10 + 4 != &uRam00007f00);
+  uVar15 = puVar10[5];
+  uVar14 = puVar10[6];
+  cVar2 = *(char *)(puVar10 + 7);
+  *(undefined4 *)(pcVar12 + 0x10) = uRam00007f00;
+  *(undefined4 *)(pcVar12 + 0x14) = uVar15;
+  *(undefined4 *)(pcVar12 + 0x18) = uVar14;
+  pcVar12[0x1c] = cVar2;
+  memset(auStack_439f,0,0x93);
+  puVar4 = (undefined4 *)0x7fa0;
+  puVar10 = local_430c;
+  do {
+    puVar11 = puVar10;
+    puVar5 = puVar4;
+    uVar16 = puVar5[1];
+    uVar15 = puVar5[2];
+    uVar14 = puVar5[3];
+    *puVar11 = *puVar5;
+    puVar11[1] = uVar16;
+    puVar11[2] = uVar15;
+    puVar11[3] = uVar14;
+    puVar4 = puVar5 + 4;
+    puVar10 = puVar11 + 4;
+  } while (puVar5 + 4 != &uRam00008000);
+  uVar15 = puVar5[5];
+  uVar14 = puVar5[6];
+  puVar11[4] = uRam00008000;
+  puVar11[5] = uVar15;
+  puVar11[6] = uVar14;
+  memset(auStack_42a0,0,0x94);
+  pcVar9 = 
+  "InternetGatewayDevice.LANDevice.{%d}.WLANConfiguration.{%d}.AssociatedDevice.{%d}.AssociatedDeviceAuthenticationState"
+  ;
+  pcVar12 = local_420c;
+  do {
+    pcVar13 = pcVar12;
+    pcVar6 = pcVar9;
+    uVar16 = *(undefined4 *)(pcVar6 + 4);
+    uVar15 = *(undefined4 *)(pcVar6 + 8);
+    uVar14 = *(undefined4 *)(pcVar6 + 0xc);
+    *(undefined4 *)pcVar13 = *(undefined4 *)pcVar6;
+    *(undefined4 *)(pcVar13 + 4) = uVar16;
+    *(undefined4 *)(pcVar13 + 8) = uVar15;
+    *(undefined4 *)(pcVar13 + 0xc) = uVar14;
+    pcVar12 = pcVar13 + 0x10;
+    pcVar9 = pcVar6 + 0x10;
+  } while (pcVar6 + 0x10 != "State");
+  uVar3 = *(undefined2 *)(pcVar6 + 0x14);
+  pcVar12[0] = 'S';
+  pcVar12[1] = 't';
+  pcVar12[2] = 'a';
+  pcVar12[3] = 't';
+  *(undefined2 *)(pcVar13 + 0x14) = uVar3;
+  memset(auStack_4196,0,0x8a);
+  pcVar9 = 
+  "InternetGatewayDevice.LANDevice.{%d}.WLANConfiguration.{%d}.AssociatedDevice.{%d}.LastRequestedUnicastCipher"
+  ;
+  pcVar12 = local_410c;
+  do {
+    pcVar13 = pcVar12;
+    pcVar6 = pcVar9;
+    uVar16 = *(undefined4 *)(pcVar6 + 4);
+    uVar15 = *(undefined4 *)(pcVar6 + 8);
+    uVar14 = *(undefined4 *)(pcVar6 + 0xc);
+    *(undefined4 *)pcVar13 = *(undefined4 *)pcVar6;
+    *(undefined4 *)(pcVar13 + 4) = uVar16;
+    *(undefined4 *)(pcVar13 + 8) = uVar15;
+    *(undefined4 *)(pcVar13 + 0xc) = uVar14;
+    pcVar12 = pcVar13 + 0x10;
+    pcVar9 = pcVar6 + 0x10;
+  } while (pcVar6 + 0x10 != "nicastCipher");
+  uVar15 = *(undefined4 *)(pcVar6 + 0x14);
+  uVar14 = *(undefined4 *)(pcVar6 + 0x18);
+  cVar2 = pcVar6[0x1c];
+  pcVar12[0] = 'n';
+  pcVar12[1] = 'i';
+  pcVar12[2] = 'c';
+  pcVar12[3] = 'a';
+  *(undefined4 *)(pcVar13 + 0x14) = uVar15;
+  *(undefined4 *)(pcVar13 + 0x18) = uVar14;
+  pcVar13[0x1c] = cVar2;
+  memset(auStack_409f,0,0x93);
+  pcVar9 = 
+  "InternetGatewayDevice.LANDevice.{%d}.WLANConfiguration.{%d}.AssociatedDevice.{%d}.LastRequestedMulticastCipher"
+  ;
+  pcVar12 = local_400c;
+  do {
+    pcVar13 = pcVar12;
+    pcVar6 = pcVar9;
+    uVar16 = *(undefined4 *)(pcVar6 + 4);
+    uVar15 = *(undefined4 *)(pcVar6 + 8);
+    uVar14 = *(undefined4 *)(pcVar6 + 0xc);
+    *(undefined4 *)pcVar13 = *(undefined4 *)pcVar6;
+    *(undefined4 *)(pcVar13 + 4) = uVar16;
+    *(undefined4 *)(pcVar13 + 8) = uVar15;
+    *(undefined4 *)(pcVar13 + 0xc) = uVar14;
+    pcVar12 = pcVar13 + 0x10;
+    pcVar9 = pcVar6 + 0x10;
+  } while (pcVar6 + 0x10 != "ulticastCipher");
+  uVar14 = *(undefined4 *)(pcVar6 + 0x18);
+  uVar3 = *(undefined2 *)(pcVar6 + 0x1c);
+  cVar2 = pcVar6[0x1e];
+  *(undefined4 *)(pcVar13 + 0x14) = *(undefined4 *)(pcVar6 + 0x14);
+  *(undefined4 *)(pcVar13 + 0x18) = uVar14;
+  *(undefined2 *)(pcVar13 + 0x1c) = uVar3;
+  pcVar12[0] = 'u';
+  pcVar12[1] = 'l';
+  pcVar12[2] = 't';
+  pcVar12[3] = 'i';
+  pcVar13[0x1e] = cVar2;
+  memset(auStack_3f9d,0,0x91);
+  pcVar9 = 
+  "InternetGatewayDevice.LANDevice.{%d}.WLANConfiguration.{%d}.AssociatedDevice.{%d}.LastPMKId";
+  pcVar12 = local_3f0c;
+  do {
+    pcVar13 = pcVar12;
+    pcVar6 = pcVar9;
+    uVar16 = *(undefined4 *)(pcVar6 + 4);
+    uVar15 = *(undefined4 *)(pcVar6 + 8);
+    uVar14 = *(undefined4 *)(pcVar6 + 0xc);
+    *(undefined4 *)pcVar13 = *(undefined4 *)pcVar6;
+    *(undefined4 *)(pcVar13 + 4) = uVar16;
+    *(undefined4 *)(pcVar13 + 8) = uVar15;
+    *(undefined4 *)(pcVar13 + 0xc) = uVar14;
+    pcVar12 = pcVar13 + 0x10;
+    pcVar9 = pcVar6 + 0x10;
+  } while (pcVar6 + 0x10 != "}.LastPMKId");
+  uVar15 = *(undefined4 *)(pcVar6 + 0x14);
+  uVar14 = *(undefined4 *)(pcVar6 + 0x18);
+  pcVar12[0] = '}';
+  pcVar12[1] = '.';
+  pcVar12[2] = 'L';
+  pcVar12[3] = 'a';
+  *(undefined4 *)(pcVar13 + 0x14) = uVar15;
+  *(undefined4 *)(pcVar13 + 0x18) = uVar14;
+  memset(auStack_3eb0,0,0xa4);
+  pcVar9 = local_4e88;
+  pcVar12 = "InternetGatewayDevice.LANDevice.{%d}.WLANConfiguration.{%d}.WEPKey.{%d}.WEPKey";
+  do {
+    pcVar13 = pcVar12;
+    pcVar6 = pcVar9;
+    uVar16 = *(undefined4 *)(pcVar13 + 4);
+    uVar15 = *(undefined4 *)(pcVar13 + 8);
+    uVar14 = *(undefined4 *)(pcVar13 + 0xc);
+    *(undefined4 *)pcVar6 = *(undefined4 *)pcVar13;
+    *(undefined4 *)(pcVar6 + 4) = uVar16;
+    *(undefined4 *)(pcVar6 + 8) = uVar15;
+    *(undefined4 *)(pcVar6 + 0xc) = uVar14;
+    pcVar9 = pcVar6 + 0x10;
+    pcVar12 = pcVar13 + 0x10;
+  } while (pcVar13 + 0x10 != "ey.{%d}.WEPKey");
+  uVar15 = *(undefined4 *)(pcVar13 + 0x14);
+  uVar14 = *(undefined4 *)(pcVar13 + 0x18);
+  uVar3 = *(undefined2 *)(pcVar13 + 0x1c);
+  pcVar6[0x1e] = pcVar13[0x1e];
+  pcVar9[0] = 'e';
+  pcVar9[1] = 'y';
+  pcVar9[2] = '.';
+  pcVar9[3] = '{';
+  *(undefined4 *)(pcVar6 + 0x14) = uVar15;
+  *(undefined4 *)(pcVar6 + 0x18) = uVar14;
+  *(undefined2 *)(pcVar6 + 0x1c) = uVar3;
+  memset(auStack_4e39,0,0xb1);
+  memset(local_4c84,0,0x300);
+  pcVar9 = 
+  "InternetGatewayDevice.LANDevice.{%d}.WLANConfiguration.{%d}.PreSharedKey.{%d}.PreSharedKey";
+  pcVar12 = local_4c84;
+  do {
+    pcVar13 = pcVar12;
+    pcVar6 = pcVar9;
+    uVar16 = *(undefined4 *)(pcVar6 + 4);
+    uVar15 = *(undefined4 *)(pcVar6 + 8);
+    uVar14 = *(undefined4 *)(pcVar6 + 0xc);
+    *(undefined4 *)pcVar13 = *(undefined4 *)pcVar6;
+    *(undefined4 *)(pcVar13 + 4) = uVar16;
+    *(undefined4 *)(pcVar13 + 8) = uVar15;
+    *(undefined4 *)(pcVar13 + 0xc) = uVar14;
+    pcVar12 = pcVar13 + 0x10;
+    pcVar9 = pcVar6 + 0x10;
+  } while (pcVar6 + 0x10 != "eSharedKey");
+  uVar14 = *(undefined4 *)(pcVar6 + 0x14);
+  uVar3 = *(undefined2 *)(pcVar6 + 0x18);
+  cVar2 = pcVar6[0x1a];
+  pcVar12[0] = 'e';
+  pcVar12[1] = 'S';
+  pcVar12[2] = 'h';
+  pcVar12[3] = 'a';
+  *(undefined4 *)(pcVar13 + 0x14) = uVar14;
+  *(undefined2 *)(pcVar13 + 0x18) = uVar3;
+  pcVar13[0x1a] = cVar2;
+  memset(auStack_4c29,0,0xa5);
+  pcVar9 = 
+  "InternetGatewayDevice.LANDevice.{%d}.WLANConfiguration.{%d}.PreSharedKey.{%d}.KeyPassphrase";
+  pcVar12 = local_4b84;
+  do {
+    pcVar13 = pcVar12;
+    pcVar6 = pcVar9;
+    uVar16 = *(undefined4 *)(pcVar6 + 4);
+    uVar15 = *(undefined4 *)(pcVar6 + 8);
+    uVar14 = *(undefined4 *)(pcVar6 + 0xc);
+    *(undefined4 *)pcVar13 = *(undefined4 *)pcVar6;
+    *(undefined4 *)(pcVar13 + 4) = uVar16;
+    *(undefined4 *)(pcVar13 + 8) = uVar15;
+    *(undefined4 *)(pcVar13 + 0xc) = uVar14;
+    pcVar12 = pcVar13 + 0x10;
+    pcVar9 = pcVar6 + 0x10;
+  } while (pcVar6 + 0x10 != "yPassphrase");
+  uVar15 = *(undefined4 *)(pcVar6 + 0x14);
+  uVar14 = *(undefined4 *)(pcVar6 + 0x18);
+  pcVar12[0] = 'y';
+  pcVar12[1] = 'P';
+  pcVar12[2] = 'a';
+  pcVar12[3] = 's';
+  *(undefined4 *)(pcVar13 + 0x14) = uVar15;
+  *(undefined4 *)(pcVar13 + 0x18) = uVar14;
+  memset(auStack_4b28,0,0xa4);
+  pcVar9 = local_4a84;
+  pcVar12 = 
+  "InternetGatewayDevice.LANDevice.{%d}.WLANConfiguration.{%d}.PreSharedKey.{%d}.AssociatedDeviceMACAddress"
+  ;
+  do {
+    pcVar13 = pcVar12;
+    pcVar6 = pcVar9;
+    uVar16 = *(undefined4 *)(pcVar13 + 4);
+    uVar15 = *(undefined4 *)(pcVar13 + 8);
+    uVar14 = *(undefined4 *)(pcVar13 + 0xc);
+    *(undefined4 *)pcVar6 = *(undefined4 *)pcVar13;
+    *(undefined4 *)(pcVar6 + 4) = uVar16;
+    *(undefined4 *)(pcVar6 + 8) = uVar15;
+    *(undefined4 *)(pcVar6 + 0xc) = uVar14;
+    pcVar9 = pcVar6 + 0x10;
+    pcVar12 = pcVar13 + 0x10;
+  } while (pcVar13 + 0x10 != "CAddress");
+  uVar14 = *(undefined4 *)(pcVar13 + 0x14);
+  cVar2 = pcVar13[0x18];
+  pcVar9[0] = 'C';
+  pcVar9[1] = 'A';
+  pcVar9[2] = 'd';
+  pcVar9[3] = 'd';
+  *(undefined4 *)(pcVar6 + 0x14) = uVar14;
+  pcVar6[0x18] = cVar2;
+  memset(auStack_4a1b,0,0x97);
+  local_5048 = 0;
+  local_5044 = 0;
+  local_5040 = 0;
+  local_503c = 0;
+  local_5038 = 0;
+  local_5034 = 0;
+  local_5030 = 0;
+  memset(acStack_4f88,0,0x100);
+  local_310c = 0xeb;
+  local_3108 = 0;
+  local_3104 = 0;
+  local_3100 = 0;
+  local_30fc = 0;
+  local_30f8 = 0;
+  local_30f4 = 0;
+  local_30f0 = 0;
+  local_5048 = 0;
+  local_5044 = 0;
+  local_5040 = 0;
+  local_503c = 0;
+  local_5038 = 0;
+  local_5034 = 0;
+  local_5030 = 0;
+  iVar20 = 0;
+  while (iVar7 = cfg_getNextObjInSubTree(&local_310c,&local_5048,0x30da,0), iVar7 == 0) {
+    iVar20 = iVar20 + 1;
+  }
+  local_4984 = 0xec;
+  local_4980 = 0;
+  local_497c = 0;
+  local_4978 = 0;
+  local_4974 = 0;
+  local_4970 = 0;
+  local_496c = 0;
+  local_4968 = 0;
+  local_5048 = 0;
+  local_5044 = 0;
+  local_5040 = 0;
+  local_503c = 0;
+  local_5038 = 0;
+  local_5034 = 0;
+  local_5030 = 0;
+  local_30 = 0;
+  while (iVar7 = cfg_getNextObjInSubTree(&local_4984,&local_5048,0x576,0), iVar7 == 0) {
+    local_30 = local_30 + 1;
+  }
+  local_502c = 0xee;
+  local_5028 = 0;
+  local_5024 = 0;
+  local_5020 = 0;
+  local_501c = 0;
+  local_5018 = 0;
+  local_5014 = 0;
+  local_5010 = 0;
+  local_5048 = 0;
+  local_5044 = 0;
+  local_5040 = 0;
+  local_503c = 0;
+  local_5038 = 0;
+  local_5034 = 0;
+  local_5030 = 0;
+  local_2c = 0;
+  while (iVar7 = cfg_getNextObjInSubTree(&local_502c,&local_5048,0xa1,0), iVar7 == 0) {
+    local_2c = local_2c + 1;
+  }
+  local_4d88 = 0xef;
+  local_4d84 = 0;
+  local_4d80 = 0;
+  local_4d7c = 0;
+  local_4d78 = 0;
+  local_4d74 = 0;
+  local_4d70 = 0;
+  local_4d6c = 0;
+  local_5048 = 0;
+  local_5044 = 0;
+  local_5040 = 0;
+  local_503c = 0;
+  local_5038 = 0;
+  local_5034 = 0;
+  local_5030 = 0;
+  iVar7 = 0;
+  while (iVar8 = cfg_getNextObjInSubTree(&local_4d88,&local_5048,0x104,0), iVar8 == 0) {
+    iVar7 = iVar7 + 1;
+  }
+  iVar8 = iVar20;
+  iVar19 = local_30;
+  iVar18 = local_2c;
+  iVar21 = iVar7;
+  log_log(7,"status_info_WLANConfiguration",0x2a6,0x6008,iVar20,local_30,local_2c,iVar7);
+  if (iVar20 == 0) {
+    log_log(3,"status_info_WLANConfiguration",0x2ab,0x6058,iVar8,iVar19,iVar18,iVar21);
+    uVar14 = 0xffffffff;
+  }
+  else {
+    iVar8 = 1;
+    pcVar9 = local_3e0c;
+    do {
+      do {
+        memset(acStack_4f88,0,0x100);
+        sprintf(acStack_4f88,pcVar9,1,iVar8);
+        pcVar9 = pcVar9 + 0x100;
+        FUN_00010c78(acStack_4f88);
+      } while ((char *)&local_310c != pcVar9);
+      iVar8 = iVar8 + 1;
+      pcVar9 = local_3e0c;
+    } while (iVar8 <= iVar20);
+    local_30 = local_30 / iVar20;
+    if (iVar20 == 0) {
+      trap(7);
+    }
+    if (local_30 == 0) {
+      log_log(7,"status_info_WLANConfiguration",700,0x6064);
+    }
+    else {
+      iVar19 = 1;
+      iVar8 = 1;
+      do {
+        do {
+          pcVar9 = local_440c;
+          do {
+            memset(acStack_4f88,0,0x100);
+            sprintf(acStack_4f88,pcVar9,1,iVar19,iVar8);
+            pcVar9 = pcVar9 + 0x100;
+            FUN_00010c78(acStack_4f88);
+          } while (local_3e0c != pcVar9);
+          iVar8 = iVar8 + 1;
+        } while (iVar8 <= local_30);
+        iVar19 = iVar19 + 1;
+        iVar8 = 1;
+      } while (iVar19 <= iVar20);
+    }
+    iVar8 = local_2c / iVar20;
+    if (iVar20 == 0) {
+      trap(7);
+    }
+    iVar19 = 1;
+    if (iVar8 == 0) {
+      log_log(7,"status_info_WLANConfiguration",0x2d1,0x607c);
+      if (iVar20 == 0) {
+        trap(7);
+      }
+    }
+    else {
+      iVar18 = 1;
+      do {
+        do {
+          memset(acStack_4f88,0,0x100);
+          sprintf(acStack_4f88,local_4e88,1,iVar19,iVar18);
+          iVar18 = iVar18 + 1;
+          FUN_00010c78(acStack_4f88);
+        } while (iVar18 <= iVar8);
+        iVar19 = iVar19 + 1;
+        iVar18 = 1;
+      } while (iVar19 <= iVar20);
+      if (iVar20 == 0) {
+        trap(7);
+      }
+    }
+    if (iVar7 / iVar20 == 0) {
+      log_log(7,"status_info_WLANConfiguration",0x2e6,0x6090);
+      return 0;
+    }
+    iVar19 = 1;
+    iVar8 = 1;
+    pcVar9 = local_4c84;
+    do {
+      do {
+        do {
+          memset(acStack_4f88,0,0x100);
+          sprintf(acStack_4f88,pcVar9,1,iVar19,iVar8);
+          pcVar9 = pcVar9 + 0x100;
+          FUN_00010c78(acStack_4f88);
+        } while ((char *)&local_4984 != pcVar9);
+        iVar8 = iVar8 + 1;
+        pcVar9 = local_4c84;
+      } while (iVar8 <= iVar7 / iVar20);
+      iVar19 = iVar19 + 1;
+      iVar8 = 1;
+    } while (iVar19 <= iVar20);
+    uVar14 = 0;
+  }
+  return uVar14;
+}
+
+
+
+/* ===== FUN_000128ac @ 000128ac ==== */
+
+undefined4 FUN_000128ac(void)
+
+{
+  char cVar1;
+  char *pcVar2;
+  char *pcVar3;
+  char *pcVar4;
+  int iVar5;
+  int iVar6;
+  int iVar7;
+  char *pcVar8;
+  undefined4 uVar9;
+  undefined4 uVar10;
+  undefined4 uVar11;
+  undefined4 uVar12;
+  int iVar13;
+  int iVar14;
+  int iVar15;
+  undefined4 local_3a10;
+  undefined4 local_3a0c;
+  undefined4 local_3a08;
+  undefined4 local_3a04;
+  undefined4 local_3a00;
+  undefined4 local_39fc;
+  undefined4 local_39f8;
+  char acStack_39f4 [256];
+  undefined4 local_38f4;
+  undefined4 local_38f0;
+  undefined4 local_38ec;
+  undefined4 local_38e8;
+  undefined4 local_38e4;
+  undefined4 local_38e0;
+  undefined4 local_38dc;
+  undefined4 local_38d8;
+  char local_37d8 [4];
+  undefined4 local_37d4 [20];
+  undefined1 auStack_3784 [172];
+  char local_36d8 [4];
+  undefined4 local_36d4 [20];
+  undefined1 auStack_3684 [172];
+  char local_35d8 [4];
+  undefined4 local_35d4 [4];
+  char acStack_35c4 [65];
+  undefined1 auStack_3583 [171];
+  char local_34d8 [5056];
+  undefined4 local_2118;
+  undefined4 local_2114;
+  undefined4 local_2110;
+  undefined4 local_210c;
+  undefined4 local_2108;
+  undefined4 local_2104;
+  undefined4 local_2100;
+  undefined4 local_20fc;
+  
+  memset(local_37d8,0,0x300);
+  pcVar2 = "InternetGatewayDevice.Services.VoiceService.{%d}.VoiceProfile.{%d}.Line.{%d}.Enable";
+  pcVar4 = local_37d8;
+  do {
+    pcVar3 = pcVar4;
+    uVar12 = *(undefined4 *)pcVar2;
+    uVar11 = *(undefined4 *)(pcVar2 + 4);
+    uVar10 = *(undefined4 *)(pcVar2 + 8);
+    uVar9 = *(undefined4 *)(pcVar2 + 0xc);
+    pcVar2 = pcVar2 + 0x10;
+    *(undefined4 *)pcVar3 = uVar12;
+    *(undefined4 *)(pcVar3 + 4) = uVar11;
+    *(undefined4 *)(pcVar3 + 8) = uVar10;
+    *(undefined4 *)(pcVar3 + 0xc) = uVar9;
+    pcVar4 = pcVar3 + 0x10;
+  } while (pcVar2 != "ble");
+  builtin_strncpy(pcVar3 + 0x10,"ble",4);
+  memset(auStack_3784,0,0xac);
+  pcVar2 = "InternetGatewayDevice.Services.VoiceService.{%d}.VoiceProfile.{%d}.Line.{%d}.Status";
+  pcVar4 = local_36d8;
+  do {
+    pcVar3 = pcVar4;
+    uVar12 = *(undefined4 *)pcVar2;
+    uVar11 = *(undefined4 *)(pcVar2 + 4);
+    uVar10 = *(undefined4 *)(pcVar2 + 8);
+    uVar9 = *(undefined4 *)(pcVar2 + 0xc);
+    pcVar2 = pcVar2 + 0x10;
+    *(undefined4 *)pcVar3 = uVar12;
+    *(undefined4 *)(pcVar3 + 4) = uVar11;
+    *(undefined4 *)(pcVar3 + 8) = uVar10;
+    *(undefined4 *)(pcVar3 + 0xc) = uVar9;
+    pcVar4 = pcVar3 + 0x10;
+  } while (pcVar2 != "tus");
+  builtin_strncpy(pcVar3 + 0x10,"tus",4);
+  memset(auStack_3684,0,0xac);
+  pcVar4 = local_35d8;
+  pcVar2 = "InternetGatewayDevice.Services.VoiceService.{%d}.VoiceProfile.{%d}.Line.{%d}.SIP.URI";
+  do {
+    pcVar8 = pcVar2;
+    pcVar3 = pcVar4;
+    uVar11 = *(undefined4 *)(pcVar8 + 4);
+    uVar10 = *(undefined4 *)(pcVar8 + 8);
+    uVar9 = *(undefined4 *)(pcVar8 + 0xc);
+    *(undefined4 *)pcVar3 = *(undefined4 *)pcVar8;
+    *(undefined4 *)(pcVar3 + 4) = uVar11;
+    *(undefined4 *)(pcVar3 + 8) = uVar10;
+    *(undefined4 *)(pcVar3 + 0xc) = uVar9;
+    pcVar4 = pcVar3 + 0x10;
+    pcVar2 = pcVar8 + 0x10;
+  } while (pcVar8 + 0x10 != ".URI");
+  cVar1 = pcVar8[0x14];
+  pcVar4[0] = '.';
+  pcVar4[1] = 'U';
+  pcVar4[2] = 'R';
+  pcVar4[3] = 'I';
+  pcVar3[0x14] = cVar1;
+  memset(auStack_3583,0,0xab);
+  local_3a10 = 0;
+  local_3a0c = 0;
+  local_3a08 = 0;
+  local_3a04 = 0;
+  local_3a00 = 0;
+  local_39fc = 0;
+  local_39f8 = 0;
+  memset(acStack_39f4,0,0x100);
+  local_2118 = 0x171;
+  local_2114 = 0;
+  local_2110 = 0;
+  local_210c = 0;
+  local_2108 = 0;
+  local_2104 = 0;
+  local_2100 = 0;
+  local_20fc = 0;
+  local_3a10 = 0;
+  local_3a0c = 0;
+  local_3a08 = 0;
+  local_3a04 = 0;
+  local_3a00 = 0;
+  local_39fc = 0;
+  local_39f8 = 0;
+  iVar15 = 0;
+  while (iVar5 = cfg_getNextObjInSubTree(&local_2118,&local_3a10,0x20eb,0), iVar5 == 0) {
+    iVar15 = iVar15 + 1;
+  }
+  local_34d8[0] = '\0';
+  local_34d8[1] = '\0';
+  local_34d8[2] = '\x01';
+  local_34d8[3] = 'z';
+  local_34d8[4] = '\0';
+  local_34d8[5] = '\0';
+  local_34d8[6] = '\0';
+  local_34d8[7] = '\0';
+  local_34d8[8] = '\0';
+  local_34d8[9] = '\0';
+  local_34d8[10] = '\0';
+  local_34d8[0xb] = '\0';
+  local_34d8[0xc] = '\0';
+  local_34d8[0xd] = '\0';
+  local_34d8[0xe] = '\0';
+  local_34d8[0xf] = '\0';
+  local_34d8[0x10] = '\0';
+  local_34d8[0x11] = '\0';
+  local_34d8[0x12] = '\0';
+  local_34d8[0x13] = '\0';
+  local_34d8[0x14] = '\0';
+  local_34d8[0x15] = '\0';
+  local_34d8[0x16] = '\0';
+  local_34d8[0x17] = '\0';
+  local_34d8[0x18] = '\0';
+  local_34d8[0x19] = '\0';
+  local_34d8[0x1a] = '\0';
+  local_34d8[0x1b] = '\0';
+  local_34d8[0x1c] = '\0';
+  local_34d8[0x1d] = '\0';
+  local_34d8[0x1e] = '\0';
+  local_34d8[0x1f] = '\0';
+  local_3a10 = 0;
+  local_3a0c = 0;
+  local_3a08 = 0;
+  local_3a04 = 0;
+  local_3a00 = 0;
+  local_39fc = 0;
+  local_39f8 = 0;
+  iVar5 = 0;
+  while (iVar6 = cfg_getNextObjInSubTree(local_34d8,&local_3a10,0x13be,0), iVar6 == 0) {
+    iVar5 = iVar5 + 1;
+  }
+  local_38f4 = 0x191;
+  local_38f0 = 0;
+  local_38ec = 0;
+  local_38e8 = 0;
+  local_38e4 = 0;
+  local_38e0 = 0;
+  local_38dc = 0;
+  local_38d8 = 0;
+  local_3a10 = 0;
+  local_3a0c = 0;
+  local_3a08 = 0;
+  local_3a04 = 0;
+  local_3a00 = 0;
+  local_39fc = 0;
+  local_39f8 = 0;
+  iVar6 = 0;
+  while (iVar7 = cfg_getNextObjInSubTree(&local_38f4,&local_3a10,0x11b,0), iVar7 == 0) {
+    iVar6 = iVar6 + 1;
+  }
+  log_log(7,"status_info_voice",0x32b,0x60a8,iVar15,iVar5,iVar6);
+  if (((iVar15 != 0) && (iVar5 != 0)) && (iVar6 != 0)) {
+    iVar14 = 1;
+    iVar13 = 1;
+    iVar7 = 1;
+    do {
+      do {
+        do {
+          pcVar4 = local_37d8;
+          do {
+            memset(acStack_39f4,0,0x100);
+            sprintf(acStack_39f4,pcVar4,iVar14,iVar13,iVar7);
+            pcVar4 = pcVar4 + 0x100;
+            FUN_00010c78(acStack_39f4);
+          } while (local_34d8 != pcVar4);
+          iVar7 = iVar7 + 1;
+        } while (iVar7 <= iVar6);
+        iVar13 = iVar13 + 1;
+        iVar7 = 1;
+      } while (iVar13 <= iVar5);
+      iVar14 = iVar14 + 1;
+      iVar13 = 1;
+    } while (iVar14 <= iVar15);
+    return 0;
+  }
+  log_log(3,"status_info_voice",0x32f,0x60a8,iVar15,iVar5,iVar6);
+  return 0xffffffff;
+}
+
+
+
+/* ===== FUN_00012cf8 @ 00012cf8 ==== */
+
+undefined4 FUN_00012cf8(char *param_1,char *param_2)
+
+{
+  char *pcVar1;
+  size_t __n;
+  undefined4 uVar2;
+  
+  pcVar1 = strchr(param_1,0x3d);
+  if (pcVar1 == (char *)0x0) {
+    log_log(3,"config_info_get_val",0x40c,0x60dc,param_1);
+    uVar2 = 0xffffffff;
+  }
+  else {
+    __n = strlen(pcVar1 + 1);
+    strncpy(param_2,pcVar1 + 1,__n);
+    log_log(7,"config_info_get_val",0x412,0x60e8,param_1,param_2);
+    uVar2 = 0;
+  }
+  return uVar2;
+}
+
+
+
+/* ===== extract_e8digstatus_info @ 00012dd0 ==== */
+
+undefined4 extract_e8digstatus_info(void)
+
+{
+  char cVar1;
+  undefined2 uVar2;
+  FILE *__stream;
+  char *pcVar3;
+  size_t sVar4;
+  ulong uVar5;
+  int iVar6;
+  char *pcVar7;
+  char *pcVar8;
+  char *pcVar9;
+  undefined4 uVar10;
+  undefined4 uVar11;
+  undefined4 uVar12;
+  undefined4 uVar13;
+  int iVar14;
+  undefined4 local_1540;
+  undefined4 local_153c;
+  undefined4 local_1538;
+  undefined4 local_1534;
+  undefined4 local_1530;
+  undefined4 local_152c;
+  undefined4 local_1528;
+  char acStack_1524 [128];
+  char acStack_14a4 [11];
+  char acStack_1499 [10];
+  undefined1 local_148f;
+  undefined4 local_1424;
+  undefined4 local_1420;
+  undefined4 local_141c;
+  undefined4 local_1418;
+  undefined4 local_1414;
+  undefined4 local_1410;
+  undefined4 local_140c;
+  undefined4 local_1408;
+  char acStack_132c [256];
+  char local_122c [4];
+  undefined4 local_1228 [4];
+  undefined4 local_1218;
+  undefined4 local_1214;
+  undefined4 local_1210;
+  undefined1 auStack_11ed [8];
+  undefined1 uStack_11e5;
+  undefined1 auStack_11e4 [184];
+  char local_112c [4];
+  undefined4 local_1128 [3];
+  undefined4 uStack_111c;
+  undefined4 uStack_1118;
+  undefined2 uStack_1114;
+  char acStack_1112 [41];
+  undefined1 auStack_10e9 [4];
+  undefined1 auStack_10e5 [4];
+  undefined1 auStack_10e1 [181];
+  char local_102c [4];
+  undefined4 local_1028 [5];
+  char acStack_1014 [48];
+  undefined1 uStack_fe4;
+  undefined1 auStack_fe3 [183];
+  char local_f2c [4];
+  undefined4 local_f28 [5];
+  char acStack_f14 [40];
+  undefined1 auStack_eec [9];
+  undefined1 auStack_ee3 [183];
+  char local_e2c [4];
+  undefined4 local_e28 [6];
+  undefined2 auStack_e10 [17];
+  undefined1 auStack_dee [194];
+  char local_d2c [4];
+  undefined4 local_d28 [3];
+  undefined2 uStack_d1c;
+  char acStack_d1a [49];
+  undefined1 auStack_ce9 [189];
+  char local_c2c [4];
+  undefined4 local_c28 [6];
+  undefined4 local_c10 [4];
+  undefined1 auStack_bfe [30];
+  undefined1 auStack_be0 [180];
+  char local_b2c [4];
+  undefined4 local_b28 [3];
+  char acStack_b1c [4];
+  undefined4 auStack_b18 [7];
+  undefined1 auStack_afb [27];
+  undefined1 auStack_ae0 [180];
+  char local_a2c [4];
+  undefined4 local_a28 [4];
+  char acStack_a18 [4];
+  undefined4 uStack_a14;
+  undefined2 auStack_a10 [9];
+  undefined1 auStack_9fe [39];
+  undefined1 auStack_9d7 [171];
+  char local_92c [4];
+  undefined4 local_928 [5];
+  char acStack_914 [4];
+  undefined2 auStack_910 [9];
+  undefined1 auStack_8fe [43];
+  undefined1 auStack_8d3 [167];
+  char local_82c [4];
+  undefined4 local_828 [3];
+  char acStack_81c [4];
+  undefined2 uStack_818;
+  char acStack_816 [27];
+  undefined1 auStack_7fb [38];
+  undefined1 auStack_7d5 [169];
+  char local_72c [4];
+  undefined4 local_728 [3];
+  char acStack_71c [4];
+  undefined4 uStack_718;
+  undefined2 uStack_714;
+  char acStack_712 [23];
+  undefined1 auStack_6fb [42];
+  undefined1 auStack_6d1 [165];
+  char local_62c [4];
+  undefined4 local_628 [4];
+  char acStack_618 [33];
+  undefined1 auStack_5f7 [203];
+  char local_52c [4];
+  undefined4 local_528 [6];
+  undefined2 uStack_510;
+  char acStack_50e [17];
+  undefined1 auStack_4fd [209];
+  char local_42c [4];
+  undefined4 local_428 [3];
+  char acStack_41c [33];
+  undefined1 auStack_3fb [207];
+  char local_32c [4];
+  undefined4 local_328 [4];
+  char acStack_318 [33];
+  undefined1 auStack_2f7 [203];
+  char local_22c [4];
+  undefined4 local_228 [6];
+  undefined2 uStack_210;
+  char acStack_20e [17];
+  undefined1 auStack_1fd [209];
+  char local_12c [4];
+  undefined4 local_128 [13];
+  undefined1 auStack_f4 [200];
+  char acStack_2c [4];
+  
+  memset(acStack_14a4,0,0x80);
+  memset(acStack_1524,0,0x80);
+  __stream = popen((char *)0x60f8,(char *)0x6150);
+  if (__stream != (FILE *)0x0) {
+    memset(acStack_14a4,0,0x80);
+    memset(acStack_1524,0,0x80);
+    pcVar3 = fgets(acStack_1524,0x80,__stream);
+    if (pcVar3 == (char *)0x0) {
+      iVar14 = 1;
+    }
+    else {
+      sVar4 = strlen(acStack_1524);
+      acStack_1524[sVar4 - 1] = '\0';
+      strncpy(acStack_14a4,acStack_1524,0x7f);
+      local_148f = 0;
+      uVar5 = strtoul(acStack_1499,(char **)0x0,10);
+      iVar14 = uVar5 + 1;
+    }
+    memset(acStack_14a4,0,0x80);
+    snprintf(acStack_14a4,0x80,(char *)0x6154,0x6164,iVar14);
+    pclose(__stream);
+    DAT_0002b960 = open(acStack_14a4,0x102,0x1a4);
+    if (-1 < DAT_0002b960) {
+      iVar14 = access(acStack_1524,0);
+      if (iVar14 == 0) {
+        memset(acStack_132c,0,0x100);
+        sprintf(acStack_132c,(char *)0x61a4,acStack_1524);
+        system(acStack_132c);
+      }
+      memset(local_c2c,0,0xc00);
+      pcVar3 = "InternetGatewayDevice.DeviceInfo.Manufacturer";
+      pcVar8 = local_c2c;
+      do {
+        pcVar9 = pcVar8;
+        pcVar7 = pcVar3;
+        uVar12 = *(undefined4 *)(pcVar7 + 4);
+        uVar11 = *(undefined4 *)(pcVar7 + 8);
+        uVar10 = *(undefined4 *)(pcVar7 + 0xc);
+        *(undefined4 *)pcVar9 = *(undefined4 *)pcVar7;
+        *(undefined4 *)(pcVar9 + 4) = uVar12;
+        *(undefined4 *)(pcVar9 + 8) = uVar11;
+        *(undefined4 *)(pcVar9 + 0xc) = uVar10;
+        pcVar8 = pcVar9 + 0x10;
+        pcVar3 = pcVar7 + 0x10;
+      } while (pcVar7 + 0x10 != ".Manufacturer");
+      uVar11 = *(undefined4 *)(pcVar7 + 0x14);
+      uVar10 = *(undefined4 *)(pcVar7 + 0x18);
+      uVar2 = *(undefined2 *)(pcVar7 + 0x1c);
+      pcVar8[0] = '.';
+      pcVar8[1] = 'M';
+      pcVar8[2] = 'a';
+      pcVar8[3] = 'n';
+      *(undefined4 *)(pcVar9 + 0x14) = uVar11;
+      *(undefined4 *)(pcVar9 + 0x18) = uVar10;
+      *(undefined2 *)(pcVar9 + 0x1c) = uVar2;
+      memset(auStack_bfe,0,0xd2);
+      pcVar8 = local_b2c;
+      pcVar3 = "InternetGatewayDevice.DeviceInfo.ManufacturerOUI";
+      do {
+        uVar13 = *(undefined4 *)pcVar3;
+        uVar12 = *(undefined4 *)(pcVar3 + 4);
+        uVar11 = *(undefined4 *)(pcVar3 + 8);
+        uVar10 = *(undefined4 *)(pcVar3 + 0xc);
+        pcVar3 = pcVar3 + 0x10;
+        *(undefined4 *)pcVar8 = uVar13;
+        *(undefined4 *)(pcVar8 + 4) = uVar12;
+        *(undefined4 *)(pcVar8 + 8) = uVar11;
+        *(undefined4 *)(pcVar8 + 0xc) = uVar10;
+        pcVar8 = pcVar8 + 0x10;
+      } while (pcVar3 != "");
+      *pcVar8 = '\0';
+      memset(auStack_afb,0,0xcf);
+      pcVar3 = "InternetGatewayDevice.DeviceInfo.ProductClass";
+      pcVar8 = local_a2c;
+      do {
+        pcVar9 = pcVar8;
+        pcVar7 = pcVar3;
+        uVar12 = *(undefined4 *)(pcVar7 + 4);
+        uVar11 = *(undefined4 *)(pcVar7 + 8);
+        uVar10 = *(undefined4 *)(pcVar7 + 0xc);
+        *(undefined4 *)pcVar9 = *(undefined4 *)pcVar7;
+        *(undefined4 *)(pcVar9 + 4) = uVar12;
+        *(undefined4 *)(pcVar9 + 8) = uVar11;
+        *(undefined4 *)(pcVar9 + 0xc) = uVar10;
+        pcVar8 = pcVar9 + 0x10;
+        pcVar3 = pcVar7 + 0x10;
+      } while (pcVar7 + 0x10 != ".ProductClass");
+      uVar11 = *(undefined4 *)(pcVar7 + 0x14);
+      uVar10 = *(undefined4 *)(pcVar7 + 0x18);
+      uVar2 = *(undefined2 *)(pcVar7 + 0x1c);
+      pcVar8[0] = '.';
+      pcVar8[1] = 'P';
+      pcVar8[2] = 'r';
+      pcVar8[3] = 'o';
+      *(undefined4 *)(pcVar9 + 0x14) = uVar11;
+      *(undefined4 *)(pcVar9 + 0x18) = uVar10;
+      *(undefined2 *)(pcVar9 + 0x1c) = uVar2;
+      memset(auStack_9fe,0,0xd2);
+      pcVar3 = "InternetGatewayDevice.DeviceInfo.SerialNumber";
+      pcVar8 = local_92c;
+      do {
+        pcVar9 = pcVar8;
+        pcVar7 = pcVar3;
+        uVar12 = *(undefined4 *)(pcVar7 + 4);
+        uVar11 = *(undefined4 *)(pcVar7 + 8);
+        uVar10 = *(undefined4 *)(pcVar7 + 0xc);
+        *(undefined4 *)pcVar9 = *(undefined4 *)pcVar7;
+        *(undefined4 *)(pcVar9 + 4) = uVar12;
+        *(undefined4 *)(pcVar9 + 8) = uVar11;
+        *(undefined4 *)(pcVar9 + 0xc) = uVar10;
+        pcVar8 = pcVar9 + 0x10;
+        pcVar3 = pcVar7 + 0x10;
+      } while (pcVar7 + 0x10 != ".SerialNumber");
+      uVar11 = *(undefined4 *)(pcVar7 + 0x14);
+      uVar10 = *(undefined4 *)(pcVar7 + 0x18);
+      uVar2 = *(undefined2 *)(pcVar7 + 0x1c);
+      pcVar8[0] = '.';
+      pcVar8[1] = 'S';
+      pcVar8[2] = 'e';
+      pcVar8[3] = 'r';
+      *(undefined4 *)(pcVar9 + 0x14) = uVar11;
+      *(undefined4 *)(pcVar9 + 0x18) = uVar10;
+      *(undefined2 *)(pcVar9 + 0x1c) = uVar2;
+      memset(auStack_8fe,0,0xd2);
+      pcVar8 = local_82c;
+      pcVar3 = "InternetGatewayDevice.DeviceInfo.HardwareVersion";
+      do {
+        uVar13 = *(undefined4 *)pcVar3;
+        uVar12 = *(undefined4 *)(pcVar3 + 4);
+        uVar11 = *(undefined4 *)(pcVar3 + 8);
+        uVar10 = *(undefined4 *)(pcVar3 + 0xc);
+        pcVar3 = pcVar3 + 0x10;
+        *(undefined4 *)pcVar8 = uVar13;
+        *(undefined4 *)(pcVar8 + 4) = uVar12;
+        *(undefined4 *)(pcVar8 + 8) = uVar11;
+        *(undefined4 *)(pcVar8 + 0xc) = uVar10;
+        pcVar8 = pcVar8 + 0x10;
+      } while (pcVar3 != "");
+      *pcVar8 = '\0';
+      memset(auStack_7fb,0,0xcf);
+      pcVar8 = local_72c;
+      pcVar3 = "InternetGatewayDevice.DeviceInfo.SoftwareVersion";
+      do {
+        uVar13 = *(undefined4 *)pcVar3;
+        uVar12 = *(undefined4 *)(pcVar3 + 4);
+        uVar11 = *(undefined4 *)(pcVar3 + 8);
+        uVar10 = *(undefined4 *)(pcVar3 + 0xc);
+        pcVar3 = pcVar3 + 0x10;
+        *(undefined4 *)pcVar8 = uVar13;
+        *(undefined4 *)(pcVar8 + 4) = uVar12;
+        *(undefined4 *)(pcVar8 + 8) = uVar11;
+        *(undefined4 *)(pcVar8 + 0xc) = uVar10;
+        pcVar8 = pcVar8 + 0x10;
+      } while (pcVar3 != "");
+      *pcVar8 = '\0';
+      memset(auStack_6fb,0,0xcf);
+      pcVar3 = "InternetGatewayDevice.DeviceInfo.X_CT-COM_DeviceType";
+      pcVar8 = local_62c;
+      do {
+        pcVar9 = pcVar8;
+        pcVar7 = pcVar3;
+        uVar12 = *(undefined4 *)(pcVar7 + 4);
+        uVar11 = *(undefined4 *)(pcVar7 + 8);
+        uVar10 = *(undefined4 *)(pcVar7 + 0xc);
+        *(undefined4 *)pcVar9 = *(undefined4 *)pcVar7;
+        *(undefined4 *)(pcVar9 + 4) = uVar12;
+        *(undefined4 *)(pcVar9 + 8) = uVar11;
+        *(undefined4 *)(pcVar9 + 0xc) = uVar10;
+        pcVar8 = pcVar9 + 0x10;
+        pcVar3 = pcVar7 + 0x10;
+      } while (pcVar7 + 0x10 != "Type");
+      cVar1 = pcVar7[0x14];
+      pcVar8[0] = 'T';
+      pcVar8[1] = 'y';
+      pcVar8[2] = 'p';
+      pcVar8[3] = 'e';
+      pcVar9[0x14] = cVar1;
+      memset(auStack_5f7,0,0xcb);
+      pcVar3 = "InternetGatewayDevice.DeviceInfo.X_CT-COM_Card";
+      pcVar8 = local_52c;
+      do {
+        pcVar9 = pcVar8;
+        pcVar7 = pcVar3;
+        uVar12 = *(undefined4 *)(pcVar7 + 4);
+        uVar11 = *(undefined4 *)(pcVar7 + 8);
+        uVar10 = *(undefined4 *)(pcVar7 + 0xc);
+        *(undefined4 *)pcVar9 = *(undefined4 *)pcVar7;
+        *(undefined4 *)(pcVar9 + 4) = uVar12;
+        *(undefined4 *)(pcVar9 + 8) = uVar11;
+        *(undefined4 *)(pcVar9 + 0xc) = uVar10;
+        pcVar8 = pcVar9 + 0x10;
+        pcVar3 = pcVar7 + 0x10;
+      } while (pcVar7 + 0x10 != ".X_CT-COM_Card");
+      uVar10 = *(undefined4 *)(pcVar7 + 0x18);
+      uVar2 = *(undefined2 *)(pcVar7 + 0x1c);
+      cVar1 = pcVar7[0x1e];
+      *(undefined4 *)(pcVar9 + 0x14) = *(undefined4 *)(pcVar7 + 0x14);
+      *(undefined4 *)(pcVar9 + 0x18) = uVar10;
+      *(undefined2 *)(pcVar9 + 0x1c) = uVar2;
+      pcVar8[0] = '.';
+      pcVar8[1] = 'X';
+      pcVar8[2] = '_';
+      pcVar8[3] = 'C';
+      pcVar9[0x1e] = cVar1;
+      memset(auStack_4fd,0,0xd1);
+      pcVar8 = local_42c;
+      pcVar3 = "InternetGatewayDevice.DeviceInfo.X_CT-COM_UPLink";
+      do {
+        uVar13 = *(undefined4 *)pcVar3;
+        uVar12 = *(undefined4 *)(pcVar3 + 4);
+        uVar11 = *(undefined4 *)(pcVar3 + 8);
+        uVar10 = *(undefined4 *)(pcVar3 + 0xc);
+        pcVar3 = pcVar3 + 0x10;
+        *(undefined4 *)pcVar8 = uVar13;
+        *(undefined4 *)(pcVar8 + 4) = uVar12;
+        *(undefined4 *)(pcVar8 + 8) = uVar11;
+        *(undefined4 *)(pcVar8 + 0xc) = uVar10;
+        pcVar8 = pcVar8 + 0x10;
+      } while (pcVar3 != "");
+      *pcVar8 = '\0';
+      memset(auStack_3fb,0,0xcf);
+      pcVar3 = "InternetGatewayDevice.DeviceInfo.X_CT-COM_Capability";
+      pcVar8 = local_32c;
+      do {
+        pcVar9 = pcVar8;
+        pcVar7 = pcVar3;
+        uVar12 = *(undefined4 *)(pcVar7 + 4);
+        uVar11 = *(undefined4 *)(pcVar7 + 8);
+        uVar10 = *(undefined4 *)(pcVar7 + 0xc);
+        *(undefined4 *)pcVar9 = *(undefined4 *)pcVar7;
+        *(undefined4 *)(pcVar9 + 4) = uVar12;
+        *(undefined4 *)(pcVar9 + 8) = uVar11;
+        *(undefined4 *)(pcVar9 + 0xc) = uVar10;
+        pcVar8 = pcVar9 + 0x10;
+        pcVar3 = pcVar7 + 0x10;
+      } while (pcVar7 + 0x10 != "lity");
+      cVar1 = pcVar7[0x14];
+      pcVar8[0] = 'l';
+      pcVar8[1] = 'i';
+      pcVar8[2] = 't';
+      pcVar8[3] = 'y';
+      pcVar9[0x14] = cVar1;
+      memset(auStack_2f7,0,0xcb);
+      pcVar3 = "InternetGatewayDevice.X_CT-COM_UserInfo.Status";
+      pcVar8 = local_22c;
+      do {
+        pcVar9 = pcVar8;
+        pcVar7 = pcVar3;
+        uVar12 = *(undefined4 *)(pcVar7 + 4);
+        uVar11 = *(undefined4 *)(pcVar7 + 8);
+        uVar10 = *(undefined4 *)(pcVar7 + 0xc);
+        *(undefined4 *)pcVar9 = *(undefined4 *)pcVar7;
+        *(undefined4 *)(pcVar9 + 4) = uVar12;
+        *(undefined4 *)(pcVar9 + 8) = uVar11;
+        *(undefined4 *)(pcVar9 + 0xc) = uVar10;
+        pcVar8 = pcVar9 + 0x10;
+        pcVar3 = pcVar7 + 0x10;
+      } while (pcVar7 + 0x10 != "serInfo.Status");
+      uVar10 = *(undefined4 *)(pcVar7 + 0x18);
+      uVar2 = *(undefined2 *)(pcVar7 + 0x1c);
+      cVar1 = pcVar7[0x1e];
+      *(undefined4 *)(pcVar9 + 0x14) = *(undefined4 *)(pcVar7 + 0x14);
+      *(undefined4 *)(pcVar9 + 0x18) = uVar10;
+      *(undefined2 *)(pcVar9 + 0x1c) = uVar2;
+      pcVar8[0] = 's';
+      pcVar8[1] = 'e';
+      pcVar8[2] = 'r';
+      pcVar8[3] = 'I';
+      pcVar9[0x1e] = cVar1;
+      memset(auStack_1fd,0,0xd1);
+      pcVar3 = "InternetGatewayDevice.X_CT-COM_UserInfo.ConfigureStatus";
+      pcVar8 = local_12c;
+      do {
+        pcVar9 = pcVar8;
+        pcVar7 = pcVar3;
+        uVar12 = *(undefined4 *)(pcVar7 + 4);
+        uVar11 = *(undefined4 *)(pcVar7 + 8);
+        uVar10 = *(undefined4 *)(pcVar7 + 0xc);
+        *(undefined4 *)pcVar9 = *(undefined4 *)pcVar7;
+        *(undefined4 *)(pcVar9 + 4) = uVar12;
+        *(undefined4 *)(pcVar9 + 8) = uVar11;
+        *(undefined4 *)(pcVar9 + 0xc) = uVar10;
+        pcVar8 = pcVar9 + 0x10;
+        pcVar3 = pcVar7 + 0x10;
+      } while (pcVar7 + 0x10 != "eStatus");
+      uVar10 = *(undefined4 *)(pcVar7 + 0x14);
+      pcVar8[0] = 'e';
+      pcVar8[1] = 'S';
+      pcVar8[2] = 't';
+      pcVar8[3] = 'a';
+      *(undefined4 *)(pcVar9 + 0x14) = uVar10;
+      memset(auStack_f4,0,200);
+      pcVar3 = local_c2c;
+      do {
+        pcVar8 = pcVar3 + 0x100;
+        FUN_00010c78(pcVar3);
+        pcVar3 = pcVar8;
+      } while (pcVar8 != acStack_2c);
+      memset(local_122c,0,0x200);
+      pcVar3 = "InternetGatewayDevice.WANDevice.{1}.WANDSLInterfaceConfig.Enable=false\n";
+      pcVar8 = local_122c;
+      do {
+        pcVar9 = pcVar8;
+        pcVar7 = pcVar3;
+        uVar12 = *(undefined4 *)(pcVar7 + 4);
+        uVar11 = *(undefined4 *)(pcVar7 + 8);
+        uVar10 = *(undefined4 *)(pcVar7 + 0xc);
+        *(undefined4 *)pcVar9 = *(undefined4 *)pcVar7;
+        *(undefined4 *)(pcVar9 + 4) = uVar12;
+        *(undefined4 *)(pcVar9 + 8) = uVar11;
+        *(undefined4 *)(pcVar9 + 0xc) = uVar10;
+        pcVar8 = pcVar9 + 0x10;
+        pcVar3 = pcVar7 + 0x10;
+      } while (pcVar7 + 0x10 != "=false\n");
+      uVar10 = *(undefined4 *)(pcVar7 + 0x14);
+      pcVar8[0] = '=';
+      pcVar8[1] = 'f';
+      pcVar8[2] = 'a';
+      pcVar8[3] = 'l';
+      *(undefined4 *)(pcVar9 + 0x14) = uVar10;
+      memset(auStack_11e4,0,0xb8);
+      pcVar3 = local_112c;
+      pcVar8 = "InternetGatewayDevice.WANDevice.{1}.WANDSLInterfaceConfig.Status=disabled\n";
+      do {
+        pcVar9 = pcVar8;
+        pcVar7 = pcVar3;
+        uVar12 = *(undefined4 *)(pcVar9 + 4);
+        uVar11 = *(undefined4 *)(pcVar9 + 8);
+        uVar10 = *(undefined4 *)(pcVar9 + 0xc);
+        *(undefined4 *)pcVar7 = *(undefined4 *)pcVar9;
+        *(undefined4 *)(pcVar7 + 4) = uVar12;
+        *(undefined4 *)(pcVar7 + 8) = uVar11;
+        *(undefined4 *)(pcVar7 + 0xc) = uVar10;
+        pcVar3 = pcVar7 + 0x10;
+        pcVar8 = pcVar9 + 0x10;
+      } while (pcVar9 + 0x10 != "=disabled\n");
+      uVar10 = *(undefined4 *)(pcVar9 + 0x14);
+      uVar2 = *(undefined2 *)(pcVar9 + 0x18);
+      pcVar7[0x1a] = pcVar9[0x1a];
+      pcVar3[0] = '=';
+      pcVar3[1] = 'd';
+      pcVar3[2] = 'i';
+      pcVar3[3] = 's';
+      *(undefined4 *)(pcVar7 + 0x14) = uVar10;
+      *(undefined2 *)(pcVar7 + 0x18) = uVar2;
+      memset(auStack_10e1,0,0xb5);
+      sVar4 = strlen(local_122c);
+      write(DAT_0002b960,local_122c,sVar4);
+      sVar4 = strlen(local_112c);
+      write(DAT_0002b960,local_112c,sVar4);
+      memset(acStack_132c,0,0x100);
+      memset(local_122c,0,0x400);
+      pcVar3 = "InternetGatewayDevice.WANDevice.{%d}.WANEthernetInterfaceConfig.Enable";
+      pcVar8 = local_122c;
+      do {
+        pcVar9 = pcVar8;
+        pcVar7 = pcVar3;
+        uVar12 = *(undefined4 *)(pcVar7 + 4);
+        uVar11 = *(undefined4 *)(pcVar7 + 8);
+        uVar10 = *(undefined4 *)(pcVar7 + 0xc);
+        *(undefined4 *)pcVar9 = *(undefined4 *)pcVar7;
+        *(undefined4 *)(pcVar9 + 4) = uVar12;
+        *(undefined4 *)(pcVar9 + 8) = uVar11;
+        *(undefined4 *)(pcVar9 + 0xc) = uVar10;
+        pcVar8 = pcVar9 + 0x10;
+        pcVar3 = pcVar7 + 0x10;
+      } while (pcVar7 + 0x10 != "Enable");
+      uVar2 = *(undefined2 *)(pcVar7 + 0x14);
+      cVar1 = pcVar7[0x16];
+      pcVar8[0] = 'E';
+      pcVar8[1] = 'n';
+      pcVar8[2] = 'a';
+      pcVar8[3] = 'b';
+      *(undefined2 *)(pcVar9 + 0x14) = uVar2;
+      pcVar9[0x16] = cVar1;
+      memset(&uStack_11e5,0,0xb9);
+      pcVar3 = "InternetGatewayDevice.WANDevice.{%d}.WANEthernetInterfaceConfig.Status";
+      pcVar8 = local_112c;
+      do {
+        pcVar9 = pcVar8;
+        pcVar7 = pcVar3;
+        uVar12 = *(undefined4 *)(pcVar7 + 4);
+        uVar11 = *(undefined4 *)(pcVar7 + 8);
+        uVar10 = *(undefined4 *)(pcVar7 + 0xc);
+        *(undefined4 *)pcVar9 = *(undefined4 *)pcVar7;
+        *(undefined4 *)(pcVar9 + 4) = uVar12;
+        *(undefined4 *)(pcVar9 + 8) = uVar11;
+        *(undefined4 *)(pcVar9 + 0xc) = uVar10;
+        pcVar8 = pcVar9 + 0x10;
+        pcVar3 = pcVar7 + 0x10;
+      } while (pcVar7 + 0x10 != "Status");
+      uVar2 = *(undefined2 *)(pcVar7 + 0x14);
+      cVar1 = pcVar7[0x16];
+      pcVar8[0] = 'S';
+      pcVar8[1] = 't';
+      pcVar8[2] = 'a';
+      pcVar8[3] = 't';
+      *(undefined2 *)(pcVar9 + 0x14) = uVar2;
+      pcVar9[0x16] = cVar1;
+      memset(auStack_10e5,0,0xb9);
+      pcVar3 = "InternetGatewayDevice.WANDevice.{%d}.X_CT-COM_EponInterfaceConfig.Status";
+      pcVar8 = local_102c;
+      do {
+        pcVar9 = pcVar8;
+        pcVar7 = pcVar3;
+        uVar12 = *(undefined4 *)(pcVar7 + 4);
+        uVar11 = *(undefined4 *)(pcVar7 + 8);
+        uVar10 = *(undefined4 *)(pcVar7 + 0xc);
+        *(undefined4 *)pcVar9 = *(undefined4 *)pcVar7;
+        *(undefined4 *)(pcVar9 + 4) = uVar12;
+        *(undefined4 *)(pcVar9 + 8) = uVar11;
+        *(undefined4 *)(pcVar9 + 0xc) = uVar10;
+        pcVar8 = pcVar9 + 0x10;
+        pcVar3 = pcVar7 + 0x10;
+      } while (pcVar7 + 0x10 != "g.Status");
+      uVar10 = *(undefined4 *)(pcVar7 + 0x14);
+      cVar1 = pcVar7[0x18];
+      pcVar8[0] = 'g';
+      pcVar8[1] = '.';
+      pcVar8[2] = 'S';
+      pcVar8[3] = 't';
+      *(undefined4 *)(pcVar9 + 0x14) = uVar10;
+      pcVar9[0x18] = cVar1;
+      memset(auStack_fe3,0,0xb7);
+      pcVar3 = "InternetGatewayDevice.WANDevice.{%d}.X_CT-COM_GponInterfaceConfig.Status";
+      pcVar8 = local_f2c;
+      do {
+        pcVar9 = pcVar8;
+        pcVar7 = pcVar3;
+        uVar12 = *(undefined4 *)(pcVar7 + 4);
+        uVar11 = *(undefined4 *)(pcVar7 + 8);
+        uVar10 = *(undefined4 *)(pcVar7 + 0xc);
+        *(undefined4 *)pcVar9 = *(undefined4 *)pcVar7;
+        *(undefined4 *)(pcVar9 + 4) = uVar12;
+        *(undefined4 *)(pcVar9 + 8) = uVar11;
+        *(undefined4 *)(pcVar9 + 0xc) = uVar10;
+        pcVar8 = pcVar9 + 0x10;
+        pcVar3 = pcVar7 + 0x10;
+      } while (pcVar7 + 0x10 != "g.Status");
+      uVar10 = *(undefined4 *)(pcVar7 + 0x14);
+      cVar1 = pcVar7[0x18];
+      pcVar8[0] = 'g';
+      pcVar8[1] = '.';
+      pcVar8[2] = 'S';
+      pcVar8[3] = 't';
+      *(undefined4 *)(pcVar9 + 0x14) = uVar10;
+      pcVar9[0x18] = cVar1;
+      memset(auStack_ee3,0,0xb7);
+      pcVar3 = local_122c;
+      do {
+        memset(acStack_132c,0,0x100);
+        sprintf(acStack_132c,pcVar3,1);
+        pcVar3 = pcVar3 + 0x100;
+        FUN_00010c78(acStack_132c);
+      } while (pcVar3 != local_e2c);
+      FUN_00011074();
+      memset(local_c2c,0,0x600);
+      pcVar3 = "InternetGatewayDevice.LANDevice.{%d}.LANEthernetInterfaceConfig.{%d}.Enable";
+      pcVar8 = local_c2c;
+      do {
+        pcVar9 = pcVar8;
+        pcVar7 = pcVar3;
+        uVar12 = *(undefined4 *)(pcVar7 + 4);
+        uVar11 = *(undefined4 *)(pcVar7 + 8);
+        uVar10 = *(undefined4 *)(pcVar7 + 0xc);
+        *(undefined4 *)pcVar9 = *(undefined4 *)pcVar7;
+        *(undefined4 *)(pcVar9 + 4) = uVar12;
+        *(undefined4 *)(pcVar9 + 8) = uVar11;
+        *(undefined4 *)(pcVar9 + 0xc) = uVar10;
+        pcVar8 = pcVar9 + 0x10;
+        pcVar3 = pcVar7 + 0x10;
+      } while (pcVar7 + 0x10 != "{%d}.Enable");
+      uVar11 = *(undefined4 *)(pcVar7 + 0x14);
+      uVar10 = *(undefined4 *)(pcVar7 + 0x18);
+      pcVar8[0] = '{';
+      pcVar8[1] = '%';
+      pcVar8[2] = 'd';
+      pcVar8[3] = '}';
+      *(undefined4 *)(pcVar9 + 0x14) = uVar11;
+      *(undefined4 *)(pcVar9 + 0x18) = uVar10;
+      memset(auStack_be0,0,0xb4);
+      pcVar3 = "InternetGatewayDevice.LANDevice.{%d}.LANEthernetInterfaceConfig.{%d}.Status";
+      pcVar8 = local_b2c;
+      do {
+        pcVar9 = pcVar8;
+        pcVar7 = pcVar3;
+        uVar12 = *(undefined4 *)(pcVar7 + 4);
+        uVar11 = *(undefined4 *)(pcVar7 + 8);
+        uVar10 = *(undefined4 *)(pcVar7 + 0xc);
+        *(undefined4 *)pcVar9 = *(undefined4 *)pcVar7;
+        *(undefined4 *)(pcVar9 + 4) = uVar12;
+        *(undefined4 *)(pcVar9 + 8) = uVar11;
+        *(undefined4 *)(pcVar9 + 0xc) = uVar10;
+        pcVar8 = pcVar9 + 0x10;
+        pcVar3 = pcVar7 + 0x10;
+      } while (pcVar7 + 0x10 != "{%d}.Status");
+      uVar11 = *(undefined4 *)(pcVar7 + 0x14);
+      uVar10 = *(undefined4 *)(pcVar7 + 0x18);
+      pcVar8[0] = '{';
+      pcVar8[1] = '%';
+      pcVar8[2] = 'd';
+      pcVar8[3] = '}';
+      *(undefined4 *)(pcVar9 + 0x14) = uVar11;
+      *(undefined4 *)(pcVar9 + 0x18) = uVar10;
+      memset(auStack_ae0,0,0xb4);
+      pcVar3 = 
+      "InternetGatewayDevice.LANDevice.{%d}.LANEthernetInterfaceConfig.{%d}.Stats.BytesSent";
+      pcVar8 = local_a2c;
+      do {
+        pcVar9 = pcVar8;
+        pcVar7 = pcVar3;
+        uVar12 = *(undefined4 *)(pcVar7 + 4);
+        uVar11 = *(undefined4 *)(pcVar7 + 8);
+        uVar10 = *(undefined4 *)(pcVar7 + 0xc);
+        *(undefined4 *)pcVar9 = *(undefined4 *)pcVar7;
+        *(undefined4 *)(pcVar9 + 4) = uVar12;
+        *(undefined4 *)(pcVar9 + 8) = uVar11;
+        *(undefined4 *)(pcVar9 + 0xc) = uVar10;
+        pcVar8 = pcVar9 + 0x10;
+        pcVar3 = pcVar7 + 0x10;
+      } while (pcVar7 + 0x10 != "Sent");
+      cVar1 = pcVar7[0x14];
+      pcVar8[0] = 'S';
+      pcVar8[1] = 'e';
+      pcVar8[2] = 'n';
+      pcVar8[3] = 't';
+      pcVar9[0x14] = cVar1;
+      memset(auStack_9d7,0,0xab);
+      pcVar3 = 
+      "InternetGatewayDevice.LANDevice.{%d}.LANEthernetInterfaceConfig.{%d}.Stats.BytesReceived";
+      pcVar8 = local_92c;
+      do {
+        pcVar9 = pcVar8;
+        pcVar7 = pcVar3;
+        uVar12 = *(undefined4 *)(pcVar7 + 4);
+        uVar11 = *(undefined4 *)(pcVar7 + 8);
+        uVar10 = *(undefined4 *)(pcVar7 + 0xc);
+        *(undefined4 *)pcVar9 = *(undefined4 *)pcVar7;
+        *(undefined4 *)(pcVar9 + 4) = uVar12;
+        *(undefined4 *)(pcVar9 + 8) = uVar11;
+        *(undefined4 *)(pcVar9 + 0xc) = uVar10;
+        pcVar8 = pcVar9 + 0x10;
+        pcVar3 = pcVar7 + 0x10;
+      } while (pcVar7 + 0x10 != "Received");
+      uVar10 = *(undefined4 *)(pcVar7 + 0x14);
+      cVar1 = pcVar7[0x18];
+      pcVar8[0] = 'R';
+      pcVar8[1] = 'e';
+      pcVar8[2] = 'c';
+      pcVar8[3] = 'e';
+      *(undefined4 *)(pcVar9 + 0x14) = uVar10;
+      pcVar9[0x18] = cVar1;
+      memset(auStack_8d3,0,0xa7);
+      pcVar3 = 
+      "InternetGatewayDevice.LANDevice.{%d}.LANEthernetInterfaceConfig.{%d}.Stats.PacketsSent";
+      pcVar8 = local_82c;
+      do {
+        pcVar9 = pcVar8;
+        pcVar7 = pcVar3;
+        uVar12 = *(undefined4 *)(pcVar7 + 4);
+        uVar11 = *(undefined4 *)(pcVar7 + 8);
+        uVar10 = *(undefined4 *)(pcVar7 + 0xc);
+        *(undefined4 *)pcVar9 = *(undefined4 *)pcVar7;
+        *(undefined4 *)(pcVar9 + 4) = uVar12;
+        *(undefined4 *)(pcVar9 + 8) = uVar11;
+        *(undefined4 *)(pcVar9 + 0xc) = uVar10;
+        pcVar8 = pcVar9 + 0x10;
+        pcVar3 = pcVar7 + 0x10;
+      } while (pcVar7 + 0x10 != "tsSent");
+      uVar2 = *(undefined2 *)(pcVar7 + 0x14);
+      cVar1 = pcVar7[0x16];
+      pcVar8[0] = 't';
+      pcVar8[1] = 's';
+      pcVar8[2] = 'S';
+      pcVar8[3] = 'e';
+      *(undefined2 *)(pcVar9 + 0x14) = uVar2;
+      pcVar9[0x16] = cVar1;
+      memset(auStack_7d5,0,0xa9);
+      pcVar3 = local_72c;
+      pcVar8 = 
+      "InternetGatewayDevice.LANDevice.{%d}.LANEthernetInterfaceConfig.{%d}.Stats.PacketsReceived";
+      do {
+        pcVar9 = pcVar8;
+        pcVar7 = pcVar3;
+        uVar12 = *(undefined4 *)(pcVar9 + 4);
+        uVar11 = *(undefined4 *)(pcVar9 + 8);
+        uVar10 = *(undefined4 *)(pcVar9 + 0xc);
+        *(undefined4 *)pcVar7 = *(undefined4 *)pcVar9;
+        *(undefined4 *)(pcVar7 + 4) = uVar12;
+        *(undefined4 *)(pcVar7 + 8) = uVar11;
+        *(undefined4 *)(pcVar7 + 0xc) = uVar10;
+        pcVar3 = pcVar7 + 0x10;
+        pcVar8 = pcVar9 + 0x10;
+      } while (pcVar9 + 0x10 != "tsReceived");
+      uVar10 = *(undefined4 *)(pcVar9 + 0x14);
+      uVar2 = *(undefined2 *)(pcVar9 + 0x18);
+      cVar1 = pcVar9[0x1a];
+      pcVar3[0] = 't';
+      pcVar3[1] = 's';
+      pcVar3[2] = 'R';
+      pcVar3[3] = 'e';
+      *(undefined4 *)(pcVar7 + 0x14) = uVar10;
+      *(undefined2 *)(pcVar7 + 0x18) = uVar2;
+      pcVar7[0x1a] = cVar1;
+      memset(auStack_6d1,0,0xa5);
+      local_1540 = 0;
+      local_153c = 0;
+      local_1538 = 0;
+      local_1534 = 0;
+      local_1530 = 0;
+      local_152c = 0;
+      local_1528 = 0;
+      memset(acStack_132c,0,0x100);
+      local_122c[0] = '\0';
+      local_122c[1] = '\0';
+      local_122c[2] = '\0';
+      local_122c[3] = -0x19;
+      local_1228[0] = 0;
+      local_1228[1] = 0;
+      local_1228[2] = 0;
+      local_1228[3] = 0;
+      local_1218 = 0;
+      local_1214 = 0;
+      local_1210 = 0;
+      iVar14 = 0;
+      while (iVar6 = cfg_getNextObjInSubTree(local_122c,&local_1540,0x196,0), iVar6 == 0) {
+        iVar14 = iVar14 + 1;
+      }
+      iVar6 = iVar14;
+      log_log(7,"status_info_LANEthernetInterfaceConfig",0x1d5,0x61b0,iVar14);
+      if (iVar14 == 0) {
+        log_log(3,"status_info_LANEthernetInterfaceConfig",0x1d9,0x61c0,iVar6);
+      }
+      else {
+        iVar6 = 1;
+        pcVar3 = local_c2c;
+        do {
+          do {
+            memset(acStack_132c,0,0x100);
+            sprintf(acStack_132c,pcVar3,1,iVar6);
+            pcVar3 = pcVar3 + 0x100;
+            FUN_00010c78(acStack_132c);
+          } while (local_62c != pcVar3);
+          iVar6 = iVar6 + 1;
+          pcVar3 = local_c2c;
+        } while (iVar6 <= iVar14);
+      }
+      memset(local_122c,0,0x600);
+      pcVar3 = "InternetGatewayDevice.LANDevice.{%d}.Hosts.Host.{%d}.IPAddress";
+      pcVar8 = local_122c;
+      do {
+        pcVar9 = pcVar8;
+        pcVar7 = pcVar3;
+        uVar12 = *(undefined4 *)(pcVar7 + 4);
+        uVar11 = *(undefined4 *)(pcVar7 + 8);
+        uVar10 = *(undefined4 *)(pcVar7 + 0xc);
+        *(undefined4 *)pcVar9 = *(undefined4 *)pcVar7;
+        *(undefined4 *)(pcVar9 + 4) = uVar12;
+        *(undefined4 *)(pcVar9 + 8) = uVar11;
+        *(undefined4 *)(pcVar9 + 0xc) = uVar10;
+        pcVar8 = pcVar9 + 0x10;
+        pcVar3 = pcVar7 + 0x10;
+      } while (pcVar7 + 0x10 != "{%d}.IPAddress");
+      uVar10 = *(undefined4 *)(pcVar7 + 0x18);
+      uVar2 = *(undefined2 *)(pcVar7 + 0x1c);
+      cVar1 = pcVar7[0x1e];
+      *(undefined4 *)(pcVar9 + 0x14) = *(undefined4 *)(pcVar7 + 0x14);
+      *(undefined4 *)(pcVar9 + 0x18) = uVar10;
+      *(undefined2 *)(pcVar9 + 0x1c) = uVar2;
+      pcVar8[0] = '{';
+      pcVar8[1] = '%';
+      pcVar8[2] = 'd';
+      pcVar8[3] = '}';
+      pcVar9[0x1e] = cVar1;
+      memset(auStack_11ed,0,0xc1);
+      pcVar3 = "InternetGatewayDevice.LANDevice.{%d}.Hosts.Host.{%d}.AddressSource";
+      pcVar8 = local_112c;
+      do {
+        pcVar9 = pcVar8;
+        pcVar7 = pcVar3;
+        uVar12 = *(undefined4 *)(pcVar7 + 4);
+        uVar11 = *(undefined4 *)(pcVar7 + 8);
+        uVar10 = *(undefined4 *)(pcVar7 + 0xc);
+        *(undefined4 *)pcVar9 = *(undefined4 *)pcVar7;
+        *(undefined4 *)(pcVar9 + 4) = uVar12;
+        *(undefined4 *)(pcVar9 + 8) = uVar11;
+        *(undefined4 *)(pcVar9 + 0xc) = uVar10;
+        pcVar8 = pcVar9 + 0x10;
+        pcVar3 = pcVar7 + 0x10;
+      } while (pcVar7 + 0x10 != "ce");
+      cVar1 = pcVar7[0x12];
+      pcVar8[0] = 'c';
+      pcVar8[1] = 'e';
+      pcVar9[0x12] = cVar1;
+      memset(auStack_10e9,0,0xbd);
+      pcVar3 = "InternetGatewayDevice.LANDevice.{%d}.Hosts.Host.{%d}.LeaseTimeRemaining";
+      pcVar8 = local_102c;
+      do {
+        pcVar9 = pcVar8;
+        pcVar7 = pcVar3;
+        uVar12 = *(undefined4 *)(pcVar7 + 4);
+        uVar11 = *(undefined4 *)(pcVar7 + 8);
+        uVar10 = *(undefined4 *)(pcVar7 + 0xc);
+        *(undefined4 *)pcVar9 = *(undefined4 *)pcVar7;
+        *(undefined4 *)(pcVar9 + 4) = uVar12;
+        *(undefined4 *)(pcVar9 + 8) = uVar11;
+        *(undefined4 *)(pcVar9 + 0xc) = uVar10;
+        pcVar8 = pcVar9 + 0x10;
+        pcVar3 = pcVar7 + 0x10;
+      } while (pcVar7 + 0x10 != "maining");
+      uVar10 = *(undefined4 *)(pcVar7 + 0x14);
+      pcVar8[0] = 'm';
+      pcVar8[1] = 'a';
+      pcVar8[2] = 'i';
+      pcVar8[3] = 'n';
+      *(undefined4 *)(pcVar9 + 0x14) = uVar10;
+      memset(&uStack_fe4,0,0xb8);
+      pcVar8 = local_f2c;
+      pcVar3 = "InternetGatewayDevice.LANDevice.{%d}.Hosts.Host.{%d}.MACAddress";
+      do {
+        uVar13 = *(undefined4 *)pcVar3;
+        uVar12 = *(undefined4 *)(pcVar3 + 4);
+        uVar11 = *(undefined4 *)(pcVar3 + 8);
+        uVar10 = *(undefined4 *)(pcVar3 + 0xc);
+        pcVar3 = pcVar3 + 0x10;
+        *(undefined4 *)pcVar8 = uVar13;
+        *(undefined4 *)(pcVar8 + 4) = uVar12;
+        *(undefined4 *)(pcVar8 + 8) = uVar11;
+        *(undefined4 *)(pcVar8 + 0xc) = uVar10;
+        pcVar8 = pcVar8 + 0x10;
+      } while (pcVar3 != "");
+      memset(auStack_eec,0,0xc0);
+      pcVar3 = "InternetGatewayDevice.LANDevice.{%d}.Hosts.Host.{%d}.HostName";
+      pcVar8 = local_e2c;
+      do {
+        pcVar9 = pcVar8;
+        pcVar7 = pcVar3;
+        uVar12 = *(undefined4 *)(pcVar7 + 4);
+        uVar11 = *(undefined4 *)(pcVar7 + 8);
+        uVar10 = *(undefined4 *)(pcVar7 + 0xc);
+        *(undefined4 *)pcVar9 = *(undefined4 *)pcVar7;
+        *(undefined4 *)(pcVar9 + 4) = uVar12;
+        *(undefined4 *)(pcVar9 + 8) = uVar11;
+        *(undefined4 *)(pcVar9 + 0xc) = uVar10;
+        pcVar8 = pcVar9 + 0x10;
+        pcVar3 = pcVar7 + 0x10;
+      } while (pcVar7 + 0x10 != "{%d}.HostName");
+      uVar11 = *(undefined4 *)(pcVar7 + 0x14);
+      uVar10 = *(undefined4 *)(pcVar7 + 0x18);
+      uVar2 = *(undefined2 *)(pcVar7 + 0x1c);
+      pcVar8[0] = '{';
+      pcVar8[1] = '%';
+      pcVar8[2] = 'd';
+      pcVar8[3] = '}';
+      *(undefined4 *)(pcVar9 + 0x14) = uVar11;
+      *(undefined4 *)(pcVar9 + 0x18) = uVar10;
+      *(undefined2 *)(pcVar9 + 0x1c) = uVar2;
+      memset(auStack_dee,0,0xc2);
+      pcVar3 = local_d2c;
+      pcVar8 = "InternetGatewayDevice.LANDevice.{%d}.Hosts.Host.{%d}.InterfaceType";
+      do {
+        pcVar9 = pcVar8;
+        pcVar7 = pcVar3;
+        uVar12 = *(undefined4 *)(pcVar9 + 4);
+        uVar11 = *(undefined4 *)(pcVar9 + 8);
+        uVar10 = *(undefined4 *)(pcVar9 + 0xc);
+        *(undefined4 *)pcVar7 = *(undefined4 *)pcVar9;
+        *(undefined4 *)(pcVar7 + 4) = uVar12;
+        *(undefined4 *)(pcVar7 + 8) = uVar11;
+        *(undefined4 *)(pcVar7 + 0xc) = uVar10;
+        pcVar3 = pcVar7 + 0x10;
+        pcVar8 = pcVar9 + 0x10;
+      } while (pcVar9 + 0x10 != "pe");
+      cVar1 = pcVar9[0x12];
+      pcVar3[0] = 'p';
+      pcVar3[1] = 'e';
+      pcVar7[0x12] = cVar1;
+      memset(auStack_ce9,0,0xbd);
+      local_1540 = 0;
+      local_153c = 0;
+      local_1538 = 0;
+      local_1534 = 0;
+      local_1530 = 0;
+      local_152c = 0;
+      local_1528 = 0;
+      memset(acStack_132c,0,0x100);
+      local_c2c[0] = '\0';
+      local_c2c[1] = '\0';
+      local_c2c[2] = '\0';
+      local_c2c[3] = -8;
+      local_c28[0] = 0;
+      local_c28[1] = 0;
+      local_c28[2] = 0;
+      local_c28[3] = 0;
+      local_c28[4] = 0;
+      local_c28[5] = 0;
+      local_c10[0] = 0;
+      iVar14 = 0;
+      while (iVar6 = cfg_getNextObjInSubTree(local_c2c,&local_1540,0x598,0), iVar6 == 0) {
+        iVar14 = iVar14 + 1;
+      }
+      iVar6 = iVar14;
+      log_log(7,"status_info_host",0x20f,0x61d0,iVar14);
+      if (iVar14 == 0) {
+        log_log(3,"status_info_host",0x213,0x61c0,iVar6);
+      }
+      else {
+        iVar6 = 1;
+        do {
+          pcVar3 = local_122c;
+          do {
+            memset(acStack_132c,0,0x100);
+            sprintf(acStack_132c,pcVar3,1,iVar6);
+            pcVar3 = pcVar3 + 0x100;
+            FUN_00010c78(acStack_132c);
+          } while (local_c2c != pcVar3);
+          iVar6 = iVar6 + 1;
+        } while (iVar6 <= iVar14);
+      }
+      FUN_00011918();
+      FUN_000128ac();
+      memset(local_122c,0,0x200);
+      pcVar3 = "InternetGatewayDevice.LANDevice.{%d}.LANUSBInterfaceConfig.{%d}.Enable";
+      pcVar8 = local_122c;
+      do {
+        pcVar9 = pcVar8;
+        pcVar7 = pcVar3;
+        uVar12 = *(undefined4 *)(pcVar7 + 4);
+        uVar11 = *(undefined4 *)(pcVar7 + 8);
+        uVar10 = *(undefined4 *)(pcVar7 + 0xc);
+        *(undefined4 *)pcVar9 = *(undefined4 *)pcVar7;
+        *(undefined4 *)(pcVar9 + 4) = uVar12;
+        *(undefined4 *)(pcVar9 + 8) = uVar11;
+        *(undefined4 *)(pcVar9 + 0xc) = uVar10;
+        pcVar8 = pcVar9 + 0x10;
+        pcVar3 = pcVar7 + 0x10;
+      } while (pcVar7 + 0x10 != "Enable");
+      uVar2 = *(undefined2 *)(pcVar7 + 0x14);
+      cVar1 = pcVar7[0x16];
+      pcVar8[0] = 'E';
+      pcVar8[1] = 'n';
+      pcVar8[2] = 'a';
+      pcVar8[3] = 'b';
+      *(undefined2 *)(pcVar9 + 0x14) = uVar2;
+      pcVar9[0x16] = cVar1;
+      memset(&uStack_11e5,0,0xb9);
+      pcVar3 = local_112c;
+      pcVar8 = "InternetGatewayDevice.LANDevice.{%d}.LANUSBInterfaceConfig.{%d}.Status";
+      do {
+        pcVar9 = pcVar8;
+        pcVar7 = pcVar3;
+        uVar12 = *(undefined4 *)(pcVar9 + 4);
+        uVar11 = *(undefined4 *)(pcVar9 + 8);
+        uVar10 = *(undefined4 *)(pcVar9 + 0xc);
+        *(undefined4 *)pcVar7 = *(undefined4 *)pcVar9;
+        *(undefined4 *)(pcVar7 + 4) = uVar12;
+        *(undefined4 *)(pcVar7 + 8) = uVar11;
+        *(undefined4 *)(pcVar7 + 0xc) = uVar10;
+        pcVar3 = pcVar7 + 0x10;
+        pcVar8 = pcVar9 + 0x10;
+      } while (pcVar9 + 0x10 != "Status");
+      uVar2 = *(undefined2 *)(pcVar9 + 0x14);
+      cVar1 = pcVar9[0x16];
+      pcVar3[0] = 'S';
+      pcVar3[1] = 't';
+      pcVar3[2] = 'a';
+      pcVar3[3] = 't';
+      *(undefined2 *)(pcVar7 + 0x14) = uVar2;
+      pcVar7[0x16] = cVar1;
+      memset(auStack_10e5,0,0xb9);
+      local_1540 = 0;
+      local_153c = 0;
+      local_1538 = 0;
+      local_1534 = 0;
+      local_1530 = 0;
+      local_152c = 0;
+      local_1528 = 0;
+      memset(acStack_132c,0,0x100);
+      local_1424 = 0xea;
+      local_1420 = 0;
+      local_141c = 0;
+      local_1418 = 0;
+      local_1414 = 0;
+      local_1410 = 0;
+      local_140c = 0;
+      local_1408 = 0;
+      iVar14 = 0;
+      while (iVar6 = cfg_getNextObjInSubTree(&local_1424,&local_1540,0xf5,0), iVar6 == 0) {
+        iVar14 = iVar14 + 1;
+      }
+      iVar6 = iVar14;
+      log_log(7,"status_info_LANUSBInterfaceConfig",0x363,0x61e0,iVar14);
+      if (iVar14 == 0) {
+        log_log(3,"status_info_LANUSBInterfaceConfig",0x367,0x61c0,iVar6);
+      }
+      else {
+        iVar6 = 1;
+        do {
+          memset(acStack_132c,0,0x100);
+          sprintf(acStack_132c,local_122c,1,iVar6);
+          FUN_00010c78(acStack_132c);
+          memset(acStack_132c,0,0x100);
+          sprintf(acStack_132c,local_112c,1,iVar6);
+          iVar6 = iVar6 + 1;
+          FUN_00010c78(acStack_132c);
+        } while (iVar6 <= iVar14);
+      }
+      close(DAT_0002b960);
+      return 0;
+    }
+    log_log(3,"extract_e8digstatus_info",0x397,0x6188,"extract_e8digstatus_info",0x397,acStack_14a4)
+    ;
+  }
+  return 0xffffffff;
+}
+
+
+
+/* ===== processE8DigConfig @ 0001434c ==== */
+
+undefined4 processE8DigConfig(void)
+
+{
+  char cVar1;
+  undefined2 uVar2;
+  uint uVar3;
+  uint *puVar4;
+  int iVar5;
+  FILE *__stream;
+  int iVar6;
+  size_t sVar7;
+  uint uVar8;
+  char *pcVar9;
+  char *pcVar10;
+  undefined4 uVar11;
+  undefined4 uVar12;
+  undefined4 uVar13;
+  undefined4 uVar14;
+  char *pcVar15;
+  char *pcVar16;
+  char *pcVar17;
+  int iVar18;
+  char acStack_14890 [255];
+  char cStack_14791;
+  undefined4 uStack_14790;
+  undefined1 auStack_1478c [4];
+  undefined4 auStack_14788 [2];
+  int aiStack_14780 [3];
+  undefined2 auStack_14774 [2];
+  char acStack_14770 [33];
+  undefined1 auStack_1474f [13];
+  undefined1 auStack_14742 [178];
+  char acStack_14690 [4];
+  undefined4 auStack_1468c [3];
+  char acStack_14680 [4];
+  undefined4 uStack_1467c;
+  undefined2 uStack_14678;
+  char acStack_14676 [33];
+  undefined1 auStack_14655 [197];
+  char acStack_14590 [4];
+  undefined4 auStack_1458c [3];
+  char acStack_14580 [16];
+  char acStack_14570 [33];
+  undefined1 auStack_1454f [191];
+  char acStack_14490 [4];
+  undefined4 auStack_1448c [18];
+  undefined1 auStack_14444 [180];
+  char acStack_14390 [4];
+  undefined4 auStack_1438c [5];
+  char acStack_14378 [49];
+  undefined1 auStack_14347 [183];
+  char acStack_14290 [4];
+  undefined4 auStack_1428c [3];
+  undefined2 auStack_14280 [33];
+  undefined1 auStack_1423e [174];
+  char acStack_14190 [4];
+  undefined4 auStack_1418c [6];
+  undefined2 auStack_14174 [25];
+  undefined1 auStack_14142 [178];
+  char acStack_14090 [4];
+  undefined4 auStack_1408c [3];
+  char acStack_14080 [4];
+  undefined4 uStack_1407c;
+  undefined2 uStack_14078;
+  char acStack_14076 [33];
+  undefined1 auStack_14055 [197];
+  char acStack_13f90 [4];
+  undefined4 auStack_13f8c [3];
+  char acStack_13f80 [16];
+  char acStack_13f70 [33];
+  undefined1 auStack_13f4f [191];
+  char acStack_13e90 [4];
+  undefined4 auStack_13e8c [6];
+  undefined2 auStack_13e74 [10];
+  char acStack_13e60 [30];
+  undefined1 auStack_13e42 [178];
+  char acStack_13d90 [4];
+  undefined4 auStack_13d8c [3];
+  undefined2 auStack_13d80 [24];
+  char acStack_13d50 [2];
+  char acStack_13d4e [190];
+  char acStack_13c90 [4];
+  undefined4 auStack_13c8c [5];
+  char acStack_13c78 [49];
+  undefined1 auStack_13c47 [7];
+  char acStack_13c40 [176];
+  char acStack_13b90 [4];
+  undefined4 auStack_13b8c [5];
+  undefined2 uStack_13b78;
+  char acStack_13b76 [49];
+  undefined1 auStack_13b45 [181];
+  char acStack_13a90 [4];
+  undefined4 auStack_13a8c [4];
+  undefined2 auStack_13a7c [25];
+  undefined1 auStack_13a4a [186];
+  char acStack_13990 [4];
+  undefined4 auStack_1398c [6];
+  undefined2 auStack_13974 [2];
+  char acStack_13970 [46];
+  undefined1 auStack_13942 [178];
+  char acStack_13890 [4];
+  undefined4 auStack_1388c [3];
+  char acStack_13880 [4];
+  undefined4 uStack_1387c;
+  undefined2 uStack_13878;
+  char acStack_13876 [33];
+  undefined1 auStack_13855 [197];
+  char acStack_13790 [4];
+  undefined4 auStack_1378c [3];
+  char acStack_13780 [16];
+  char acStack_13770 [33];
+  undefined1 auStack_1374f [239];
+  char acStack_13660 [272];
+  char acStack_13550 [272];
+  char acStack_13440 [272];
+  char acStack_13330 [272];
+  char acStack_13220 [272];
+  undefined4 uStack_13110;
+  undefined1 uStack_1310c;
+  undefined4 uStack_13108;
+  undefined4 uStack_13104;
+  uint uStack_130d4;
+  char acStack_13016 [33];
+  char acStack_12ff5 [1146];
+  undefined1 auStack_12b7b [68];
+  char acStack_12b37 [33];
+  char acStack_12b16 [33];
+  char acStack_12af5 [33];
+  char acStack_12ad4 [33];
+  char acStack_12ab3 [10879];
+  char acStack_10034 [65540];
+  char *local_30;
+  char *local_2c;
+  
+  memset(acStack_10034,0,0x10000);
+  memset(acStack_14890,0,0x100);
+  iVar5 = access((char *)0x61f0,0);
+  if (iVar5 == 0) {
+    DAT_0002b964 = 4;
+    FUN_00010ac0();
+  }
+  else {
+    memset(&uStack_14790,0,0x100);
+    pcVar17 = "config_info_load_to_mem";
+    log_log(7,"config_info_load_to_mem",0x3c6,0x6208,"config_info_load_to_mem");
+    iVar5 = access((char *)0x6224,0);
+    if (iVar5 == 0) {
+      sprintf((char *)&uStack_14790,(char *)0x6260,0x6224);
+      system((char *)&uStack_14790);
+      __stream = fopen((char *)0x6224,(char *)0x6150);
+      if (__stream != (FILE *)0x0) {
+        pcVar15 = acStack_10034;
+        iVar5 = 0;
+        while( true ) {
+          iVar6 = feof(__stream);
+          if (iVar6 != 0) break;
+          memset(&uStack_14790,0,0x100);
+          fgets((char *)&uStack_14790,0x100,__stream);
+          if (uStack_14790._0_1_ != '\0') {
+            sVar7 = strlen((char *)&uStack_14790);
+            iVar5 = iVar5 + 1;
+            if ((&cStack_14791)[sVar7] == '\n') {
+              (&cStack_14791)[sVar7] = '\0';
+              sVar7 = strlen((char *)&uStack_14790);
+            }
+            strncpy(pcVar15,(char *)&uStack_14790,sVar7);
+            pcVar15 = pcVar15 + 0x100;
+          }
+        }
+        fclose(__stream);
+        pcVar9 = (char *)&uStack_14790;
+        pcVar16 = "InternetGatewayDevice.LANDevice.1.WLANConfiguration.1.BeaconType";
+        pcVar15 = pcVar16;
+        do {
+          uVar14 = *(undefined4 *)pcVar15;
+          uVar13 = *(undefined4 *)(pcVar15 + 4);
+          uVar12 = *(undefined4 *)(pcVar15 + 8);
+          uVar11 = *(undefined4 *)(pcVar15 + 0xc);
+          pcVar15 = pcVar15 + 0x10;
+          *(undefined4 *)pcVar9 = uVar14;
+          *(undefined4 *)(pcVar9 + 4) = uVar13;
+          *(undefined4 *)(pcVar9 + 8) = uVar12;
+          *(undefined4 *)(pcVar9 + 0xc) = uVar11;
+          pcVar9 = pcVar9 + 0x10;
+        } while (pcVar15 != "");
+        *pcVar9 = '\0';
+        memset(auStack_1474f,0,0xbf);
+        if (iVar5 != 0) {
+          pcVar15 = acStack_10034;
+          iVar6 = 0;
+          do {
+            pcVar9 = strstr(pcVar15,(char *)&uStack_14790);
+            iVar6 = iVar6 + 1;
+            if (pcVar9 != (char *)0x0) {
+              iVar6 = FUN_00012cf8(pcVar15,acStack_14890);
+              if (iVar6 == 0) {
+                iVar6 = strcmp(acStack_14890,(char *)0x6378);
+                if (iVar6 == 0) {
+                  memset(acStack_13990,0,0x300);
+                  pcVar17 = 
+                  "InternetGatewayDevice.LANDevice.1.WLANConfiguration.1.X_CT-COM_APModuleEnable";
+                  pcVar15 = acStack_13990;
+                  do {
+                    pcVar10 = pcVar15;
+                    pcVar9 = pcVar17;
+                    uVar13 = *(undefined4 *)(pcVar9 + 4);
+                    uVar12 = *(undefined4 *)(pcVar9 + 8);
+                    uVar11 = *(undefined4 *)(pcVar9 + 0xc);
+                    *(undefined4 *)pcVar10 = *(undefined4 *)pcVar9;
+                    *(undefined4 *)(pcVar10 + 4) = uVar13;
+                    *(undefined4 *)(pcVar10 + 8) = uVar12;
+                    *(undefined4 *)(pcVar10 + 0xc) = uVar11;
+                    pcVar15 = pcVar10 + 0x10;
+                    pcVar17 = pcVar9 + 0x10;
+                  } while (pcVar9 + 0x10 != "PModuleEnable");
+                  uVar12 = *(undefined4 *)(pcVar9 + 0x14);
+                  uVar11 = *(undefined4 *)(pcVar9 + 0x18);
+                  uVar2 = *(undefined2 *)(pcVar9 + 0x1c);
+                  pcVar15[0] = 'P';
+                  pcVar15[1] = 'M';
+                  pcVar15[2] = 'o';
+                  pcVar15[3] = 'd';
+                  *(undefined4 *)(pcVar10 + 0x14) = uVar12;
+                  *(undefined4 *)(pcVar10 + 0x18) = uVar11;
+                  *(undefined2 *)(pcVar10 + 0x1c) = uVar2;
+                  memset(auStack_13942,0,0xb2);
+                  pcVar17 = "InternetGatewayDevice.LANDevice.1.WLANConfiguration.1.SSID";
+                  pcVar15 = acStack_13890;
+                  do {
+                    pcVar10 = pcVar15;
+                    pcVar9 = pcVar17;
+                    uVar13 = *(undefined4 *)(pcVar9 + 4);
+                    uVar12 = *(undefined4 *)(pcVar9 + 8);
+                    uVar11 = *(undefined4 *)(pcVar9 + 0xc);
+                    *(undefined4 *)pcVar10 = *(undefined4 *)pcVar9;
+                    *(undefined4 *)(pcVar10 + 4) = uVar13;
+                    *(undefined4 *)(pcVar10 + 8) = uVar12;
+                    *(undefined4 *)(pcVar10 + 0xc) = uVar11;
+                    pcVar15 = pcVar10 + 0x10;
+                    pcVar17 = pcVar9 + 0x10;
+                  } while (pcVar9 + 0x10 != "ion.1.SSID");
+                  uVar11 = *(undefined4 *)(pcVar9 + 0x14);
+                  uVar2 = *(undefined2 *)(pcVar9 + 0x18);
+                  cVar1 = pcVar9[0x1a];
+                  pcVar15[0] = 'i';
+                  pcVar15[1] = 'o';
+                  pcVar15[2] = 'n';
+                  pcVar15[3] = '.';
+                  *(undefined4 *)(pcVar10 + 0x14) = uVar11;
+                  *(undefined2 *)(pcVar10 + 0x18) = uVar2;
+                  pcVar10[0x1a] = cVar1;
+                  memset(auStack_13855,0,0xc5);
+                  pcVar17 = acStack_13790;
+                  do {
+                    uVar14 = *(undefined4 *)pcVar16;
+                    uVar13 = *(undefined4 *)(pcVar16 + 4);
+                    uVar12 = *(undefined4 *)(pcVar16 + 8);
+                    uVar11 = *(undefined4 *)(pcVar16 + 0xc);
+                    pcVar16 = pcVar16 + 0x10;
+                    *(undefined4 *)pcVar17 = uVar14;
+                    *(undefined4 *)(pcVar17 + 4) = uVar13;
+                    *(undefined4 *)(pcVar17 + 8) = uVar12;
+                    *(undefined4 *)(pcVar17 + 0xc) = uVar11;
+                    pcVar17 = pcVar17 + 0x10;
+                  } while (pcVar16 != "");
+                  *pcVar17 = '\0';
+                  memset(auStack_1374f,0,0xbf);
+                  memset(&uStack_14790,0,0x330);
+                  pcVar17 = (char *)&uStack_14790;
+                  iVar6 = 0;
+                  local_2c = acStack_13990;
+                  local_30 = pcVar17;
+                  while( true ) {
+                    pcVar15 = acStack_10034;
+                    iVar18 = 0;
+                    while (pcVar9 = strstr(pcVar15,local_2c), pcVar9 == (char *)0x0) {
+                      iVar18 = iVar18 + 1;
+                      pcVar15 = pcVar15 + 0x100;
+                      if (iVar18 == iVar5) goto LAB_00015838;
+                    }
+                    FUN_00012cf8(pcVar15,local_30);
+                    if (iVar5 <= iVar18) break;
+                    iVar6 = iVar6 + 1;
+                    local_30 = local_30 + 0x110;
+                    local_2c = local_2c + 0x100;
+                    if (iVar6 == 3) {
+                      pcVar15 = "config_info_set_BeaconType_None";
+                      iVar5 = 0;
+                      do {
+                        iVar18 = iVar5 + 1;
+                        iVar6 = iVar5;
+                        pcVar9 = pcVar17;
+                        log_log(7,"config_info_set_BeaconType_None",0x47e,0x62fc,iVar5,pcVar17);
+                        pcVar17 = pcVar17 + 0x110;
+                        iVar5 = iVar18;
+                      } while (iVar18 != 3);
+                      if (acStack_14680[0] == '\0') {
+                        uVar11 = 0x483;
+                        uVar12 = 0x6310;
+                        goto LAB_000158d4;
+                      }
+                      iVar5 = strcmp((char *)&uStack_14790,(char *)0x6324);
+                      if ((iVar5 != 0) &&
+                         (iVar5 = strcmp((char *)&uStack_14790,(char *)0x632c), iVar5 != 0)) {
+                        pcVar17 = (char *)&uStack_14790;
+                        uVar11 = 0x48c;
+                        uVar12 = 0x6334;
+                        goto LAB_00015958;
+                      }
+                      memset(&uStack_13110,0,0x30da);
+                      uStack_13110 = 0xeb;
+                      uStack_1310c = 2;
+                      uStack_13108 = 1;
+                      uStack_13104 = 1;
+                      iVar5 = cfg_getObj(&uStack_13110,0x30da,0x800);
+                      if (iVar5 == 0) {
+                        iVar5 = strcmp((char *)&uStack_14790,(char *)0x6324);
+                        uStack_130d4 = (uint)(iVar5 == 0);
+                        strncpy(acStack_13016,acStack_14680,0x20);
+                        strncpy(acStack_12ff5,acStack_14570,0x20);
+                        strncpy(acStack_12b16,(char *)0x6378,0x20);
+                        iVar5 = cfg_setObj(&uStack_13110,0x30da,0x800);
+                        if (iVar5 == 0) {
+LAB_00015018:
+                          DAT_0002b964 = 0;
+                          goto LAB_0001501c;
+                        }
+                        pcVar17 = "config_info_set_BeaconType_None";
+                        uVar11 = 0x4a5;
+                        uVar12 = 0x6380;
+                      }
+                      else {
+                        pcVar17 = "config_info_set_BeaconType_None";
+                        uVar11 = 0x495;
+                        uVar12 = 0x635c;
+                      }
+LAB_00015788:
+                      log_log(3,pcVar17,uVar11,uVar12);
+                      DAT_0002b964 = 99;
+                      goto LAB_0001501c;
+                    }
+                  }
+                  local_2c = acStack_13990 + iVar6 * 0x100;
+LAB_00015838:
+                  pcVar17 = "config_info_set_BeaconType_None";
+                  uVar11 = 0x476;
+                  local_30 = local_2c;
+                }
+                else {
+                  iVar6 = strcmp(acStack_14890,(char *)0x639c);
+                  if (iVar6 == 0) {
+                    memset(acStack_14190,0,0x800);
+                    pcVar17 = 
+                    "InternetGatewayDevice.LANDevice.1.WLANConfiguration.1.X_CT-COM_APModuleEnable";
+                    pcVar15 = acStack_14190;
+                    do {
+                      pcVar10 = pcVar15;
+                      pcVar9 = pcVar17;
+                      uVar13 = *(undefined4 *)(pcVar9 + 4);
+                      uVar12 = *(undefined4 *)(pcVar9 + 8);
+                      uVar11 = *(undefined4 *)(pcVar9 + 0xc);
+                      *(undefined4 *)pcVar10 = *(undefined4 *)pcVar9;
+                      *(undefined4 *)(pcVar10 + 4) = uVar13;
+                      *(undefined4 *)(pcVar10 + 8) = uVar12;
+                      *(undefined4 *)(pcVar10 + 0xc) = uVar11;
+                      pcVar15 = pcVar10 + 0x10;
+                      pcVar17 = pcVar9 + 0x10;
+                    } while (pcVar9 + 0x10 != "PModuleEnable");
+                    uVar12 = *(undefined4 *)(pcVar9 + 0x14);
+                    uVar11 = *(undefined4 *)(pcVar9 + 0x18);
+                    uVar2 = *(undefined2 *)(pcVar9 + 0x1c);
+                    pcVar15[0] = 'P';
+                    pcVar15[1] = 'M';
+                    pcVar15[2] = 'o';
+                    pcVar15[3] = 'd';
+                    *(undefined4 *)(pcVar10 + 0x14) = uVar12;
+                    *(undefined4 *)(pcVar10 + 0x18) = uVar11;
+                    *(undefined2 *)(pcVar10 + 0x1c) = uVar2;
+                    memset(auStack_14142,0,0xb2);
+                    pcVar17 = "InternetGatewayDevice.LANDevice.1.WLANConfiguration.1.SSID";
+                    pcVar15 = acStack_14090;
+                    do {
+                      pcVar10 = pcVar15;
+                      pcVar9 = pcVar17;
+                      uVar13 = *(undefined4 *)(pcVar9 + 4);
+                      uVar12 = *(undefined4 *)(pcVar9 + 8);
+                      uVar11 = *(undefined4 *)(pcVar9 + 0xc);
+                      *(undefined4 *)pcVar10 = *(undefined4 *)pcVar9;
+                      *(undefined4 *)(pcVar10 + 4) = uVar13;
+                      *(undefined4 *)(pcVar10 + 8) = uVar12;
+                      *(undefined4 *)(pcVar10 + 0xc) = uVar11;
+                      pcVar15 = pcVar10 + 0x10;
+                      pcVar17 = pcVar9 + 0x10;
+                    } while (pcVar9 + 0x10 != "ion.1.SSID");
+                    uVar11 = *(undefined4 *)(pcVar9 + 0x14);
+                    uVar2 = *(undefined2 *)(pcVar9 + 0x18);
+                    cVar1 = pcVar9[0x1a];
+                    pcVar15[0] = 'i';
+                    pcVar15[1] = 'o';
+                    pcVar15[2] = 'n';
+                    pcVar15[3] = '.';
+                    *(undefined4 *)(pcVar10 + 0x14) = uVar11;
+                    *(undefined2 *)(pcVar10 + 0x18) = uVar2;
+                    pcVar10[0x1a] = cVar1;
+                    memset(auStack_14055,0,0xc5);
+                    pcVar17 = acStack_13f90;
+                    do {
+                      uVar14 = *(undefined4 *)pcVar16;
+                      uVar13 = *(undefined4 *)(pcVar16 + 4);
+                      uVar12 = *(undefined4 *)(pcVar16 + 8);
+                      uVar11 = *(undefined4 *)(pcVar16 + 0xc);
+                      pcVar16 = pcVar16 + 0x10;
+                      *(undefined4 *)pcVar17 = uVar14;
+                      *(undefined4 *)(pcVar17 + 4) = uVar13;
+                      *(undefined4 *)(pcVar17 + 8) = uVar12;
+                      *(undefined4 *)(pcVar17 + 0xc) = uVar11;
+                      pcVar17 = pcVar17 + 0x10;
+                    } while (pcVar16 != "");
+                    *pcVar17 = '\0';
+                    memset(auStack_13f4f,0,0xbf);
+                    pcVar17 = 
+                    "InternetGatewayDevice.LANDevice.1.WLANConfiguration.1.BasicAuthenticationMode";
+                    pcVar15 = acStack_13e90;
+                    do {
+                      pcVar16 = pcVar15;
+                      pcVar9 = pcVar17;
+                      uVar13 = *(undefined4 *)(pcVar9 + 4);
+                      uVar12 = *(undefined4 *)(pcVar9 + 8);
+                      uVar11 = *(undefined4 *)(pcVar9 + 0xc);
+                      *(undefined4 *)pcVar16 = *(undefined4 *)pcVar9;
+                      *(undefined4 *)(pcVar16 + 4) = uVar13;
+                      *(undefined4 *)(pcVar16 + 8) = uVar12;
+                      *(undefined4 *)(pcVar16 + 0xc) = uVar11;
+                      pcVar15 = pcVar16 + 0x10;
+                      pcVar17 = pcVar9 + 0x10;
+                    } while (pcVar9 + 0x10 != "nticationMode");
+                    uVar12 = *(undefined4 *)(pcVar9 + 0x14);
+                    uVar11 = *(undefined4 *)(pcVar9 + 0x18);
+                    uVar2 = *(undefined2 *)(pcVar9 + 0x1c);
+                    pcVar15[0] = 'n';
+                    pcVar15[1] = 't';
+                    pcVar15[2] = 'i';
+                    pcVar15[3] = 'c';
+                    *(undefined4 *)(pcVar16 + 0x14) = uVar12;
+                    *(undefined4 *)(pcVar16 + 0x18) = uVar11;
+                    *(undefined2 *)(pcVar16 + 0x1c) = uVar2;
+                    memset(auStack_13e42,0,0xb2);
+                    pcVar15 = acStack_13d90;
+                    pcVar17 = "InternetGatewayDevice.LANDevice.1.WLANConfiguration.1.WEPKeyIndex";
+                    do {
+                      uVar14 = *(undefined4 *)pcVar17;
+                      uVar13 = *(undefined4 *)(pcVar17 + 4);
+                      uVar12 = *(undefined4 *)(pcVar17 + 8);
+                      uVar11 = *(undefined4 *)(pcVar17 + 0xc);
+                      pcVar17 = pcVar17 + 0x10;
+                      *(undefined4 *)pcVar15 = uVar14;
+                      *(undefined4 *)(pcVar15 + 4) = uVar13;
+                      *(undefined4 *)(pcVar15 + 8) = uVar12;
+                      *(undefined4 *)(pcVar15 + 0xc) = uVar11;
+                      pcVar15 = pcVar15 + 0x10;
+                    } while (pcVar17 != "x");
+                    pcVar15[0] = 'x';
+                    pcVar15[1] = '\0';
+                    memset(acStack_13d50 + 2,0,0xbe);
+                    pcVar17 = 
+                    "InternetGatewayDevice.LANDevice.1.WLANConfiguration.1.WEPEncryptionLevel";
+                    pcVar15 = acStack_13c90;
+                    do {
+                      pcVar16 = pcVar15;
+                      pcVar9 = pcVar17;
+                      uVar13 = *(undefined4 *)(pcVar9 + 4);
+                      uVar12 = *(undefined4 *)(pcVar9 + 8);
+                      uVar11 = *(undefined4 *)(pcVar9 + 0xc);
+                      *(undefined4 *)pcVar16 = *(undefined4 *)pcVar9;
+                      *(undefined4 *)(pcVar16 + 4) = uVar13;
+                      *(undefined4 *)(pcVar16 + 8) = uVar12;
+                      *(undefined4 *)(pcVar16 + 0xc) = uVar11;
+                      pcVar15 = pcVar16 + 0x10;
+                      pcVar17 = pcVar9 + 0x10;
+                    } while (pcVar9 + 0x10 != "ionLevel");
+                    uVar11 = *(undefined4 *)(pcVar9 + 0x14);
+                    cVar1 = pcVar9[0x18];
+                    pcVar15[0] = 'i';
+                    pcVar15[1] = 'o';
+                    pcVar15[2] = 'n';
+                    pcVar15[3] = 'L';
+                    *(undefined4 *)(pcVar16 + 0x14) = uVar11;
+                    pcVar16[0x18] = cVar1;
+                    memset(auStack_13c47,0,0xb7);
+                    pcVar17 = 
+                    "InternetGatewayDevice.LANDevice.1.WLANConfiguration.1.BasicEncryptionModes";
+                    pcVar15 = acStack_13b90;
+                    do {
+                      pcVar16 = pcVar15;
+                      pcVar9 = pcVar17;
+                      uVar13 = *(undefined4 *)(pcVar9 + 4);
+                      uVar12 = *(undefined4 *)(pcVar9 + 8);
+                      uVar11 = *(undefined4 *)(pcVar9 + 0xc);
+                      *(undefined4 *)pcVar16 = *(undefined4 *)pcVar9;
+                      *(undefined4 *)(pcVar16 + 4) = uVar13;
+                      *(undefined4 *)(pcVar16 + 8) = uVar12;
+                      *(undefined4 *)(pcVar16 + 0xc) = uVar11;
+                      pcVar15 = pcVar16 + 0x10;
+                      pcVar17 = pcVar9 + 0x10;
+                    } while (pcVar9 + 0x10 != "ptionModes");
+                    uVar11 = *(undefined4 *)(pcVar9 + 0x14);
+                    uVar2 = *(undefined2 *)(pcVar9 + 0x18);
+                    cVar1 = pcVar9[0x1a];
+                    pcVar15[0] = 'p';
+                    pcVar15[1] = 't';
+                    pcVar15[2] = 'i';
+                    pcVar15[3] = 'o';
+                    *(undefined4 *)(pcVar16 + 0x14) = uVar11;
+                    *(undefined2 *)(pcVar16 + 0x18) = uVar2;
+                    pcVar16[0x1a] = cVar1;
+                    memset(auStack_13b45,0,0xb5);
+                    pcVar17 = acStack_13a90;
+                    pcVar15 = 
+                    "InternetGatewayDevice.LANDevice.1.WLANConfiguration.1.WEPKey.1.WEPKey";
+                    do {
+                      pcVar16 = pcVar15;
+                      pcVar9 = pcVar17;
+                      uVar13 = *(undefined4 *)(pcVar16 + 4);
+                      uVar12 = *(undefined4 *)(pcVar16 + 8);
+                      uVar11 = *(undefined4 *)(pcVar16 + 0xc);
+                      *(undefined4 *)pcVar9 = *(undefined4 *)pcVar16;
+                      *(undefined4 *)(pcVar9 + 4) = uVar13;
+                      *(undefined4 *)(pcVar9 + 8) = uVar12;
+                      *(undefined4 *)(pcVar9 + 0xc) = uVar11;
+                      pcVar17 = pcVar9 + 0x10;
+                      pcVar15 = pcVar16 + 0x10;
+                    } while (pcVar16 + 0x10 != "EPKey");
+                    uVar2 = *(undefined2 *)(pcVar16 + 0x14);
+                    pcVar17[0] = 'E';
+                    pcVar17[1] = 'P';
+                    pcVar17[2] = 'K';
+                    pcVar17[3] = 'e';
+                    *(undefined2 *)(pcVar9 + 0x14) = uVar2;
+                    memset(auStack_13a4a,0,0xba);
+                    pcVar17 = acStack_13990;
+                    memset(pcVar17,0,0x880);
+                    iVar6 = 0;
+                    local_2c = acStack_14190;
+                    local_30 = pcVar17;
+                    while( true ) {
+                      pcVar15 = acStack_10034;
+                      iVar18 = 0;
+                      while (pcVar9 = strstr(pcVar15,local_2c), pcVar9 == (char *)0x0) {
+                        iVar18 = iVar18 + 1;
+                        pcVar15 = pcVar15 + 0x100;
+                        if (iVar18 == iVar5) goto LAB_00015b1c;
+                      }
+                      FUN_00012cf8(pcVar15,local_30);
+                      if (iVar5 <= iVar18) break;
+                      iVar6 = iVar6 + 1;
+                      local_30 = local_30 + 0x110;
+                      local_2c = local_2c + 0x100;
+                      if (iVar6 == 8) {
+                        pcVar15 = "config_info_set_BeaconType_Basic";
+                        pcVar16 = pcVar17;
+                        iVar5 = 0;
+                        do {
+                          iVar18 = iVar5 + 1;
+                          iVar6 = iVar5;
+                          pcVar9 = pcVar16;
+                          log_log(7,"config_info_set_BeaconType_Basic",0x577,0x62fc,iVar5,pcVar16);
+                          pcVar16 = pcVar16 + 0x110;
+                          iVar5 = iVar18;
+                        } while (iVar18 != 8);
+                        if (acStack_13880[0] == '\0') {
+                          uVar11 = 0x57c;
+                          uVar12 = 0x6310;
+                          goto LAB_000158d4;
+                        }
+                        iVar5 = strcmp(pcVar17,(char *)0x6324);
+                        if ((iVar5 != 0) && (iVar5 = strcmp(pcVar17,(char *)0x632c), iVar5 != 0)) {
+                          uVar11 = 0x585;
+                          uVar12 = 0x6334;
+                          goto LAB_00015958;
+                        }
+                        iVar5 = strcmp(acStack_13660,(char *)0x63a4);
+                        if (iVar5 == 0) {
+                          uVar8 = atoi(acStack_13550);
+                          if (uVar8 - 1 < 4) {
+                            iVar5 = strcmp(acStack_13330,(char *)0x63f0);
+                            if (iVar5 == 0) {
+                              iVar5 = strcmp(acStack_13440,(char *)0x6428);
+                              if (iVar5 == 0) {
+                                sVar7 = strlen(acStack_13220);
+                                if (sVar7 == 10) {
+LAB_000155bc:
+                                  memset(&uStack_13110,0,0x30da);
+                                  uStack_13110 = 0xeb;
+                                  uStack_1310c = 2;
+                                  uStack_13108 = 1;
+                                  uStack_13104 = 1;
+                                  iVar5 = cfg_getObj(&uStack_13110,0x30da,0x800);
+                                  if (iVar5 == 0) {
+                                    iVar5 = strcmp(pcVar17,(char *)0x6324);
+                                    uStack_130d4 = (uint)(iVar5 == 0);
+                                    strncpy(acStack_13016,acStack_13880,0x20);
+                                    strncpy(acStack_12ff5,acStack_13770,0x20);
+                                    strncpy(acStack_12af5,acStack_13660,0x20);
+                                    uVar3 = (uint)auStack_12b7b & 3;
+                                    puVar4 = (uint *)(auStack_12b7b + -uVar3);
+                                    *puVar4 = *puVar4 & -1 << (4 - uVar3) * 8 | uVar8 >> uVar3 * 8;
+                                    auStack_12b7b._3_4_ =
+                                         auStack_12b7b._3_4_ & 0xffffff | uVar8 << 0x18;
+                                    strncpy(acStack_12b37,acStack_13440,0x20);
+                                    strncpy(acStack_12b16,acStack_13330,0x20);
+                                    iVar5 = cfg_setObj(&uStack_13110,0x30da,0x800);
+                                    if (iVar5 == 0) {
+                                      memset(&uStack_14790,0,0xa1);
+                                      uStack_14790 = 0xee;
+                                      auStack_1478c[0] = 3;
+                                      auStack_14788[0] = 1;
+                                      auStack_14788[1] = 1;
+                                      iVar5 = 1;
+                                      while( true ) {
+                                        aiStack_14780[0] = iVar5;
+                                        strncpy(acStack_14770,acStack_13220,0x80);
+                                        iVar6 = cfg_setObj(&uStack_14790,0xa1,0x800);
+                                        iVar5 = iVar5 + 1;
+                                        if (iVar6 != 0) break;
+                                        if (iVar5 == 5) goto LAB_00015018;
+                                      }
+                                      pcVar17 = "config_info_set_BeaconType_Basic";
+                                      uVar11 = 0x5e4;
+                                      uVar12 = 0x6474;
+                                    }
+                                    else {
+                                      pcVar17 = "config_info_set_BeaconType_Basic";
+                                      uVar11 = 0x5d5;
+                                      uVar12 = 0x6380;
+                                    }
+                                  }
+                                  else {
+                                    pcVar17 = "config_info_set_BeaconType_Basic";
+                                    uVar11 = 0x5c2;
+                                    uVar12 = 0x635c;
+                                  }
+                                  goto LAB_00015788;
+                                }
+                                pcVar15 = "config_info_set_BeaconType_Basic";
+                                uVar11 = 0x5a8;
+                                uVar12 = 0x6430;
+                                pcVar17 = acStack_13220;
+                              }
+                              else {
+                                iVar5 = strcmp(acStack_13440,(char *)0x6448);
+                                if (iVar5 != 0) {
+                                  pcVar17 = (char *)0x6450;
+                                  pcVar15 = acStack_13440;
+                                  goto LAB_00015b74;
+                                }
+                                sVar7 = strlen(acStack_13220);
+                                if (sVar7 == 0x1a) goto LAB_000155bc;
+                                pcVar15 = "config_info_set_BeaconType_Basic";
+                                uVar11 = 0x5b1;
+                                uVar12 = 0x6430;
+                                pcVar17 = acStack_13220;
+                              }
+LAB_00015958:
+                              log_log(3,pcVar15,uVar11,uVar12,pcVar17,pcVar9);
+                              DAT_0002b964 = 1;
+                              goto LAB_0001501c;
+                            }
+                            pcVar17 = (char *)0x6400;
+                            pcVar15 = acStack_13330;
+                          }
+                          else {
+                            pcVar17 = (char *)0x63d4;
+                            pcVar15 = acStack_13550;
+                          }
+                        }
+                        else {
+                          pcVar17 = (char *)0x63ac;
+                          pcVar15 = acStack_13660;
+                        }
+LAB_00015b74:
+                        printf(pcVar17,pcVar15);
+                        DAT_0002b964 = 1;
+                        goto LAB_0001501c;
+                      }
+                    }
+                    local_2c = acStack_14190 + iVar6 * 0x100;
+LAB_00015b1c:
+                    pcVar17 = "config_info_set_BeaconType_Basic";
+                    uVar11 = 0x56f;
+                    local_30 = local_2c;
+                  }
+                  else {
+                    iVar6 = strcmp(acStack_14890,(char *)0x6494);
+                    if (iVar6 != 0) {
+                      DAT_0002b964 = 1;
+                      log_log(3,"processE8DigConfig",0x624,0x6584,acStack_14890);
+                      return 0xffffffff;
+                    }
+                    memset(&uStack_14790,0,0x600);
+                    pcVar17 = 
+                    "InternetGatewayDevice.LANDevice.1.WLANConfiguration.1.X_CT-COM_APModuleEnable";
+                    pcVar15 = (char *)&uStack_14790;
+                    do {
+                      pcVar10 = pcVar15;
+                      pcVar9 = pcVar17;
+                      uVar13 = *(undefined4 *)(pcVar9 + 4);
+                      uVar12 = *(undefined4 *)(pcVar9 + 8);
+                      uVar11 = *(undefined4 *)(pcVar9 + 0xc);
+                      *(undefined4 *)pcVar10 = *(undefined4 *)pcVar9;
+                      *(undefined4 *)(pcVar10 + 4) = uVar13;
+                      *(undefined4 *)(pcVar10 + 8) = uVar12;
+                      *(undefined4 *)(pcVar10 + 0xc) = uVar11;
+                      pcVar15 = pcVar10 + 0x10;
+                      pcVar17 = pcVar9 + 0x10;
+                    } while (pcVar9 + 0x10 != "PModuleEnable");
+                    uVar12 = *(undefined4 *)(pcVar9 + 0x14);
+                    uVar11 = *(undefined4 *)(pcVar9 + 0x18);
+                    uVar2 = *(undefined2 *)(pcVar9 + 0x1c);
+                    pcVar15[0] = 'P';
+                    pcVar15[1] = 'M';
+                    pcVar15[2] = 'o';
+                    pcVar15[3] = 'd';
+                    *(undefined4 *)(pcVar10 + 0x14) = uVar12;
+                    *(undefined4 *)(pcVar10 + 0x18) = uVar11;
+                    *(undefined2 *)(pcVar10 + 0x1c) = uVar2;
+                    memset(auStack_14742,0,0xb2);
+                    pcVar17 = "InternetGatewayDevice.LANDevice.1.WLANConfiguration.1.SSID";
+                    pcVar15 = acStack_14690;
+                    do {
+                      pcVar10 = pcVar15;
+                      pcVar9 = pcVar17;
+                      uVar13 = *(undefined4 *)(pcVar9 + 4);
+                      uVar12 = *(undefined4 *)(pcVar9 + 8);
+                      uVar11 = *(undefined4 *)(pcVar9 + 0xc);
+                      *(undefined4 *)pcVar10 = *(undefined4 *)pcVar9;
+                      *(undefined4 *)(pcVar10 + 4) = uVar13;
+                      *(undefined4 *)(pcVar10 + 8) = uVar12;
+                      *(undefined4 *)(pcVar10 + 0xc) = uVar11;
+                      pcVar15 = pcVar10 + 0x10;
+                      pcVar17 = pcVar9 + 0x10;
+                    } while (pcVar9 + 0x10 != "ion.1.SSID");
+                    uVar11 = *(undefined4 *)(pcVar9 + 0x14);
+                    uVar2 = *(undefined2 *)(pcVar9 + 0x18);
+                    cVar1 = pcVar9[0x1a];
+                    pcVar15[0] = 'i';
+                    pcVar15[1] = 'o';
+                    pcVar15[2] = 'n';
+                    pcVar15[3] = '.';
+                    *(undefined4 *)(pcVar10 + 0x14) = uVar11;
+                    *(undefined2 *)(pcVar10 + 0x18) = uVar2;
+                    pcVar10[0x1a] = cVar1;
+                    memset(auStack_14655,0,0xc5);
+                    pcVar17 = acStack_14590;
+                    do {
+                      uVar14 = *(undefined4 *)pcVar16;
+                      uVar13 = *(undefined4 *)(pcVar16 + 4);
+                      uVar12 = *(undefined4 *)(pcVar16 + 8);
+                      uVar11 = *(undefined4 *)(pcVar16 + 0xc);
+                      pcVar16 = pcVar16 + 0x10;
+                      *(undefined4 *)pcVar17 = uVar14;
+                      *(undefined4 *)(pcVar17 + 4) = uVar13;
+                      *(undefined4 *)(pcVar17 + 8) = uVar12;
+                      *(undefined4 *)(pcVar17 + 0xc) = uVar11;
+                      pcVar17 = pcVar17 + 0x10;
+                    } while (pcVar16 != "");
+                    *pcVar17 = '\0';
+                    memset(auStack_1454f,0,0xbf);
+                    pcVar17 = 
+                    "InternetGatewayDevice.LANDevice.1.WLANConfiguration.1.WPAAuthenticationMode";
+                    pcVar15 = acStack_14490;
+                    do {
+                      pcVar16 = pcVar15;
+                      pcVar9 = pcVar17;
+                      uVar13 = *(undefined4 *)(pcVar9 + 4);
+                      uVar12 = *(undefined4 *)(pcVar9 + 8);
+                      uVar11 = *(undefined4 *)(pcVar9 + 0xc);
+                      *(undefined4 *)pcVar16 = *(undefined4 *)pcVar9;
+                      *(undefined4 *)(pcVar16 + 4) = uVar13;
+                      *(undefined4 *)(pcVar16 + 8) = uVar12;
+                      *(undefined4 *)(pcVar16 + 0xc) = uVar11;
+                      pcVar15 = pcVar16 + 0x10;
+                      pcVar17 = pcVar9 + 0x10;
+                    } while (pcVar9 + 0x10 != "icationMode");
+                    uVar12 = *(undefined4 *)(pcVar9 + 0x14);
+                    uVar11 = *(undefined4 *)(pcVar9 + 0x18);
+                    pcVar15[0] = 'i';
+                    pcVar15[1] = 'c';
+                    pcVar15[2] = 'a';
+                    pcVar15[3] = 't';
+                    *(undefined4 *)(pcVar16 + 0x14) = uVar12;
+                    *(undefined4 *)(pcVar16 + 0x18) = uVar11;
+                    memset(auStack_14444,0,0xb4);
+                    pcVar17 = 
+                    "InternetGatewayDevice.LANDevice.1.WLANConfiguration.1.WPAEncryptionModes";
+                    pcVar15 = acStack_14390;
+                    do {
+                      pcVar16 = pcVar15;
+                      pcVar9 = pcVar17;
+                      uVar13 = *(undefined4 *)(pcVar9 + 4);
+                      uVar12 = *(undefined4 *)(pcVar9 + 8);
+                      uVar11 = *(undefined4 *)(pcVar9 + 0xc);
+                      *(undefined4 *)pcVar16 = *(undefined4 *)pcVar9;
+                      *(undefined4 *)(pcVar16 + 4) = uVar13;
+                      *(undefined4 *)(pcVar16 + 8) = uVar12;
+                      *(undefined4 *)(pcVar16 + 0xc) = uVar11;
+                      pcVar15 = pcVar16 + 0x10;
+                      pcVar17 = pcVar9 + 0x10;
+                    } while (pcVar9 + 0x10 != "ionModes");
+                    uVar11 = *(undefined4 *)(pcVar9 + 0x14);
+                    cVar1 = pcVar9[0x18];
+                    pcVar15[0] = 'i';
+                    pcVar15[1] = 'o';
+                    pcVar15[2] = 'n';
+                    pcVar15[3] = 'M';
+                    *(undefined4 *)(pcVar16 + 0x14) = uVar11;
+                    pcVar16[0x18] = cVar1;
+                    memset(auStack_14347,0,0xb7);
+                    pcVar17 = acStack_14290;
+                    pcVar15 = 
+                    "InternetGatewayDevice.LANDevice.1.WLANConfiguration.1.PreSharedKey.1.PreSharedKey"
+                    ;
+                    do {
+                      uVar14 = *(undefined4 *)pcVar15;
+                      uVar13 = *(undefined4 *)(pcVar15 + 4);
+                      uVar12 = *(undefined4 *)(pcVar15 + 8);
+                      uVar11 = *(undefined4 *)(pcVar15 + 0xc);
+                      pcVar15 = pcVar15 + 0x10;
+                      *(undefined4 *)pcVar17 = uVar14;
+                      *(undefined4 *)(pcVar17 + 4) = uVar13;
+                      *(undefined4 *)(pcVar17 + 8) = uVar12;
+                      *(undefined4 *)(pcVar17 + 0xc) = uVar11;
+                      pcVar17 = pcVar17 + 0x10;
+                    } while (pcVar15 != "y");
+                    pcVar17[0] = 'y';
+                    pcVar17[1] = '\0';
+                    memset(auStack_1423e,0,0xae);
+                    memset(acStack_14190,0,0x660);
+                    local_30 = (char *)&uStack_14790;
+                    iVar6 = 0;
+                    pcVar17 = acStack_14190;
+                    while( true ) {
+                      pcVar15 = acStack_10034;
+                      iVar18 = 0;
+                      while (pcVar9 = strstr(pcVar15,local_30), pcVar9 == (char *)0x0) {
+                        iVar18 = iVar18 + 1;
+                        pcVar15 = pcVar15 + 0x100;
+                        if (iVar18 == iVar5) goto LAB_00015990;
+                      }
+                      FUN_00012cf8(pcVar15,pcVar17);
+                      if (iVar5 <= iVar18) break;
+                      iVar6 = iVar6 + 1;
+                      pcVar17 = pcVar17 + 0x110;
+                      local_30 = local_30 + 0x100;
+                      if (iVar6 == 6) {
+                        pcVar15 = "config_info_set_BeaconType_WPA";
+                        pcVar17 = acStack_14190;
+                        iVar5 = 0;
+                        do {
+                          iVar18 = iVar5 + 1;
+                          iVar6 = iVar5;
+                          pcVar9 = pcVar17;
+                          log_log(7,"config_info_set_BeaconType_WPA",0x4e1,0x62fc,iVar5,pcVar17);
+                          pcVar17 = pcVar17 + 0x110;
+                          iVar5 = iVar18;
+                        } while (iVar18 != 6);
+                        if (acStack_14080[0] == '\0') {
+                          uVar11 = 0x4e6;
+                          uVar12 = 0x6310;
+LAB_000158d4:
+                          log_log(3,pcVar15,uVar11,uVar12,iVar6,pcVar9);
+                          DAT_0002b964 = 1;
+                          goto LAB_0001501c;
+                        }
+                        iVar5 = strcmp(acStack_14190,(char *)0x6324);
+                        if ((iVar5 == 0) ||
+                           (iVar5 = strcmp(acStack_14190,(char *)0x632c), iVar5 == 0)) {
+                          iVar5 = strcmp(acStack_13e60,(char *)0x6498);
+                          if (iVar5 == 0) {
+                            iVar5 = strcmp(acStack_13d50,(char *)0x64d4);
+                            if ((iVar5 == 0) ||
+                               (iVar5 = strcmp(acStack_13d50,(char *)0x64e4), iVar5 == 0)) {
+                              if (acStack_13c40[0] != '\0') {
+                                memset(&uStack_13110,0,0x30da);
+                                uStack_13110 = 0xeb;
+                                uStack_1310c = 2;
+                                uStack_13108 = 1;
+                                uStack_13104 = 1;
+                                iVar5 = cfg_getObj(&uStack_13110,0x30da,0x800);
+                                if (iVar5 == 0) {
+                                  iVar5 = strcmp(acStack_14190,(char *)0x6324);
+                                  uStack_130d4 = (uint)(iVar5 == 0);
+                                  strncpy(acStack_13016,acStack_14080,0x20);
+                                  strncpy(acStack_12ff5,acStack_13f70,0x20);
+                                  strncpy(acStack_12ab3,acStack_13e60,0x20);
+                                  strncpy(acStack_12ad4,acStack_13d50,0x20);
+                                  iVar5 = cfg_setObj(&uStack_13110,0x30da,0x800);
+                                  if (iVar5 == 0) {
+                                    memset(acStack_13990,0,0x104);
+                                    acStack_13990[0] = '\0';
+                                    acStack_13990[1] = '\0';
+                                    acStack_13990[2] = '\0';
+                                    acStack_13990[3] = -0x11;
+                                    auStack_1398c[0]._0_1_ = 3;
+                                    auStack_1398c[1] = 1;
+                                    auStack_1398c[2] = 1;
+                                    auStack_1398c[3] = 1;
+                                    iVar5 = cfg_getObj(acStack_13990,0x104,0x800);
+                                    if (iVar5 == 0) {
+                                      memset(acStack_13970,0,0x200);
+                                      strcpy(acStack_13970,acStack_13c40);
+                                      iVar5 = cfg_setObj(acStack_13990,0x104,0x800);
+                                      if (iVar5 == 0) goto LAB_00015018;
+                                      pcVar17 = "config_info_set_BeaconType_WPA";
+                                      uVar11 = 0x536;
+                                      uVar12 = 0x655c;
+                                    }
+                                    else {
+                                      pcVar17 = "config_info_set_BeaconType_WPA";
+                                      uVar11 = 0x52c;
+                                      uVar12 = 0x6534;
+                                    }
+                                  }
+                                  else {
+                                    pcVar17 = "config_info_set_BeaconType_WPA";
+                                    uVar11 = 0x523;
+                                    uVar12 = 0x6380;
+                                  }
+                                }
+                                else {
+                                  pcVar17 = "config_info_set_BeaconType_WPA";
+                                  uVar11 = 0x512;
+                                  uVar12 = 0x635c;
+                                }
+                                goto LAB_00015788;
+                              }
+                              pcVar15 = "config_info_set_BeaconType_WPA";
+                              uVar11 = 0x508;
+                              uVar12 = 0x6518;
+                              goto LAB_000158d4;
+                            }
+                            pcVar15 = "config_info_set_BeaconType_WPA";
+                            uVar11 = 0x500;
+                            uVar12 = 0x64f4;
+                            pcVar17 = acStack_13d50;
+                          }
+                          else {
+                            pcVar15 = "config_info_set_BeaconType_WPA";
+                            uVar11 = 0x4f7;
+                            uVar12 = 0x64ac;
+                            pcVar17 = acStack_13e60;
+                          }
+                        }
+                        else {
+                          uVar11 = 0x4ef;
+                          uVar12 = 0x6334;
+                          pcVar17 = acStack_14190;
+                        }
+                        goto LAB_00015958;
+                      }
+                    }
+                    local_30 = auStack_1478c + iVar6 * 0x100 + -4;
+LAB_00015990:
+                    pcVar17 = "config_info_set_BeaconType_WPA";
+                    uVar11 = 0x4d9;
+                  }
+                }
+                log_log(3,pcVar17,uVar11,0x624c,local_30);
+                DAT_0002b964 = 2;
+LAB_0001501c:
+                FUN_00010ac0();
+                return 0;
+              }
+              log_log(3,"config_info_get_BeaconType",1099,0x62b8);
+              goto LAB_00014c30;
+            }
+            pcVar15 = pcVar15 + 0x100;
+          } while (iVar6 != iVar5);
+        }
+        pcVar17 = (char *)&uStack_14790;
+        log_log(3,"config_info_get_BeaconType",0x445,0x62a4,pcVar17);
+LAB_00014c30:
+        DAT_0002b964 = 2;
+        log_log(3,"processE8DigConfig",0x610,0x62d8,pcVar17);
+        return 0xffffffff;
+      }
+      uVar11 = 0x6224;
+      log_log(3,"config_info_load_to_mem",0x3d5,0x626c,0x6224);
+    }
+    else {
+      uVar11 = 0x6224;
+      log_log(3,"config_info_load_to_mem",0x3ca,0x624c,0x6224);
+    }
+    DAT_0002b964 = 99;
+    log_log(3,"processE8DigConfig",0x602,0x6280,uVar11);
+  }
+  return 0xffffffff;
+}
+
+
+
+/* ===== FUN_00015c60 @ 00015c60 ==== */
+
+void FUN_00015c60(void)
+
+{
+  undefined4 *puVar1;
+  
+  for (puVar1 = &DAT_0002b864; (code *)*puVar1 != (code *)0xffffffff; puVar1 = puVar1 + -1) {
+    (*(code *)*puVar1)();
+  }
+  return;
+}
+
+
+
+/* ===== open @ 00015cc0 ==== */
+
+/* WARNING: Unknown calling convention -- yet parameter storage is locked */
+
+int open(char *__file,int __oflag,...)
+
+{
+  int iVar1;
+  
+  (*(code *)(undefined *)0x0)();
+  (*(code *)(undefined *)0x0)();
+  (*(code *)(undefined *)0x0)();
+  (*(code *)(undefined *)0x0)();
+  (*(code *)(undefined *)0x0)();
+  (*(code *)(undefined *)0x0)();
+  (*(code *)(undefined *)0x0)();
+  (*(code *)(undefined *)0x0)();
+  (*(code *)(undefined *)0x0)();
+  (*(code *)(undefined *)0x0)();
+  (*(code *)(undefined *)0x0)();
+  (*(code *)(undefined *)0x0)();
+  (*(code *)(undefined *)0x0)();
+  (*(code *)(undefined *)0x0)();
+  (*(code *)(undefined *)0x0)();
+  (*(code *)(undefined *)0x0)();
+  (*(code *)(undefined *)0x0)();
+  (*(code *)(undefined *)0x0)();
+  (*(code *)(undefined *)0x0)();
+  (*(code *)(undefined *)0x0)();
+  (*(code *)(undefined *)0x0)();
+  (*(code *)(undefined *)0x0)();
+  (*(code *)(undefined *)0x0)();
+  (*(code *)(undefined *)0x0)();
+  (*(code *)(undefined *)0x0)();
+  (*(code *)(undefined *)0x0)();
+  (*(code *)(undefined *)0x0)();
+  (*(code *)(undefined *)0x0)();
+  (*(code *)(undefined *)0x0)();
+  (*(code *)(undefined *)0x0)();
+  (*(code *)(undefined *)0x0)();
+  iVar1 = entry();
+  return iVar1;
+}
+
+
+
+/* ===== system @ 00015cd0 ==== */
+
+/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
+/* WARNING: Unknown calling convention -- yet parameter storage is locked */
+
+int system(char *__command)
+
+{
+  int iVar1;
+  
+  (*__GLOBAL_OFFSET_TABLE_)();
+  (*__GLOBAL_OFFSET_TABLE_)();
+  (*__GLOBAL_OFFSET_TABLE_)();
+  (*__GLOBAL_OFFSET_TABLE_)();
+  (*__GLOBAL_OFFSET_TABLE_)();
+  (*__GLOBAL_OFFSET_TABLE_)();
+  (*__GLOBAL_OFFSET_TABLE_)();
+  (*__GLOBAL_OFFSET_TABLE_)();
+  (*__GLOBAL_OFFSET_TABLE_)();
+  (*__GLOBAL_OFFSET_TABLE_)();
+  (*__GLOBAL_OFFSET_TABLE_)();
+  (*__GLOBAL_OFFSET_TABLE_)();
+  (*__GLOBAL_OFFSET_TABLE_)();
+  (*__GLOBAL_OFFSET_TABLE_)();
+  (*__GLOBAL_OFFSET_TABLE_)();
+  (*__GLOBAL_OFFSET_TABLE_)();
+  (*__GLOBAL_OFFSET_TABLE_)();
+  (*__GLOBAL_OFFSET_TABLE_)();
+  (*__GLOBAL_OFFSET_TABLE_)();
+  (*__GLOBAL_OFFSET_TABLE_)();
+  (*__GLOBAL_OFFSET_TABLE_)();
+  (*__GLOBAL_OFFSET_TABLE_)();
+  (*__GLOBAL_OFFSET_TABLE_)();
+  (*__GLOBAL_OFFSET_TABLE_)();
+  (*__GLOBAL_OFFSET_TABLE_)();
+  (*__GLOBAL_OFFSET_TABLE_)();
+  (*__GLOBAL_OFFSET_TABLE_)();
+  (*__GLOBAL_OFFSET_TABLE_)();
+  (*__GLOBAL_OFFSET_TABLE_)();
+  (*__GLOBAL_OFFSET_TABLE_)();
+  iVar1 = entry();
+  return iVar1;
+}
+
+
+
+/* ===== strcat @ 00015ce0 ==== */
+
+/* WARNING: Unknown calling convention -- yet parameter storage is locked */
+
+char * strcat(char *__dest,char *__src)
+
+{
+  char *pcVar1;
+  int unaff_gp;
+  
+  (**(code **)(unaff_gp + -0x7ff0))();
+  (**(code **)(unaff_gp + -0x7ff0))();
+  (**(code **)(unaff_gp + -0x7ff0))();
+  (**(code **)(unaff_gp + -0x7ff0))();
+  (**(code **)(unaff_gp + -0x7ff0))();
+  (**(code **)(unaff_gp + -0x7ff0))();
+  (**(code **)(unaff_gp + -0x7ff0))();
+  (**(code **)(unaff_gp + -0x7ff0))();
+  (**(code **)(unaff_gp + -0x7ff0))();
+  (**(code **)(unaff_gp + -0x7ff0))();
+  (**(code **)(unaff_gp + -0x7ff0))();
+  (**(code **)(unaff_gp + -0x7ff0))();
+  (**(code **)(unaff_gp + -0x7ff0))();
+  (**(code **)(unaff_gp + -0x7ff0))();
+  (**(code **)(unaff_gp + -0x7ff0))();
+  (**(code **)(unaff_gp + -0x7ff0))();
+  (**(code **)(unaff_gp + -0x7ff0))();
+  (**(code **)(unaff_gp + -0x7ff0))();
+  (**(code **)(unaff_gp + -0x7ff0))();
+  (**(code **)(unaff_gp + -0x7ff0))();
+  (**(code **)(unaff_gp + -0x7ff0))();
+  (**(code **)(unaff_gp + -0x7ff0))();
+  (**(code **)(unaff_gp + -0x7ff0))();
+  (**(code **)(unaff_gp + -0x7ff0))();
+  (**(code **)(unaff_gp + -0x7ff0))();
+  (**(code **)(unaff_gp + -0x7ff0))();
+  (**(code **)(unaff_gp + -0x7ff0))();
+  (**(code **)(unaff_gp + -0x7ff0))();
+  (**(code **)(unaff_gp + -0x7ff0))();
+  pcVar1 = (char *)entry();
+  return pcVar1;
+}
+
+
+
+/* ===== feof @ 00015cf0 ==== */
+
+/* WARNING: Unknown calling convention -- yet parameter storage is locked */
+
+int feof(FILE *__stream)
+
+{
+  int iVar1;
+  int unaff_gp;
+  
+  (**(code **)(unaff_gp + -0x7ff0))();
+  (**(code **)(unaff_gp + -0x7ff0))();
+  (**(code **)(unaff_gp + -0x7ff0))();
+  (**(code **)(unaff_gp + -0x7ff0))();
+  (**(code **)(unaff_gp + -0x7ff0))();
+  (**(code **)(unaff_gp + -0x7ff0))();
+  (**(code **)(unaff_gp + -0x7ff0))();
+  (**(code **)(unaff_gp + -0x7ff0))();
+  (**(code **)(unaff_gp + -0x7ff0))();
+  (**(code **)(unaff_gp + -0x7ff0))();
+  (**(code **)(unaff_gp + -0x7ff0))();
+  (**(code **)(unaff_gp + -0x7ff0))();
+  (**(code **)(unaff_gp + -0x7ff0))();
+  (**(code **)(unaff_gp + -0x7ff0))();
+  (**(code **)(unaff_gp + -0x7ff0))();
+  (**(code **)(unaff_gp + -0x7ff0))();
+  (**(code **)(unaff_gp + -0x7ff0))();
+  (**(code **)(unaff_gp + -0x7ff0))();
+  (**(code **)(unaff_gp + -0x7ff0))();
+  (**(code **)(unaff_gp + -0x7ff0))();
+  (**(code **)(unaff_gp + -0x7ff0))();
+  (**(code **)(unaff_gp + -0x7ff0))();
+  (**(code **)(unaff_gp + -0x7ff0))();
+  (**(code **)(unaff_gp + -0x7ff0))();
+  (**(code **)(unaff_gp + -0x7ff0))();
+  (**(code **)(unaff_gp + -0x7ff0))();
+  (**(code **)(unaff_gp + -0x7ff0))();
+  (**(code **)(unaff_gp + -0x7ff0))();
+  iVar1 = entry();
+  return iVar1;
+}
+
+
+
+/* ===== strtoul @ 00015d00 ==== */
+
+/* WARNING: Unknown calling convention -- yet parameter storage is locked */
+
+ulong strtoul(char *__nptr,char **__endptr,int __base)
+
+{
+  ulong uVar1;
+  int unaff_gp;
+  
+  (**(code **)(unaff_gp + -0x7ff0))();
+  (**(code **)(unaff_gp + -0x7ff0))();
+  (**(code **)(unaff_gp + -0x7ff0))();
+  (**(code **)(unaff_gp + -0x7ff0))();
+  (**(code **)(unaff_gp + -0x7ff0))();
+  (**(code **)(unaff_gp + -0x7ff0))();
+  (**(code **)(unaff_gp + -0x7ff0))();
+  (**(code **)(unaff_gp + -0x7ff0))();
+  (**(code **)(unaff_gp + -0x7ff0))();
+  (**(code **)(unaff_gp + -0x7ff0))();
+  (**(code **)(unaff_gp + -0x7ff0))();
+  (**(code **)(unaff_gp + -0x7ff0))();
+  (**(code **)(unaff_gp + -0x7ff0))();
+  (**(code **)(unaff_gp + -0x7ff0))();
+  (**(code **)(unaff_gp + -0x7ff0))();
+  (**(code **)(unaff_gp + -0x7ff0))();
+  (**(code **)(unaff_gp + -0x7ff0))();
+  (**(code **)(unaff_gp + -0x7ff0))();
+  (**(code **)(unaff_gp + -0x7ff0))();
+  (**(code **)(unaff_gp + -0x7ff0))();
+  (**(code **)(unaff_gp + -0x7ff0))();
+  (**(code **)(unaff_gp + -0x7ff0))();
+  (**(code **)(unaff_gp + -0x7ff0))();
+  (**(code **)(unaff_gp + -0x7ff0))();
+  (**(code **)(unaff_gp + -0x7ff0))();
+  (**(code **)(unaff_gp + -0x7ff0))();
+  (**(code **)(unaff_gp + -0x7ff0))();
+  uVar1 = entry();
+  return uVar1;
+}
+
+
+
+/* ===== strlen @ 00015d10 ==== */
+
+/* WARNING: Unknown calling convention -- yet parameter storage is locked */
+
+size_t strlen(char *__s)
+
+{
+  size_t sVar1;
+  
+  (*(code *)(undefined *)0x0)();
+  (*(code *)(undefined *)0x0)();
+  (*(code *)(undefined *)0x0)();
+  (*(code *)(undefined *)0x0)();
+  (*(code *)(undefined *)0x0)();
+  (*(code *)(undefined *)0x0)();
+  (*(code *)(undefined *)0x0)();
+  (*(code *)(undefined *)0x0)();
+  (*(code *)(undefined *)0x0)();
+  (*(code *)(undefined *)0x0)();
+  (*(code *)(undefined *)0x0)();
+  (*(code *)(undefined *)0x0)();
+  (*(code *)(undefined *)0x0)();
+  (*(code *)(undefined *)0x0)();
+  (*(code *)(undefined *)0x0)();
+  (*(code *)(undefined *)0x0)();
+  (*(code *)(undefined *)0x0)();
+  (*(code *)(undefined *)0x0)();
+  (*(code *)(undefined *)0x0)();
+  (*(code *)(undefined *)0x0)();
+  (*(code *)(undefined *)0x0)();
+  (*(code *)(undefined *)0x0)();
+  (*(code *)(undefined *)0x0)();
+  (*(code *)(undefined *)0x0)();
+  (*(code *)(undefined *)0x0)();
+  (*(code *)(undefined *)0x0)();
+  sVar1 = entry();
+  return sVar1;
+}
+
+
+
+/* ===== log_log @ 00015d20 ==== */
+
+void log_log(void)
+
+{
+  int unaff_gp;
+  
+  (**(code **)(unaff_gp + -0x7ff0))();
+  (**(code **)(unaff_gp + -0x7ff0))();
+  (**(code **)(unaff_gp + -0x7ff0))();
+  (**(code **)(unaff_gp + -0x7ff0))();
+  (**(code **)(unaff_gp + -0x7ff0))();
+  (**(code **)(unaff_gp + -0x7ff0))();
+  (**(code **)(unaff_gp + -0x7ff0))();
+  (**(code **)(unaff_gp + -0x7ff0))();
+  (**(code **)(unaff_gp + -0x7ff0))();
+  (**(code **)(unaff_gp + -0x7ff0))();
+  (**(code **)(unaff_gp + -0x7ff0))();
+  (**(code **)(unaff_gp + -0x7ff0))();
+  (**(code **)(unaff_gp + -0x7ff0))();
+  (**(code **)(unaff_gp + -0x7ff0))();
+  (**(code **)(unaff_gp + -0x7ff0))();
+  (**(code **)(unaff_gp + -0x7ff0))();
+  (**(code **)(unaff_gp + -0x7ff0))();
+  (**(code **)(unaff_gp + -0x7ff0))();
+  (**(code **)(unaff_gp + -0x7ff0))();
+  (**(code **)(unaff_gp + -0x7ff0))();
+  (**(code **)(unaff_gp + -0x7ff0))();
+  (**(code **)(unaff_gp + -0x7ff0))();
+  (**(code **)(unaff_gp + -0x7ff0))();
+  (**(code **)(unaff_gp + -0x7ff0))();
+  (**(code **)(unaff_gp + -0x7ff0))();
+  entry();
+  return;
+}
+
+
+
+/* ===== snprintf @ 00015d30 ==== */
+
+/* WARNING: Unknown calling convention -- yet parameter storage is locked */
+
+int snprintf(char *__s,size_t __maxlen,char *__format,...)
+
+{
+  int iVar1;
+  int unaff_gp;
+  
+  (**(code **)(unaff_gp + -0x7ff0))();
+  (**(code **)(unaff_gp + -0x7ff0))();
+  (**(code **)(unaff_gp + -0x7ff0))();
+  (**(code **)(unaff_gp + -0x7ff0))();
+  (**(code **)(unaff_gp + -0x7ff0))();
+  (**(code **)(unaff_gp + -0x7ff0))();
+  (**(code **)(unaff_gp + -0x7ff0))();
+  (**(code **)(unaff_gp + -0x7ff0))();
+  (**(code **)(unaff_gp + -0x7ff0))();
+  (**(code **)(unaff_gp + -0x7ff0))();
+  (**(code **)(unaff_gp + -0x7ff0))();
+  (**(code **)(unaff_gp + -0x7ff0))();
+  (**(code **)(unaff_gp + -0x7ff0))();
+  (**(code **)(unaff_gp + -0x7ff0))();
+  (**(code **)(unaff_gp + -0x7ff0))();
+  (**(code **)(unaff_gp + -0x7ff0))();
+  (**(code **)(unaff_gp + -0x7ff0))();
+  (**(code **)(unaff_gp + -0x7ff0))();
+  (**(code **)(unaff_gp + -0x7ff0))();
+  (**(code **)(unaff_gp + -0x7ff0))();
+  (**(code **)(unaff_gp + -0x7ff0))();
+  (**(code **)(unaff_gp + -0x7ff0))();
+  (**(code **)(unaff_gp + -0x7ff0))();
+  (**(code **)(unaff_gp + -0x7ff0))();
+  iVar1 = entry();
+  return iVar1;
+}
+
+
+
+/* ===== access @ 00015d40 ==== */
+
+/* WARNING: Unknown calling convention -- yet parameter storage is locked */
+
+int access(char *__name,int __type)
+
+{
+  int iVar1;
+  int unaff_gp;
+  
+  (**(code **)(unaff_gp + -0x7ff0))();
+  (**(code **)(unaff_gp + -0x7ff0))();
+  (**(code **)(unaff_gp + -0x7ff0))();
+  (**(code **)(unaff_gp + -0x7ff0))();
+  (**(code **)(unaff_gp + -0x7ff0))();
+  (**(code **)(unaff_gp + -0x7ff0))();
+  (**(code **)(unaff_gp + -0x7ff0))();
+  (**(code **)(unaff_gp + -0x7ff0))();
+  (**(code **)(unaff_gp + -0x7ff0))();
+  (**(code **)(unaff_gp + -0x7ff0))();
+  (**(code **)(unaff_gp + -0x7ff0))();
+  (**(code **)(unaff_gp + -0x7ff0))();
+  (**(code **)(unaff_gp + -0x7ff0))();
+  (**(code **)(unaff_gp + -0x7ff0))();
+  (**(code **)(unaff_gp + -0x7ff0))();
+  (**(code **)(unaff_gp + -0x7ff0))();
+  (**(code **)(unaff_gp + -0x7ff0))();
+  (**(code **)(unaff_gp + -0x7ff0))();
+  (**(code **)(unaff_gp + -0x7ff0))();
+  (**(code **)(unaff_gp + -0x7ff0))();
+  (**(code **)(unaff_gp + -0x7ff0))();
+  (**(code **)(unaff_gp + -0x7ff0))();
+  (**(code **)(unaff_gp + -0x7ff0))();
+  iVar1 = entry();
+  return iVar1;
+}
+
+
+
+/* ===== cfg_pathToTr069Node @ 00015d50 ==== */
+
+/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
+
+void cfg_pathToTr069Node(void)
+
+{
+  (*__GLOBAL_OFFSET_TABLE_)();
+  (*__GLOBAL_OFFSET_TABLE_)();
+  (*__GLOBAL_OFFSET_TABLE_)();
+  (*__GLOBAL_OFFSET_TABLE_)();
+  (*__GLOBAL_OFFSET_TABLE_)();
+  (*__GLOBAL_OFFSET_TABLE_)();
+  (*__GLOBAL_OFFSET_TABLE_)();
+  (*__GLOBAL_OFFSET_TABLE_)();
+  (*__GLOBAL_OFFSET_TABLE_)();
+  (*__GLOBAL_OFFSET_TABLE_)();
+  (*__GLOBAL_OFFSET_TABLE_)();
+  (*__GLOBAL_OFFSET_TABLE_)();
+  (*__GLOBAL_OFFSET_TABLE_)();
+  (*__GLOBAL_OFFSET_TABLE_)();
+  (*__GLOBAL_OFFSET_TABLE_)();
+  (*__GLOBAL_OFFSET_TABLE_)();
+  (*__GLOBAL_OFFSET_TABLE_)();
+  (*__GLOBAL_OFFSET_TABLE_)();
+  (*__GLOBAL_OFFSET_TABLE_)();
+  (*__GLOBAL_OFFSET_TABLE_)();
+  (*__GLOBAL_OFFSET_TABLE_)();
+  (*__GLOBAL_OFFSET_TABLE_)();
+  entry();
+  return;
+}
+
+
+
+/* ===== strsep @ 00015d60 ==== */
+
+/* WARNING: Unknown calling convention -- yet parameter storage is locked */
+
+char * strsep(char **__stringp,char *__delim)
+
+{
+  char *pcVar1;
+  int unaff_gp;
+  
+  (**(code **)(unaff_gp + -0x7ff0))();
+  (**(code **)(unaff_gp + -0x7ff0))();
+  (**(code **)(unaff_gp + -0x7ff0))();
+  (**(code **)(unaff_gp + -0x7ff0))();
+  (**(code **)(unaff_gp + -0x7ff0))();
+  (**(code **)(unaff_gp + -0x7ff0))();
+  (**(code **)(unaff_gp + -0x7ff0))();
+  (**(code **)(unaff_gp + -0x7ff0))();
+  (**(code **)(unaff_gp + -0x7ff0))();
+  (**(code **)(unaff_gp + -0x7ff0))();
+  (**(code **)(unaff_gp + -0x7ff0))();
+  (**(code **)(unaff_gp + -0x7ff0))();
+  (**(code **)(unaff_gp + -0x7ff0))();
+  (**(code **)(unaff_gp + -0x7ff0))();
+  (**(code **)(unaff_gp + -0x7ff0))();
+  (**(code **)(unaff_gp + -0x7ff0))();
+  (**(code **)(unaff_gp + -0x7ff0))();
+  (**(code **)(unaff_gp + -0x7ff0))();
+  (**(code **)(unaff_gp + -0x7ff0))();
+  (**(code **)(unaff_gp + -0x7ff0))();
+  (**(code **)(unaff_gp + -0x7ff0))();
+  pcVar1 = (char *)entry();
+  return pcVar1;
+}
+
+
+
+/* ===== pclose @ 00015d70 ==== */
+
+/* WARNING: Unknown calling convention -- yet parameter storage is locked */
+
+int pclose(FILE *__stream)
+
+{
+  int iVar1;
+  int unaff_gp;
+  
+  (**(code **)(unaff_gp + -0x7ff0))();
+  (**(code **)(unaff_gp + -0x7ff0))();
+  (**(code **)(unaff_gp + -0x7ff0))();
+  (**(code **)(unaff_gp + -0x7ff0))();
+  (**(code **)(unaff_gp + -0x7ff0))();
+  (**(code **)(unaff_gp + -0x7ff0))();
+  (**(code **)(unaff_gp + -0x7ff0))();
+  (**(code **)(unaff_gp + -0x7ff0))();
+  (**(code **)(unaff_gp + -0x7ff0))();
+  (**(code **)(unaff_gp + -0x7ff0))();
+  (**(code **)(unaff_gp + -0x7ff0))();
+  (**(code **)(unaff_gp + -0x7ff0))();
+  (**(code **)(unaff_gp + -0x7ff0))();
+  (**(code **)(unaff_gp + -0x7ff0))();
+  (**(code **)(unaff_gp + -0x7ff0))();
+  (**(code **)(unaff_gp + -0x7ff0))();
+  (**(code **)(unaff_gp + -0x7ff0))();
+  (**(code **)(unaff_gp + -0x7ff0))();
+  (**(code **)(unaff_gp + -0x7ff0))();
+  (**(code **)(unaff_gp + -0x7ff0))();
+  iVar1 = entry();
+  return iVar1;
+}
+
+
+
+/* ===== fclose @ 00015d80 ==== */
+
+/* WARNING: Unknown calling convention -- yet parameter storage is locked */
+
+int fclose(FILE *__stream)
+
+{
+  int iVar1;
+  int unaff_gp;
+  
+  (**(code **)(unaff_gp + -0x7ff0))();
+  (**(code **)(unaff_gp + -0x7ff0))();
+  (**(code **)(unaff_gp + -0x7ff0))();
+  (**(code **)(unaff_gp + -0x7ff0))();
+  (**(code **)(unaff_gp + -0x7ff0))();
+  (**(code **)(unaff_gp + -0x7ff0))();
+  (**(code **)(unaff_gp + -0x7ff0))();
+  (**(code **)(unaff_gp + -0x7ff0))();
+  (**(code **)(unaff_gp + -0x7ff0))();
+  (**(code **)(unaff_gp + -0x7ff0))();
+  (**(code **)(unaff_gp + -0x7ff0))();
+  (**(code **)(unaff_gp + -0x7ff0))();
+  (**(code **)(unaff_gp + -0x7ff0))();
+  (**(code **)(unaff_gp + -0x7ff0))();
+  (**(code **)(unaff_gp + -0x7ff0))();
+  (**(code **)(unaff_gp + -0x7ff0))();
+  (**(code **)(unaff_gp + -0x7ff0))();
+  (**(code **)(unaff_gp + -0x7ff0))();
+  (**(code **)(unaff_gp + -0x7ff0))();
+  iVar1 = entry();
+  return iVar1;
+}
+
+
+
+/* ===== fopen @ 00015d90 ==== */
+
+/* WARNING: Unknown calling convention -- yet parameter storage is locked */
+
+FILE * fopen(char *__filename,char *__modes)
+
+{
+  FILE *pFVar1;
+  int unaff_gp;
+  
+  (**(code **)(unaff_gp + -0x7ff0))();
+  (**(code **)(unaff_gp + -0x7ff0))();
+  (**(code **)(unaff_gp + -0x7ff0))();
+  (**(code **)(unaff_gp + -0x7ff0))();
+  (**(code **)(unaff_gp + -0x7ff0))();
+  (**(code **)(unaff_gp + -0x7ff0))();
+  (**(code **)(unaff_gp + -0x7ff0))();
+  (**(code **)(unaff_gp + -0x7ff0))();
+  (**(code **)(unaff_gp + -0x7ff0))();
+  (**(code **)(unaff_gp + -0x7ff0))();
+  (**(code **)(unaff_gp + -0x7ff0))();
+  (**(code **)(unaff_gp + -0x7ff0))();
+  (**(code **)(unaff_gp + -0x7ff0))();
+  (**(code **)(unaff_gp + -0x7ff0))();
+  (**(code **)(unaff_gp + -0x7ff0))();
+  (**(code **)(unaff_gp + -0x7ff0))();
+  (**(code **)(unaff_gp + -0x7ff0))();
+  (**(code **)(unaff_gp + -0x7ff0))();
+  pFVar1 = (FILE *)entry();
+  return pFVar1;
+}
+
+
+
+/* ===== cfg_getNextObjInSubTree @ 00015da0 ==== */
+
+void cfg_getNextObjInSubTree(void)
+
+{
+  int unaff_gp;
+  
+  (**(code **)(unaff_gp + -0x7ff0))();
+  (**(code **)(unaff_gp + -0x7ff0))();
+  (**(code **)(unaff_gp + -0x7ff0))();
+  (**(code **)(unaff_gp + -0x7ff0))();
+  (**(code **)(unaff_gp + -0x7ff0))();
+  (**(code **)(unaff_gp + -0x7ff0))();
+  (**(code **)(unaff_gp + -0x7ff0))();
+  (**(code **)(unaff_gp + -0x7ff0))();
+  (**(code **)(unaff_gp + -0x7ff0))();
+  (**(code **)(unaff_gp + -0x7ff0))();
+  (**(code **)(unaff_gp + -0x7ff0))();
+  (**(code **)(unaff_gp + -0x7ff0))();
+  (**(code **)(unaff_gp + -0x7ff0))();
+  (**(code **)(unaff_gp + -0x7ff0))();
+  (**(code **)(unaff_gp + -0x7ff0))();
+  (**(code **)(unaff_gp + -0x7ff0))();
+  (**(code **)(unaff_gp + -0x7ff0))();
+  entry();
+  return;
+}
+
+
+
+/* ===== write @ 00015db0 ==== */
+
+/* WARNING: Unknown calling convention -- yet parameter storage is locked */
+
+ssize_t write(int __fd,void *__buf,size_t __n)
+
+{
+  ssize_t sVar1;
+  int unaff_gp;
+  
+  (**(code **)(unaff_gp + -0x7ff0))();
+  (**(code **)(unaff_gp + -0x7ff0))();
+  (**(code **)(unaff_gp + -0x7ff0))();
+  (**(code **)(unaff_gp + -0x7ff0))();
+  (**(code **)(unaff_gp + -0x7ff0))();
+  (**(code **)(unaff_gp + -0x7ff0))();
+  (**(code **)(unaff_gp + -0x7ff0))();
+  (**(code **)(unaff_gp + -0x7ff0))();
+  (**(code **)(unaff_gp + -0x7ff0))();
+  (**(code **)(unaff_gp + -0x7ff0))();
+  (**(code **)(unaff_gp + -0x7ff0))();
+  (**(code **)(unaff_gp + -0x7ff0))();
+  (**(code **)(unaff_gp + -0x7ff0))();
+  (**(code **)(unaff_gp + -0x7ff0))();
+  (**(code **)(unaff_gp + -0x7ff0))();
+  (**(code **)(unaff_gp + -0x7ff0))();
+  sVar1 = entry();
+  return sVar1;
+}
+
+
+
+/* ===== close @ 00015dc0 ==== */
+
+/* WARNING: Unknown calling convention -- yet parameter storage is locked */
+
+int close(int __fd)
+
+{
+  int iVar1;
+  int unaff_gp;
+  
+  (**(code **)(unaff_gp + -0x7ff0))();
+  (**(code **)(unaff_gp + -0x7ff0))();
+  (**(code **)(unaff_gp + -0x7ff0))();
+  (**(code **)(unaff_gp + -0x7ff0))();
+  (**(code **)(unaff_gp + -0x7ff0))();
+  (**(code **)(unaff_gp + -0x7ff0))();
+  (**(code **)(unaff_gp + -0x7ff0))();
+  (**(code **)(unaff_gp + -0x7ff0))();
+  (**(code **)(unaff_gp + -0x7ff0))();
+  (**(code **)(unaff_gp + -0x7ff0))();
+  (**(code **)(unaff_gp + -0x7ff0))();
+  (**(code **)(unaff_gp + -0x7ff0))();
+  (**(code **)(unaff_gp + -0x7ff0))();
+  (**(code **)(unaff_gp + -0x7ff0))();
+  (**(code **)(unaff_gp + -0x7ff0))();
+  iVar1 = entry();
+  return iVar1;
+}
+
+
+
+/* ===== fgets @ 00015dd0 ==== */
+
+/* WARNING: Unknown calling convention -- yet parameter storage is locked */
+
+char * fgets(char *__s,int __n,FILE *__stream)
+
+{
+  char *pcVar1;
+  int unaff_gp;
+  
+  (**(code **)(unaff_gp + -0x7ff0))();
+  (**(code **)(unaff_gp + -0x7ff0))();
+  (**(code **)(unaff_gp + -0x7ff0))();
+  (**(code **)(unaff_gp + -0x7ff0))();
+  (**(code **)(unaff_gp + -0x7ff0))();
+  (**(code **)(unaff_gp + -0x7ff0))();
+  (**(code **)(unaff_gp + -0x7ff0))();
+  (**(code **)(unaff_gp + -0x7ff0))();
+  (**(code **)(unaff_gp + -0x7ff0))();
+  (**(code **)(unaff_gp + -0x7ff0))();
+  (**(code **)(unaff_gp + -0x7ff0))();
+  (**(code **)(unaff_gp + -0x7ff0))();
+  (**(code **)(unaff_gp + -0x7ff0))();
+  (**(code **)(unaff_gp + -0x7ff0))();
+  pcVar1 = (char *)entry();
+  return pcVar1;
+}
+
+
+
+/* ===== strncpy @ 00015de0 ==== */
+
+/* WARNING: Unknown calling convention -- yet parameter storage is locked */
+
+char * strncpy(char *__dest,char *__src,size_t __n)
+
+{
+  char *pcVar1;
+  int unaff_gp;
+  
+  (**(code **)(unaff_gp + -0x7ff0))();
+  (**(code **)(unaff_gp + -0x7ff0))();
+  (**(code **)(unaff_gp + -0x7ff0))();
+  (**(code **)(unaff_gp + -0x7ff0))();
+  (**(code **)(unaff_gp + -0x7ff0))();
+  (**(code **)(unaff_gp + -0x7ff0))();
+  (**(code **)(unaff_gp + -0x7ff0))();
+  (**(code **)(unaff_gp + -0x7ff0))();
+  (**(code **)(unaff_gp + -0x7ff0))();
+  (**(code **)(unaff_gp + -0x7ff0))();
+  (**(code **)(unaff_gp + -0x7ff0))();
+  (**(code **)(unaff_gp + -0x7ff0))();
+  (**(code **)(unaff_gp + -0x7ff0))();
+  pcVar1 = (char *)entry();
+  return pcVar1;
+}
+
+
+
+/* ===== cfg_setObj @ 00015df0 ==== */
+
+void cfg_setObj(void)
+
+{
+  int unaff_gp;
+  
+  (**(code **)(unaff_gp + -0x7ff0))();
+  (**(code **)(unaff_gp + -0x7ff0))();
+  (**(code **)(unaff_gp + -0x7ff0))();
+  (**(code **)(unaff_gp + -0x7ff0))();
+  (**(code **)(unaff_gp + -0x7ff0))();
+  (**(code **)(unaff_gp + -0x7ff0))();
+  (**(code **)(unaff_gp + -0x7ff0))();
+  (**(code **)(unaff_gp + -0x7ff0))();
+  (**(code **)(unaff_gp + -0x7ff0))();
+  (**(code **)(unaff_gp + -0x7ff0))();
+  (**(code **)(unaff_gp + -0x7ff0))();
+  (**(code **)(unaff_gp + -0x7ff0))();
+  entry();
+  return;
+}
+
+
+
+/* ===== memset @ 00015e00 ==== */
+
+/* WARNING: Unknown calling convention -- yet parameter storage is locked */
+
+void * memset(void *__s,int __c,size_t __n)
+
+{
+  void *pvVar1;
+  int unaff_gp;
+  
+  (**(code **)(unaff_gp + -0x7ff0))();
+  (**(code **)(unaff_gp + -0x7ff0))();
+  (**(code **)(unaff_gp + -0x7ff0))();
+  (**(code **)(unaff_gp + -0x7ff0))();
+  (**(code **)(unaff_gp + -0x7ff0))();
+  (**(code **)(unaff_gp + -0x7ff0))();
+  (**(code **)(unaff_gp + -0x7ff0))();
+  (**(code **)(unaff_gp + -0x7ff0))();
+  (**(code **)(unaff_gp + -0x7ff0))();
+  (**(code **)(unaff_gp + -0x7ff0))();
+  (**(code **)(unaff_gp + -0x7ff0))();
+  pvVar1 = (void *)entry();
+  return pvVar1;
+}
+
+
+
+/* ===== sprintf @ 00015e10 ==== */
+
+/* WARNING: Unknown calling convention -- yet parameter storage is locked */
+
+int sprintf(char *__s,char *__format,...)
+
+{
+  int iVar1;
+  int unaff_gp;
+  
+  (**(code **)(unaff_gp + -0x7ff0))();
+  (**(code **)(unaff_gp + -0x7ff0))();
+  (**(code **)(unaff_gp + -0x7ff0))();
+  (**(code **)(unaff_gp + -0x7ff0))();
+  (**(code **)(unaff_gp + -0x7ff0))();
+  (**(code **)(unaff_gp + -0x7ff0))();
+  (**(code **)(unaff_gp + -0x7ff0))();
+  (**(code **)(unaff_gp + -0x7ff0))();
+  (**(code **)(unaff_gp + -0x7ff0))();
+  (**(code **)(unaff_gp + -0x7ff0))();
+  iVar1 = entry();
+  return iVar1;
+}
+
+
+
+/* ===== strstr @ 00015e20 ==== */
+
+/* WARNING: Unknown calling convention -- yet parameter storage is locked */
+
+char * strstr(char *__haystack,char *__needle)
+
+{
+  char *pcVar1;
+  int unaff_gp;
+  
+  (**(code **)(unaff_gp + -0x7ff0))();
+  (**(code **)(unaff_gp + -0x7ff0))();
+  (**(code **)(unaff_gp + -0x7ff0))();
+  (**(code **)(unaff_gp + -0x7ff0))();
+  (**(code **)(unaff_gp + -0x7ff0))();
+  (**(code **)(unaff_gp + -0x7ff0))();
+  (**(code **)(unaff_gp + -0x7ff0))();
+  (**(code **)(unaff_gp + -0x7ff0))();
+  (**(code **)(unaff_gp + -0x7ff0))();
+  pcVar1 = (char *)entry();
+  return pcVar1;
+}
+
+
+
+/* ===== strcmp @ 00015e30 ==== */
+
+/* WARNING: Unknown calling convention -- yet parameter storage is locked */
+
+int strcmp(char *__s1,char *__s2)
+
+{
+  int iVar1;
+  int unaff_gp;
+  
+  (**(code **)(unaff_gp + -0x7ff0))();
+  (**(code **)(unaff_gp + -0x7ff0))();
+  (**(code **)(unaff_gp + -0x7ff0))();
+  (**(code **)(unaff_gp + -0x7ff0))();
+  (**(code **)(unaff_gp + -0x7ff0))();
+  (**(code **)(unaff_gp + -0x7ff0))();
+  (**(code **)(unaff_gp + -0x7ff0))();
+  (**(code **)(unaff_gp + -0x7ff0))();
+  iVar1 = entry();
+  return iVar1;
+}
+
+
+
+/* ===== atoi @ 00015e40 ==== */
+
+/* WARNING: Unknown calling convention -- yet parameter storage is locked */
+
+int atoi(char *__nptr)
+
+{
+  int iVar1;
+  int unaff_gp;
+  
+  (**(code **)(unaff_gp + -0x7ff0))();
+  (**(code **)(unaff_gp + -0x7ff0))();
+  (**(code **)(unaff_gp + -0x7ff0))();
+  (**(code **)(unaff_gp + -0x7ff0))();
+  (**(code **)(unaff_gp + -0x7ff0))();
+  (**(code **)(unaff_gp + -0x7ff0))();
+  (**(code **)(unaff_gp + -0x7ff0))();
+  iVar1 = entry();
+  return iVar1;
+}
+
+
+
+/* ===== strchr @ 00015e50 ==== */
+
+/* WARNING: Unknown calling convention -- yet parameter storage is locked */
+
+char * strchr(char *__s,int __c)
+
+{
+  char *pcVar1;
+  int unaff_gp;
+  
+  (**(code **)(unaff_gp + -0x7ff0))();
+  (**(code **)(unaff_gp + -0x7ff0))();
+  (**(code **)(unaff_gp + -0x7ff0))();
+  (**(code **)(unaff_gp + -0x7ff0))();
+  (**(code **)(unaff_gp + -0x7ff0))();
+  (**(code **)(unaff_gp + -0x7ff0))();
+  pcVar1 = (char *)entry();
+  return pcVar1;
+}
+
+
+
+/* ===== printf @ 00015e60 ==== */
+
+/* WARNING: Unknown calling convention -- yet parameter storage is locked */
+
+int printf(char *__format,...)
+
+{
+  int iVar1;
+  int unaff_gp;
+  
+  (**(code **)(unaff_gp + -0x7ff0))();
+  (**(code **)(unaff_gp + -0x7ff0))();
+  (**(code **)(unaff_gp + -0x7ff0))();
+  (**(code **)(unaff_gp + -0x7ff0))();
+  (**(code **)(unaff_gp + -0x7ff0))();
+  iVar1 = entry();
+  return iVar1;
+}
+
+
+
+/* ===== popen @ 00015e70 ==== */
+
+/* WARNING: Unknown calling convention -- yet parameter storage is locked */
+
+FILE * popen(char *__command,char *__modes)
+
+{
+  FILE *pFVar1;
+  int unaff_gp;
+  
+  (**(code **)(unaff_gp + -0x7ff0))();
+  (**(code **)(unaff_gp + -0x7ff0))();
+  (**(code **)(unaff_gp + -0x7ff0))();
+  (**(code **)(unaff_gp + -0x7ff0))();
+  pFVar1 = (FILE *)entry();
+  return pFVar1;
+}
+
+
+
+/* ===== strcpy @ 00015e80 ==== */
+
+/* WARNING: Unknown calling convention -- yet parameter storage is locked */
+
+char * strcpy(char *__dest,char *__src)
+
+{
+  char *pcVar1;
+  int unaff_gp;
+  
+  (**(code **)(unaff_gp + -0x7ff0))();
+  (**(code **)(unaff_gp + -0x7ff0))();
+  (**(code **)(unaff_gp + -0x7ff0))();
+  pcVar1 = (char *)entry();
+  return pcVar1;
+}
+
+
+
+/* ===== cfg_getObj @ 00015e90 ==== */
+
+void cfg_getObj(void)
+
+{
+  int unaff_gp;
+  
+  (**(code **)(unaff_gp + -0x7ff0))();
+  (**(code **)(unaff_gp + -0x7ff0))();
+  entry();
+  return;
+}
+
+
+
+/* ===== cfg_getParam @ 00015ea0 ==== */
+
+void cfg_getParam(void)
+
+{
+  int unaff_gp;
+  
+  (**(code **)(unaff_gp + -0x7ff0))();
+  entry();
+  return;
+}
+
+
+
+/* ===== _fini @ 00015ec0 ==== */
+
+void _fini(void)
+
+{
+  entry();
+  return;
+}
+
+
+
+/* ===== __cxa_finalize @ 0002c000 ==== */
+
+/* WARNING: Control flow encountered bad instruction data */
+
+void __cxa_finalize(void)
+
+{
+                    /* WARNING: Bad instruction - Truncating control flow here */
+  halt_baddata();
+}
+
+
+
+/* ===== __register_frame_info @ 0002c004 ==== */
+
+/* WARNING: Control flow encountered bad instruction data */
+
+void __register_frame_info(void)
+
+{
+                    /* WARNING: Bad instruction - Truncating control flow here */
+  halt_baddata();
+}
+
+
+
+/* ===== _Jv_RegisterClasses @ 0002c008 ==== */
+
+/* WARNING: Control flow encountered bad instruction data */
+
+void _Jv_RegisterClasses(void)
+
+{
+                    /* WARNING: Bad instruction - Truncating control flow here */
+  halt_baddata();
+}
+
+
+
+/* ===== __deregister_frame_info @ 0002c00c ==== */
+
+/* WARNING: Control flow encountered bad instruction data */
+
+void __deregister_frame_info(void)
+
+{
+                    /* WARNING: Bad instruction - Truncating control flow here */
+  halt_baddata();
+}
+
+
+
